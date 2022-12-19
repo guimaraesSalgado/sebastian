@@ -1,0 +1,16 @@
+<div class="login" fxLayout="column" fxLayoutAlign="space-around center">
+
+    <div class="login-logo-wrapper">
+        <h1>ROLE</h1>
+    </div>
+
+    <div class="login-access">
+        <login-form #accessForm (onAccess)="doSearch()"></login-form>
+    </div>
+
+    <div class="login-sign-up">
+        <a href="">Cadastre-se aqui</a>
+    </div>
+
+    <div fxShow="true" fxHide.xs="true"></div>
+</div>

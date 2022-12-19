@@ -1,0 +1,18 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{label}}</mat-label>
+  <input
+  matInput
+  [id]="id + '--input'"
+  [type]="type"
+  [name]="name"
+  [formControlName]="formControlName"
+  [minlength]="minlength"
+  [maxlength]="maxlength"
+  [placeholder]="placeholder"
+  [readonly]="readonly"
+  [autofocus]="autofocus"
+  [autocomplete]="autoComplete"
+  (focus)="focus.emit($event)"
+    (blur)="blur.emit($event)">
+  <mat-icon matSuffix>{{icon}}</mat-icon>
+</mat-form-field>

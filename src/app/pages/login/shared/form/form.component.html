@@ -1,0 +1,15 @@
+    <form id="form" name="form" [formGroup]="form" (keydown)="onEnter($event)" autocomplete="off">
+
+      <div fxLayout="column" fxLayoutAlign="space-around center">
+        <div>
+          <role-text id="email" icon="" type="E-mail" label="Qual seu e-mail?"></role-text>
+        </div>
+        <div>
+          <role-text id="password" icon="" type="password" label="E sua senha"></role-text>
+        </div>
+        <div>
+          <button mat-raised-button color="accent" (click)="onAccess()">Buscar role!</button>
+        </div>
+      </div>
+
+    </form>
