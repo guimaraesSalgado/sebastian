@@ -1,0 +1,11 @@
+
+
+body .ui-inputtext:enabled(.ui-state-error) {
+  border-color: red;
+}
+
+.error-text{
+  font-size: 0.8em;
+  vertical-align: middle;
+  color: red;
+}

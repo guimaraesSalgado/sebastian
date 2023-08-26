@@ -1,0 +1,77 @@
+<div class="container mx-auto px-4 h-full">
+  <div class="flex content-center items-center justify-center h-full py-2">
+    <div class="w-full lg:w-4/12 px-4">
+      <div class="relative flex flex-col min-w-0 break-words w-full rounded-lg border-0">
+
+        <div class="">
+          <img
+            src="https://img.freepik.com/fotos-gratis/cao-feliz-sorridente-isolado-fundo-branco-retrato-2_1562-691.jpg"
+            alt="">
+        </div>
+
+        <div class="flex-auto lg:px-10 py-10 pt-0">
+          <div class="text-blueGray-400 text-center mb-3 font-bold pt-8 pb-2">
+            <h1 class="text-2xl font-semibold tracking-tight text-left text-blueGray-600">Crie sua conta</h1>
+          </div>
+
+          <form [formGroup]="form" autocomplete="off">
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                Nome
+              </label>
+              <input formControlName="name" type="email" placeholder="Digite seu nome ou apelido"
+                class="bg-whiteborder-1 border-indigo-700 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm w-full ease-linear transition-all duration-150" />
+            </div>
+
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+                E-mail
+              </label>
+              <input formControlName="user" type="email" placeholder="Digite seu e-mail"
+                class="bg-whiteborder-1 border-indigo-700 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm w-full ease-linear transition-all duration-150" />
+            </div>
+
+            <div class="relative w-full mb-3">
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
+                Senha
+              </label>
+              <input formControlName="password" type="password" placeholder="Digite sua senha" minlength="8"
+                class="bg-white border-1 border-indigo-700 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 rounded text-sm w-full ease-linear transition-all duration-150" />
+            </div>
+
+            <div>
+              <a (click)="teste()">cliquei aquifhshdfgahsdgf</a>
+              A senha deve conter pelo menos 8 caracteres.*
+              Use uma combinação de letras, números e caracteres especiais. *
+            </div>
+          </form>
+        </div>
+
+        <div class="flex-auto">
+          <div class="index__content-button grid-cols-12">
+            <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded font-sans"
+              [routerLink]="['/admin/config']">
+              Criar conta
+            </button>
+          </div>
+          <div class="p-4 text-center text-lg">
+            <small>Ou</small>
+          </div>
+          <div class="index__content-button grid-cols-12">
+            <button
+              class="w-full bg-white text-indigo-700 font-bold py-2 px-4 rounded font-sans border-1 border-indigo-700"
+              [routerLink]="['/auth/login']">
+              Criar conta com o google
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap mt-12 relative justify-around items-center">
+          <small class="text-lg text-blueGray-500">Já tem uma conta? </small><a
+            class="text-indigo-700 text-lg font-bold" [routerLink]="['/auth/login']">Acessar conta</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
