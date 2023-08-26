@@ -1,0 +1,20 @@
+<se-label *ngIf="label" [id]="id + '--label'" [target]="id + '--input'" [value]="label"
+[required]="control?.errors?.required"></se-label>
+
+<input
+autocomplete="off"
+[id]="id"
+[type]="type"
+[name]="name+'--field'"
+[formControlName]="formControlName"
+[minlength]="minlength"
+[maxlength]="maxlength"
+[placeholder]="placeholder"
+[readonly]="readonly"
+[autofocus]="autofocus"
+(focus)="focus.emit($event)"
+(blur)="blur.emit($event)"
+class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-md w-full ease-linear transition-all duration-150"/>
+
+<se-error [id]="id + '--error'" [control]="control"></se-error>
+
