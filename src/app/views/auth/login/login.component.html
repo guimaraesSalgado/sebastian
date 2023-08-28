@@ -3,13 +3,13 @@
     <div class="w-full lg:w-4/12 px-4">
       <div class="relative flex flex-col min-w-0 break-words w-full rounded-lg border-0">
 
-        <div class="">
+        <div class="flex-auto">
           <img src="assets/img/svg/access.svg" alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
         </div>
 
-        <div class="flex-auto lg:px-10 pb-10">
-          <div class="text-blueGray-400 text-center mb-3 font-bold pb-2">
-            <h1 class="text-2xl font-bold tracking-tight text-left text-blueGray-800">Acesse sua conta</h1>
+        <div class="flex-auto">
+          <div class="mb-3 pb-2">
+            <h1 class="text-lg font-bold text-left text-blueGray-800">Acesse sua conta</h1>
           </div>
 
           <form [formGroup]="form" autocomplete="off">
@@ -23,7 +23,7 @@
 
             <div class="flex flex-row justify-end pb-4">
               <div class="flex">
-                <button class="text-indigo-700 font-bold" type="button">
+                <button class="text-indigo-700 font-bold text-sm" type="button">
                   Esqueceu a senha?
                 </button>
               </div>
@@ -38,7 +38,7 @@
               Fazer login
             </button>
           </div>
-          <div class="p-4 text-center text-lg">
+          <div class="p-4 text-center text-sm">
             <small>Ou</small>
           </div>
           <div class="index__content-button grid-cols-12">
@@ -50,9 +50,10 @@
           </div>
         </div>
 
-        <div class="flex flex-wrap mt-12 relative justify-around items-center">
-          <small class="text-lg text-blueGray-500">Não possui uma conta? </small><a
-            class="text-indigo-700 text-lg font-bold" [routerLink]="['/auth/register']"> Criar conta</a>
+        <div class="flex flex-wrap mt-8 relative justify-evenly items-center">
+          <small class="text-base text-blueGray-500">
+            Não possui uma conta? <span class="text-indigo-700 text-base font-bold" [routerLink]="['/auth/register']">Criar conta</span>
+          </small>
         </div>
 
       </div>

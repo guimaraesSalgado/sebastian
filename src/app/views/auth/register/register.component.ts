@@ -1,28 +1,44 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
   readonly form: FormGroup = this.buildForm();
 
   constructor(
     private formBuilder: FormBuilder
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   private buildForm(): FormGroup {
     return this.formBuilder.group({
-      name: [null],
-      user: [null],
-      password: [null, [Validators.required]],
+      name: [null, [Validators.required]],
+      user: [null, [Validators.required]],
+      password: [null, [Validators.required, this.passwordValidator]],
     });
   }
 
-  teste(){
-    console.log(this.form.get('password')?.errors)
+  private passwordValidator(control: FormControl): ValidationErrors | null {
+    const value: string = control.value;
+    if (!/[A-Z]/.test(value)) {
+      return { uppercaseLetter: true };
+    }
+    if (!/[a-z]/.test(value)) {
+      return { lowercaseLetter: true };
+    }
+    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
+      return { specialCharacter: true };
+    }
+
+    if (value?.length < 8) {
+      return { minLength: true };
+    }
+
+    return null;
   }
 }

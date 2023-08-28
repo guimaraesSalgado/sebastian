@@ -2413,6 +2413,11 @@ select {
   max-height: 860px;
 }
 
+.max-h-96 {
+  max-height: 24rem;
+}
+
+
 .max-w-md {
   max-width: 28rem;
 }
