@@ -19,7 +19,6 @@ export class SeErrorComponent implements OnInit {
     if (this.control) {
       this.control.statusChanges.subscribe(status => {
         const { invalid, touched, dirty } = this.control;
-
         this.show = of(invalid && (touched || dirty));
         this.cdr.detectChanges();
       });
@@ -40,6 +39,14 @@ export class SeErrorComponent implements OnInit {
     let message: string | null = null;
     if ('required' === propertyName || 'empty' === propertyName) {
       message = 'Campo obrigatório.';
+    } else if('minLength' === propertyName) {
+      message = 'Quantidade de caracteres inválida.';
+    } else if('uppercaseLetter' === propertyName) {
+      message = 'Deve conter pelo menos uma letra maiúscula.';
+    } else if('lowercaseLetter' === propertyName) {
+      message = 'Deve conter pelo menos uma letra minúscula.';
+    } else if('specialCharacter' === propertyName) {
+      message = 'Deve conter pelo menos um caractere especial.';
     }
 
     return message;

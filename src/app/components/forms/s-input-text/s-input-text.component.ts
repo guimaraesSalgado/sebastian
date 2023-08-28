@@ -24,32 +24,45 @@ const CONTROL_CONTAINER_USE_FACTORY = (container: ControlContainer) => container
     },
   ],
 })
-export class SeInputTextComponent extends SeInputComponent{
+export class SeInputTextComponent extends SeInputComponent {
+  @Input() set inputType(type: string) {
+    this.type = type;
+    if (type === 'password') {
+      this.isPassword = true;
+    }
+  }
 
-@Input() minlength: number = 0;
-@Input() maxlength: number = 10;
-@Input() placeholder = '';
-@Input() prefix: string = '';
-@Input() suffix: string = '';
-@Input() autofocus = 'on';
-@Input() nativeType = 'text';
-@Input() index = null;
-@Input() type: string = 'text';
-@Input() override styleClass: string = '';
+  @Input() minlength: number = 0;
+  @Input() maxlength: number = 10;
+  @Input() placeholder = '';
+  @Input() prefix: string = '';
+  @Input() suffix: string = '';
+  @Input() autofocus = 'on';
+  @Input() nativeType = 'text';
+  @Input() index = null;
+  @Input() override styleClass: string = '';
 
-@Input() characterPattern = '[A-Za-z]';
-@Input() slotChar = '_';
-@Input() autoClear = true;
+  @Input() characterPattern = '[A-Za-z]';
+  @Input() slotChar = '_';
+  @Input() autoClear = true;
 
-// tslint:disable-next-line:no-output-native
-@Output() focus = new EventEmitter<any>();
+  // tslint:disable-next-line:no-output-native
+  @Output() focus = new EventEmitter<any>();
 
-// tslint:disable-next-line:no-output-native
-@Output() blur = new EventEmitter<any>();
+  // tslint:disable-next-line:no-output-native
+  @Output() blur = new EventEmitter<any>();
 
-colors: string = '';
+  colors: string = '';
+  type: string = 'text';
+  showPassword: boolean = true;
+  isPassword: boolean = false;
 
-constructor( override controlContainer: ControlContainer) {
-  super(controlContainer);
-}
+  constructor(override controlContainer: ControlContainer) {
+    super(controlContainer);
+  }
+
+  toggleShowPassword(): void {
+    this.type = this.showPassword ? 'text' : 'password';
+    this.showPassword = !this.showPassword;
+  }
 }
