@@ -18,7 +18,7 @@
             </div>
 
             <div class="relative w-full mb-3">
-              <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha"></app-s-input-text>
+              <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'"></app-s-input-text>
             </div>
 
             <div class="flex flex-row justify-end pb-4">
@@ -44,7 +44,7 @@
           <div class="index__content-button grid-cols-12">
             <button
               class="w-full bg-white text-indigo-700 font-bold py-2 px-4 rounded font-sans border-1 border-indigo-700"
-              [routerLink]="['/auth/login']">
+              (click)="loginWithGoogle()">
               Acessar com o google
             </button>
           </div>
