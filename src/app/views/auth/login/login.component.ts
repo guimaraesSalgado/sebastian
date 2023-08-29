@@ -18,12 +18,13 @@ export class LoginComponent implements OnInit {
 
   private buildForm(): FormGroup {
     return this.formBuilder.group({
-      user: [null],
-      password: [null],
+      user: [null, [Validators.required, Validators.email]],
+      password: [null, [Validators.required]],
     });
   }
 
   loginWithGoogle(): void {
+    console.log(this.form)
     // console.log(FormUtils.setPasswordValidator(this.form.get('password')))
     // FormUtils.setPasswordValidator(this.form)
     // Aqui você pode adicionar a lógica para iniciar o processo de login com o Google

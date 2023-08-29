@@ -47,6 +47,8 @@ export class SeErrorComponent implements OnInit {
       message = 'Deve conter pelo menos uma letra minúscula.';
     } else if('specialCharacter' === propertyName) {
       message = 'Deve conter pelo menos um caractere especial.';
+    } else if('email' === propertyName) {
+      message = 'Ops, o e-mail digitado esta incorreto. Tente novamente!.';
     }
 
     return message;

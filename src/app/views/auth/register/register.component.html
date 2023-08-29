@@ -15,15 +15,15 @@
 
           <form [formGroup]="form" autocomplete="off">
             <div class="relative w-full mb-3">
-              <app-s-input-text id="name" label="Nome" placeholder="Digite seu nome"></app-s-input-text>
+              <app-s-input-text id="name" label="Nome" placeholder="Digite seu nome" [maxlength]="100"></app-s-input-text>
             </div>
 
             <div class="relative w-full mb-3">
-              <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail"></app-s-input-text>
+              <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'" [maxlength]="100"></app-s-input-text>
             </div>
 
             <div class="relative w-full mb-3">
-              <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'"></app-s-input-text>
+              <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'" [maxlength]="12"></app-s-input-text>
             </div>
           </form>
         </div>
@@ -35,7 +35,7 @@
               Criar conta
             </button>
           </div>
-          <div class="p-4 text-center text-sm">
+          <div class="p-4 text-center text-base">
             <small>Ou</small>
           </div>
           <div class="index__content-button grid-cols-12">
