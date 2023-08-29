@@ -17,7 +17,7 @@
   (blur)="blur.emit($event)"
   class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-md w-full ease-linear transition-all duration-150"/>
 
-  <div class="password-toggle" (click)="toggleShowPassword()" *ngIf="isPassword">
+  <div class="password-toggle" (click)="toggleShowPassword()" *ngIf="showPassword">
     <i class="fa" [ngClass]="isPassword ? 'fa fa-eye-slash' : 'fa-eye'" aria-hidden="true"></i>
   </div>
 </div>

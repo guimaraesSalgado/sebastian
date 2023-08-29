@@ -28,7 +28,7 @@ export class SeInputTextComponent extends SeInputComponent {
   @Input() set inputType(type: string) {
     this.type = type;
     if (type === 'password') {
-      this.isPassword = true;
+      this.showPassword = true;
     }
   }
 
@@ -54,7 +54,7 @@ export class SeInputTextComponent extends SeInputComponent {
 
   colors: string = '';
   type: string = 'text';
-  showPassword: boolean = true;
+  showPassword: boolean = false;
   isPassword: boolean = false;
 
   constructor(override controlContainer: ControlContainer) {
@@ -62,7 +62,8 @@ export class SeInputTextComponent extends SeInputComponent {
   }
 
   toggleShowPassword(): void {
-    this.type = this.showPassword ? 'text' : 'password';
-    this.showPassword = !this.showPassword;
-  }
+    const newType = this.showPassword ? 'text' : 'password';
+    this.type = this.isPassword ? newType : 'password';
+    this.isPassword = !this.isPassword;
+}
 }
