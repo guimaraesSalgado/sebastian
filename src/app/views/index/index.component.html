@@ -1,26 +1,8 @@
-<section class="flex h-screen p-8 bg-gradient-app">
-  <div class="container index">
-  <div class="index__header">
-    <div class="index__header-logo flex justify-center align-center">
-      <img src="assets/img/logo.png" alt="Sebastian - Logo" title="Sebastian">
-    </div>
-
-    <div class="index__header-image justify-center align-center">
-      <img src="assets/img/svg/index.svg" alt="Acesse o app e comece ja!">
-    </div>
+<div class="fullscreen" [ngStyle]="{ 'background-color': backgroundColor }" style="transition: background-color 2s;">
+  <div #square id="square" *ngIf="showSquare" class="square">
+      <img class="image-container" src="assets/img/logo/s-logo.png" alt="Sebastian" />
   </div>
-
-  <div class="index__content">
-    <div class="index__content-text grid">
-      <h1 class="text-lg font-bold text-center font-sans">Gerencie suas compras de forma inteligente</h1>
-      <span class="text-center font-sans text-base py-4">Otimize suas idas ao supermercado</span>
-    </div>
-
-    <div class="index__content-button grid-cols-12 pt-8">
-      <button class="w-full bg-indigo-700 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded font-sans" [routerLink]="['/auth/login']">
-        Vamos lá!
-      </button>
-    </div>
+  <div *ngIf="showSquare" class="image-container logo">
+      <img src="assets/img/logo/logo.png" alt="Sebastian - Gerenciador de compras" />
   </div>
-  </div>
-</section>
+</div>

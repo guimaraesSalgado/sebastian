@@ -6,10 +6,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
 import { SeInputModule } from 'src/app/components/forms/input.module';
 
 @NgModule({
   declarations: [
+    HomeComponent,
     LoginComponent,
     RegisterComponent
   ],

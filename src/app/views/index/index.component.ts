@@ -1,12 +1,41 @@
-import { Component, OnInit } from "@angular/core";
+import { Component  , Renderer2, ElementRef, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-index",
   templateUrl: "./index.component.html",
   styleUrls: ['./index.component.scss'],
 })
-export class IndexComponent implements OnInit {
-  constructor() {}
+export class IndexComponent implements AfterViewInit {
+  showSquare: boolean = false;
+  backgroundColor: string = 'rgb(255, 255, 255)';
+  private readonly primaryColor = 'rgb(87, 72, 174)';
 
-  ngOnInit(): void {}
+  constructor(
+    private router: Router,
+    private renderer: Renderer2,
+    private elementRef: ElementRef) {}
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.backgroundColor = this.primaryColor;
+      this.showSquare = true;
+      this.animateSquare();
+    }, 2000);
+  }
+
+  private animateSquare(): void {
+    const insertNewDiv = this.elementRef.nativeElement.querySelector('#square');
+    if (insertNewDiv) {
+      this.renderer.addClass(insertNewDiv, 'show-s');
+    }
+    this.navigateToHome();
+  }
+
+  private navigateToHome(): void {
+    console.log('entrou')
+    setTimeout(() => {
+      this.router.navigate(['/auth/home']); 
+    }, 4000);
+  }
 }
