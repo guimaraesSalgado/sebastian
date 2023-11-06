@@ -1,12 +1,5 @@
 .home {
-    display: flex;
-    flex-direction: column;
-    flex: 1; 
-
     &-header {
-        flex: 1;
-        margin-bottom: 32px;
-
         h1 {
             line-height: 1.2;
             font-size: 32px;
@@ -21,13 +14,8 @@
         }
     }
 
-    &-image {
-        flex: 1;
-    }
-
     &-footer {
-        flex: 1;
-        margin: 32px 0;
+        margin: 16px 0;
 
         p {
           margin: 16px 0px;
