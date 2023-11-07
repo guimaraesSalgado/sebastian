@@ -1,59 +1,55 @@
-<div class="container mx-auto px-4 h-full">
-  <div class="flex content-center items-center justify-center h-full pb-8">
-    <div class="w-full lg:w-4/12 px-4">
-      <div class="relative flex flex-col min-w-0 break-words w-full rounded-lg border-0">
+<div class="register">
+  <div class="register-header">
+    <div class="register-image">
+      <img src="assets/img/ilustracoes/register.svg"
+        alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
+    </div>
+  </div>
 
-        <div class="flex-auto">
-          <img src="assets/img/svg/new-access.svg" alt="Crie sua conta agora e comece a gerenciar suas compras de onde estiver!">
-
-        </div>
-
-        <div class="flex-auto">
-          <div class="mb-3 pb-2">
-            <h1 class="text-lg font-bold text-left text-blueGray-600">Crie sua conta</h1>
-          </div>
-
-          <form [formGroup]="form" autocomplete="off">
-            <div class="relative w-full mb-3">
-              <app-s-input-text id="name" label="Nome" placeholder="Digite seu nome" [maxlength]="100"></app-s-input-text>
-            </div>
-
-            <div class="relative w-full mb-3">
-              <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'" [maxlength]="100"></app-s-input-text>
-            </div>
-
-            <div class="relative w-full mb-3">
-              <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'" [maxlength]="12"></app-s-input-text>
-            </div>
-          </form>
-        </div>
-
-        <div class="flex-auto">
-          <div class="index__content-button grid-cols-12">
-            <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded font-sans"
-              [routerLink]="['/admin/config']">
-              Criar conta
-            </button>
-          </div>
-          <div class="p-4 text-center text-base">
-            <small>Ou</small>
-          </div>
-          <div class="index__content-button grid-cols-12">
-            <button
-              class="w-full bg-white text-indigo-700 font-bold py-2 px-4 rounded font-sans border-1 border-indigo-700"
-              [routerLink]="['/auth/login']">
-              Criar conta com o google
-            </button>
-          </div>
-        </div>
-
-        <div class="flex flex-wrap mt-8 relative justify-evenly items-center">
-          <small class="text-base text-blueGray-500">
-            Já tem uma conta? <span class="text-indigo-700 text-base font-bold" [routerLink]="['/auth/login']">Acessar conta</span>
-          </small>
-        </div>
-
+  <div class="register-content">
+    <div class="flex-auto">
+      <div class="mb-3 pb-2">
+        <h1 class="text-xl font-bold text-left text-blueGray-600">Crie sua conta</h1>
       </div>
+
+      <form [formGroup]="form" autocomplete="off">
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="name" label="Nome" placeholder="Digite seu nome" [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+        </div>
+
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'"
+            [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+        </div>
+
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'"
+            [maxlength]="12" [disableMessageError]="true"></app-s-input-text>
+        </div>
+
+        <div class="relative w-full mb-3 errors-messages">
+          <div
+            [ngClass]="{'errors-messages-gray': form.get('password')?.hasError('passwordError'), 'errors-messages-green': !form.get('password')?.hasError('passwordError')}">
+            {{ form.get('password')?.getError('passwordError') || 'Esta tudo certo, vamos prosseguir?.' }}
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex-auto mt-8">
+      <div class="index__content-button grid-cols-12">
+        <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans"
+          [routerLink]="['/admin/config']">
+          Criar conta
+        </button>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap mt-8 relative justify-evenly items-center">
+      <small class="text-base text-blueGray-500">
+        Já tem uma conta? <span class="text-indigo-700 text-base font-bold" [routerLink]="['/auth/login']">Acessar
+          conta</span>
+      </small>
     </div>
   </div>
 </div>

@@ -7,20 +7,20 @@
   </div>
 
   <div class="login-content">
-    <div class="flex-auto mb-3 pb-2">
-      <h1 class="text-lg font-bold text-left text-blueGray-800">Acesse sua conta</h1>
+    <div class="flex-auto mb-4 pb-2">
+      <h1 class="text-xl font-bold text-left text-blueGray-800">Acesse sua conta</h1>
     </div>
 
     <form [formGroup]="form" autocomplete="off">
       <div class="relative mb-3">
-        <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'" [maxlength]="100"></app-s-input-text>
+        <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'" [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
       </div>
 
       <div class="relative mb-3">
-        <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'" [maxlength]="12"></app-s-input-text>
+        <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'" [maxlength]="12" [disableMessageError]="true"></app-s-input-text>
       </div>
 
-      <div class="flex justify-end pb-4">
+      <div class="flex justify-end pb-8 pt-2">
         <div class="flex">
           <button class="text-indigo-700 font-bold-2 text-sm" type="button">
             Esqueceu a senha?
@@ -29,17 +29,17 @@
       </div>
     </form>
 
-    <div class="flex-auto">
+    <div class="flex-auto ">
       <div class="index__content-button grid-cols-12">
-        <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded font-sans" [routerLink]="['/admin/config']">
+        <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans" [routerLink]="['/admin/config']">
           Fazer login
         </button>
       </div>
     </div>
 
     <div class="flex flex-wrap mt-8 relative justify-evenly items-center">
-      <small class="text-base text-blueGray-500">
-        Não possui uma conta? <span class="text-indigo-700 text-base font-bold pl-3" [routerLink]="['/auth/register']">Criar conta</span>
+      <small class="font-bold-2 text-sm text-blueGray-500">
+        Não possui uma conta? <span class="text-indigo-700 font-bold-2 text-sm pl-3" [routerLink]="['/auth/register']">Criar conta</span>
       </small>
     </div>
   </div>

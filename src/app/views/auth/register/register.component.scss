@@ -1,0 +1,25 @@
+.register {
+    &-image {
+        position: absolute;
+        top: 30px;
+        right: 0;
+    }
+
+    &-content{
+        position: absolute;
+        top: 200px;
+        left: 0;
+        width: 100%;
+        padding: 32px;
+    }
+}
+
+.errors-messages {
+  &-gray {
+    color: gray;
+  }
+
+  &-green {
+    color: green;
+  }
+}

@@ -15,11 +15,13 @@
   [autofocus]="autofocus"
   (focus)="focus.emit($event)"
   (blur)="blur.emit($event)"
-  class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-md w-full ease-linear transition-all duration-150"/>
+  class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150"/>
 
   <div class="password-toggle" (click)="toggleShowPassword()" *ngIf="showPassword">
-    <i class="fa" [ngClass]="isPassword ? 'fa fa-eye-slash' : 'fa-eye'" aria-hidden="true"></i>
+    <i class="fa" style="color: rgb(133 144 162)" [ngClass]="isPassword ? 'fa fa-eye-slash' : 'fa-eye'" aria-hidden="true"></i>
   </div>
 </div>
 
-<se-error [id]="id + '--error'" [control]="control"></se-error>
+<div *ngIf="messageError">
+  <se-error [id]="id + '--error'" [control]="control" *ngIf="!messageError"></se-error>
+</div>

@@ -1,9 +1,15 @@
 .password-input {
   position: relative;
+  // border: 1px solid rgb(133 144 162);
+}
+
+input {
+  border: 1px solid rgb(133 144 162);
 }
 
 .password-input input[type="password"] {
   padding-right: 40px; /* Espaço para o ícone de olho */
+  border: 1px solid rgb(133 144 162);
 }
 
 .password-toggle {

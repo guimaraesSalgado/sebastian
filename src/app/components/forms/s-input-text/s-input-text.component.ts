@@ -32,6 +32,10 @@ export class SeInputTextComponent extends SeInputComponent {
     }
   }
 
+  @Input() set disableMessageError(disable: boolean) {
+    this.messageError = disable;
+  }
+
   @Input() minlength: number = 0;
   @Input() maxlength: number = 10;
   @Input() placeholder = '';
@@ -55,6 +59,7 @@ export class SeInputTextComponent extends SeInputComponent {
   colors: string = '';
   type: string = 'text';
   showPassword: boolean = false;
+  messageError: boolean = false;
   isPassword: boolean = false;
 
   constructor(override controlContainer: ControlContainer) {

@@ -25,20 +25,15 @@ export class RegisterComponent implements OnInit {
 
   private passwordValidator(control: FormControl): ValidationErrors | null {
     const value: string = control.value;
-    if (!/[A-Z]/.test(value)) {
-      return { uppercaseLetter: true };
-    }
-    if (!/[a-z]/.test(value)) {
-      return { lowercaseLetter: true };
-    }
-    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
-      return { specialCharacter: true };
-    }
+    let errorMessage: string = '';
 
     if (value?.length < 8) {
-      return { minLength: true };
+      errorMessage = 'A senha deve conter pelo menos 8 caracteres.';
+    } else if (!/[A-Z]/.test(value) || !/[a-z]/.test(value) || !/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
+      errorMessage = 'Use uma combinação de letras, números e caracteres especiais.';
     }
 
-    return null;
+    return errorMessage ? { passwordError: errorMessage } : null;
   }
+
 }
