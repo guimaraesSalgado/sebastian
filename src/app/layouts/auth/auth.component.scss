@@ -1,20 +1,24 @@
 .auth {
   background-image: url('../../../assets/img/bg/auth.png');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #f0f0f0;
 
   &-fullscreen {
     width: 100%;
-    height: auto;
+    height: 100vh; /* Defina a altura para cobrir a tela inteira */
     position: relative;
     padding: 32px;
+
+    .login-image {
+      position: absolute;
+      top: 10%; /* Ajuste a altura conforme necessário */
+      right: 0;
+    }
   }
 
-  
-
-  &-s-logo{
+  &-s-logo {
     padding-bottom: 32px;
   }
 }

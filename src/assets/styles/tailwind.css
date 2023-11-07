@@ -2023,6 +2023,10 @@ select {
   font-weight: 700;
 }
 
+.font-bold-2 {
+  font-weight: 900;
+}
+
 .h-0 {
   height: 0px;
 }
@@ -3160,6 +3164,11 @@ select {
 }
 
 .text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgba(79, 70, 229, var(--tw-text-opacity));
+}
+
+.text-indigo-700 {
   --tw-text-opacity: 1;
   color: rgba(79, 70, 229, var(--tw-text-opacity));
 }

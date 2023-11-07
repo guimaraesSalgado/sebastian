@@ -1,10 +1,10 @@
-<div class="home">
+<div class="container mx-auto px-4 h-full">
   <div class="home-header">
     <h1>Gerencie suas compras de forma inteligente</h1>
     <p>Facilite suas idas ao supermercado!</p>
     
     <div>
-      <button class="s-button-n">Acesse sua conta</button>
+      <button class="s-button-n" [routerLink]="['/auth/login']">Acesse sua conta</button>
     </div>
   </div>
 
@@ -17,7 +17,7 @@
     <p class="text-center">Use também sem precisar criar conta</p>
 
     <div class="display-flex">
-      <button class="s-button-i">Acesse sua conta</button>
+      <button class="s-button-i" [routerLink]="['/auth/register']">Acesse sua conta</button>
     </div>
 
   </div>
