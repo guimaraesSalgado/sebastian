@@ -33,7 +33,6 @@ export class IndexComponent implements AfterViewInit {
   }
 
   private navigateToHome(): void {
-    console.log('entrou')
     setTimeout(() => {
       this.router.navigate(['/auth/home']); 
     }, 4000);
