@@ -28,7 +28,7 @@
         </div>
 
         <div class="relative w-full mb-3 errors-messages">
-          <div
+          <div class="text-sm"
             [ngClass]="{'errors-messages-gray': form.get('password')?.hasError('passwordError'), 'errors-messages-green': !form.get('password')?.hasError('passwordError')}">
             {{ form.get('password')?.getError('passwordError') || 'Esta tudo certo, vamos prosseguir?.' }}
           </div>
@@ -45,9 +45,9 @@
       </div>
     </div>
 
-    <div class="flex flex-wrap mt-8 relative justify-evenly items-center">
-      <small class="text-base text-blueGray-500">
-        Já tem uma conta? <span class="text-indigo-700 text-base font-bold" [routerLink]="['/auth/login']">Acessar
+    <div class="flex flex-wrap mt-8 relative justify-evenly items-center pb-8">
+      <small class="text-sm text-blueGray-500">
+        Já tem uma conta? <span class="text-indigo-700 font-bold-2 text-sm pl-3" [routerLink]="['/auth/login']">Acessar
           conta</span>
       </small>
     </div>

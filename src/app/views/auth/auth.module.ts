@@ -8,14 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SeInputModule } from 'src/app/components/forms/input.module';
-import { ValidationMessageDirective } from './register/validation-message-directive.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    ValidationMessageDirective
   ],
   imports: [
     CommonModule,

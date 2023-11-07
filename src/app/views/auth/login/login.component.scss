@@ -2,7 +2,7 @@
     &-image {
         position: absolute;
         top: 30px;
-        right: 0;    
+        right: 0;
     }
 
     &-content{
@@ -11,5 +11,6 @@
         left: 0;
         width: 100%;
         padding: 32px;
+        padding-bottom: 0;
     }
 }
