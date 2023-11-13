@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-login",
@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   readonly form: FormGroup = this.buildForm();
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
   ) {}
 
   ngOnInit(): void {}
@@ -24,13 +24,4 @@ export class LoginComponent implements OnInit {
       password: [null, [Validators.required]],
     });
   }
-
-  loginWithGoogle(): void {
-    console.log(this.form)
-    // console.log(FormUtils.setPasswordValidator(this.form.get('password')))
-    // FormUtils.setPasswordValidator(this.form)
-    // Aqui você pode adicionar a lógica para iniciar o processo de login com o Google
-    // Normalmente, você usaria uma biblioteca ou serviço OAuth2 para fazer isso
-  }
-
 }

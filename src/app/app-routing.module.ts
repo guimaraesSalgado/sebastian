@@ -5,6 +5,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
 import { HomeComponent } from './views/auth/home/home.component';
+import { ErrorComponent } from './layouts/error/error.component';
 
 const routes: Routes = [
    // auth views
@@ -12,11 +13,16 @@ const routes: Routes = [
     path: "auth",
     component: AuthComponent,
     children: [
-      { path: "home", component: HomeComponent},
-      { path: "login", component: LoginComponent},
-      { path: "register", component: RegisterComponent },
+      { path: "home", component: HomeComponent, data: { animation: 'Home' }},
+      { path: "login", component: LoginComponent, data: { animation: 'Login' }},
+      { path: "register", component: RegisterComponent, data: { animation: 'Register' } },
       { path: "", redirectTo: "home", pathMatch: "full" },
+
     ],
+  },
+  {
+    path: "error",
+    component: ErrorComponent,
   },
 
   { path: "", component: IndexComponent },
