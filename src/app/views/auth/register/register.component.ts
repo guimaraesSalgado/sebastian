@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { LoadingService } from "src/app/components/loading/loading.service";
 
 @Component({
   selector: "app-register",
@@ -10,7 +12,9 @@ export class RegisterComponent implements OnInit {
   readonly form: FormGroup = this.buildForm();
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private loadingService: LoadingService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void { }
@@ -21,6 +25,14 @@ export class RegisterComponent implements OnInit {
       user: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required, this.passwordValidator]],
     });
+  }
+
+  logInto(): void {
+    this.loadingService.show();
+    setTimeout(() => {
+      this.loadingService.hide()
+      this.router.navigate(['/admin/config'])
+    }, 2000);
   }
 
   private passwordValidator(control: FormControl): ValidationErrors | null {

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './views/index/index.component';
+
 import { AuthComponent } from './layouts/auth/auth.component';
+import { HomeComponent } from './views/auth/home/home.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
-import { HomeComponent } from './views/auth/home/home.component';
+
+import { HomeDashComponent } from './views/home-dash/home-dash.component';
 import { ErrorComponent } from './layouts/error/error.component';
 
 const routes: Routes = [
@@ -13,12 +16,16 @@ const routes: Routes = [
     path: "auth",
     component: AuthComponent,
     children: [
-      { path: "home", component: HomeComponent, data: { animation: 'Home' }},
-      { path: "login", component: LoginComponent, data: { animation: 'Login' }},
-      { path: "register", component: RegisterComponent, data: { animation: 'Register' } },
+      { path: "home", component: HomeComponent},
+      { path: "login", component: LoginComponent},
+      { path: "register", component: RegisterComponent},
       { path: "", redirectTo: "home", pathMatch: "full" },
 
     ],
+  },
+  {
+    path: "home",
+    component: HomeDashComponent,
   },
   {
     path: "error",

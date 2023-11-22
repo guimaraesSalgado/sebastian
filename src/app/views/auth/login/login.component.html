@@ -1,5 +1,5 @@
+<se-loading></se-loading>
 <div class="login">
-
   <div class="login-header">
     <div class="login-image">
       <img src="assets/img/ilustracoes/login.svg" alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
@@ -31,7 +31,7 @@
 
     <div class="flex-auto">
       <div class="index__content-button grid-cols-12">
-        <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans" [routerLink]="['/admin/config']">
+        <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans" (click)="logInto()">
           Fazer login
         </button>
       </div>

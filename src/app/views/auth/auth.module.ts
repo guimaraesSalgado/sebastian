@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SeInputModule } from 'src/app/components/forms/input.module';
+import { LoadingModule } from 'src/app/components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SeInputModule } from 'src/app/components/forms/input.module';
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    SeInputModule
+    SeInputModule,
+    LoadingModule.forRoot()
   ]
 })
 export class AuthModule { }

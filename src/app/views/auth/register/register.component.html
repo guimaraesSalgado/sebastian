@@ -1,3 +1,5 @@
+<se-loading></se-loading>
+
 <div class="register">
   <div class="register-header">
     <div class="register-image">
@@ -39,7 +41,7 @@
     <div class="flex-auto mt-8">
       <div class="index__content-button grid-cols-12">
         <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans"
-          [routerLink]="['/admin/config']">
+          (click)="logInto()">
           Criar conta
         </button>
       </div>

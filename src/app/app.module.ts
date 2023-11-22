@@ -9,7 +9,9 @@ import { IndexComponent } from './views/index/index.component';
 import { AuthComponent } from './layouts/auth/auth.component';
 import { AuthModule } from './views/auth/auth.module';
 import { ErrorComponent } from './layouts/error/error.component';
-import { HomeComponent } from './views/home/home.component';
+import { HeaderComponent } from './layouts/header/header.component';
+
+import { HomeDashComponent } from './views/home-dash/home-dash.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeComponent } from './views/home/home.component';
     IndexComponent,
     AuthComponent,
     ErrorComponent,
-    HomeComponent,
+    HeaderComponent,
+
+    HomeDashComponent,
   ],
   imports: [
     BrowserModule,
