@@ -6,6 +6,7 @@ import { AuthComponent } from './layouts/auth/auth.component';
 import { HomeComponent } from './views/auth/home/home.component';
 import { LoginComponent } from './views/auth/login/login.component';
 import { RegisterComponent } from './views/auth/register/register.component';
+import { WelcomeComponent } from './views/auth/welcome/welcome.component';
 
 import { HomeDashComponent } from './views/home-dash/home-dash.component';
 import { ErrorComponent } from './layouts/error/error.component';
@@ -16,11 +17,11 @@ const routes: Routes = [
     path: "auth",
     component: AuthComponent,
     children: [
-      { path: "home", component: HomeComponent},
-      { path: "login", component: LoginComponent},
-      { path: "register", component: RegisterComponent},
+      { path: "home", component: HomeComponent },
+      { path: "login", component: LoginComponent },
+      { path: "register", component: RegisterComponent },
+      { path: "welcome", component: WelcomeComponent },
       { path: "", redirectTo: "home", pathMatch: "full" },
-
     ],
   },
   {

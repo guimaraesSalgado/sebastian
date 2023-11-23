@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     this.loadingService.show();
     setTimeout(() => {
       this.loadingService.hide()
-      this.router.navigate(['/admin/config'])
+      this.router.navigate(['/auth/welcome'])
     }, 2000);
   }
 

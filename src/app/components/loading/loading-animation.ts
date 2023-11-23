@@ -14,15 +14,14 @@ export const loadingAnimations: {
 } = {
   transformBackdrop: trigger('transformBackdrop', [
     state('void', style({
-      display: 'none',
       opacity: 0,
+      display: 'none',
     })),
     state('showing', style({
-      display: 'block',
       opacity: 1,
     })),
-
     transition('void => *', [
+      style({ display: 'block' }),
       animate(`${AnimationTimings.FAST.X1} ${AnimationEasings.EASE_IN_OUT}`)
     ]),
     transition('* => void',
@@ -36,12 +35,14 @@ export const loadingAnimations: {
     state('void', style({
       transform: 'translateX(-50%) translateY(0%)',
       opacity: 0,
+      display: 'none',
     })),
     state('showing', style({
       opacity: 1,
       transform: 'translateX(-50%) translateY(-50%)',
     })),
     transition('void => *', [
+      style({ display: 'block' }),
       animate(`${AnimationTimings.FAST.X2} ${AnimationEasings.EASE_IN_OUT}`)
     ]),
     transition('* => void',

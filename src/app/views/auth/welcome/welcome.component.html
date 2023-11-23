@@ -1,0 +1,19 @@
+<!-- <div class="welcome">
+  <div class="welcome-header">
+    <div class="welcome-image">
+      <img src="assets/img/ilustracoes/login.svg" alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
+    </div>
+  </div>
+
+  <div class="welcome-content">
+
+  </div> -->
+
+  <div class="carousel-container">
+    <div class="progress-circle" [style.transform]="'rotate(' + rotation + 'deg)'"></div>
+    <div *ngFor="let item of items" class="carousel-item">
+      {{ item.name }}
+    </div>
+  </div>
+
+<!-- </div> -->
