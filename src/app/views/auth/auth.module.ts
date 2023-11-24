@@ -11,6 +11,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { SeInputModule } from 'src/app/components/forms/input.module';
 import { LoadingModule } from 'src/app/components/loading/loading.module';
+import { CarouselModule } from 'src/app/components/carousel/carousel.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { LoadingModule } from 'src/app/components/loading/loading.module';
     ReactiveFormsModule,
     AppRoutingModule,
     SeInputModule,
+    CarouselModule,
     LoadingModule.forRoot()
   ]
 })

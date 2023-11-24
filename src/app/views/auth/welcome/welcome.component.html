@@ -1,19 +1,12 @@
-<!-- <div class="welcome">
-  <div class="welcome-header">
-    <div class="welcome-image">
-      <img src="assets/img/ilustracoes/login.svg" alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
+<section class="welcome">
+  <app-carousel [currentIndex]="currentIndex" [carouselItems]="itensCarousel" (nextSlideEvent)="toAdvance()"></app-carousel>
+
+  <div class="welcome-footer">
+    <div class="welcome-footer__buttons">
+      <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans" (click)="toAdvance()">
+        Continuar
+      </button>
     </div>
   </div>
+</section>
 
-  <div class="welcome-content">
-
-  </div> -->
-
-  <div class="carousel-container">
-    <div class="progress-circle" [style.transform]="'rotate(' + rotation + 'deg)'"></div>
-    <div *ngFor="let item of items" class="carousel-item">
-      {{ item.name }}
-    </div>
-  </div>
-
-<!-- </div> -->

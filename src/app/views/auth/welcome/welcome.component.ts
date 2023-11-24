@@ -1,4 +1,7 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
+import { Carousel } from "src/app/components/carousel/carousel.interface";
+
+import { ITENS_APRESENTACAO } from "./welcome.constants";
 
 @Component({
   selector: "app-welcome",
@@ -6,39 +9,16 @@ import { Component, Input, OnInit } from "@angular/core";
   styleUrls: ['./welcome.component.scss']
 
 })
-export class WelcomeComponent implements OnInit {
-  @Input() items: { id: number; name: string }[] = [
-    {
-      id: 1,
-      name: 'joana'
-    },
-    {
-      id: 2,
-      name: 'joana ¨6'
-    },
-    {
-      id: 3,
-      name: 'joana ('
+export class WelcomeComponent {
+
+  itensCarousel: Carousel[] = ITENS_APRESENTACAO
+
+  currentIndex: number = 0;
+
+  toAdvance(): void {
+    const nextIndex = (this.currentIndex + 1) % this.itensCarousel.length;
+    if (nextIndex !== 0) { // Verifica se há mais itens no carrossel
+      this.currentIndex = nextIndex;
     }
-  ];
-
-  rotation = 0;
-
-  ngOnInit() {
-    this.setupScrollListener();
-  }
-
-  private setupScrollListener() {
-    const container = document.querySelector('.carousel-container');
-    if (container) {
-      container.addEventListener('scroll', () => {
-        this.calculateRotation(container);
-      });
-    }
-  }
-
-  private calculateRotation(container: any) {
-    const scrollPercentage = (container.scrollLeft / (container.scrollWidth - container.clientWidth)) * 100;
-    this.rotation = (scrollPercentage * 3.6); // 3.6 é usado para converter de porcentagem para graus (360 / 100)
   }
 }

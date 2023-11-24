@@ -21,7 +21,6 @@ export class LoadingComponent implements OnDestroy {
 
   constructor(private loadingService: LoadingService) {
     this.loadingSubscription = this.loadingService.getLoading().subscribe(newStatus => this.showLoading = newStatus);
-    console.log(this.loadingSubscription)
   }
 
   ngOnDestroy = () => this.loadingSubscription.unsubscribe();
