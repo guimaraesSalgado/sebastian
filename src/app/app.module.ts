@@ -28,6 +28,7 @@ import { HomeDashComponent } from './views/home-dash/home-dash.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
