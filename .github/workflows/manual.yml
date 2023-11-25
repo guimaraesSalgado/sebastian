@@ -1,0 +1,327 @@
+Skip to content
+
+DEV Community
+Create account
+
+0
+Jump to Comments
+1
+Save
+
+Felipe Marques
+Felipe Marques
+Posted on 21 de ago. de 2022
+
+Como publicar uma aplicação Angular no Firebase usando Github Actions
+#
+angular
+#
+github
+#
+firebase
+#
+devops
+O objetivo desse post é publicar uma aplicação Angular dentro de um projeto do Firebase utilizando o produto Hosting do Firebase. Para fazer automatizar a publicação configuraremos um script do Github Actions para ser executado sempre que houver um commit na branch main do repositório.
+
+Para acompanhar os passos desse post, será necessário que você tenha:
+
+Conta do Firebase
+Conta do Google
+Firebase CLI instalado, veja como aqui
+Conta do Github
+Conhecimento para criar e trabalhar com um repositório no Github
+Projeto no Firebase
+Acesse o console do Firebase em console.firebase.google.com e crie um novo projeto.
+
+Novo projeto no Firebase
+
+No meu caso vou usar o nome demoangulargithubactions
+
+Image description
+
+E vou optar por não habilitar o Google Analytics, uma vez que é irrelevante para esse tutorial.
+
+Image description
+
+Aguarde alguns instantes até que o projeto seja criado.
+
+Image description
+
+Assim que o projeto estiver disponível você terá a opção de utilizar alguns produtos, por hora deixe essa aba aberta e vamos para a próxima etapa.
+
+Image description
+
+Criar repositório no github e projeto Angular
+Para esse tutorial vou criar um repositório novo chamado demogithubactions e um projeto angular novo usando ng new angular-tour-of-heroes, mas essa etapa é opcional. Se você já tem um projeto, continue com ele.
+
+Image description
+
+Faça o clone do seu repositório localmente.
+
+Image description
+
+Crie o projeto angular
+
+Image description
+
+O projeto será criado dentro da pasta angular-tour-of-heroes como na imagem abaixo.
+
+Image description
+
+No meu caso vou mover todo o código para a pasta raiz. Se você quiser organizar de outra forma, lembre-se que o script do Github Actions precisará de algumas alterações.
+
+Image description
+
+Configuração do Firebase
+Pronto, agora que já temos o projeto Angular e o repositório prontos, vamos configurar o Firebase.
+
+Se você ainda não fez, faça a instalação do Firebase CLI e o login na sua conta.
+
+Depois, execute o comando firebase init hosting e escolha a opção Usar um projeto existente (talvez esteja em inglês: Use an existing project)
+
+Image description
+
+Será mostrado a lista de projetos da sua conta, escolha o projeto que você quer fazer o deploy.
+
+Image description
+
+A partir de agora, serão feitas algumas perguntas, vamos lá:
+
+Escolha a pasta que será publicada, essa é a mesma pasta onde o comando ng build gera os arquivos de publicação, no nosso caso será a pasta dist.
+Image description
+
+Em seguida perguntam se quer configurar sua página como single-page app, eu sempre opto por N, não sei qual a influência dessa opção no roteamente do angular, se alguém souber, me fala nos comentários, por favor.
+Image description
+
+Aqui também marco que não, porque nosso script já vai fazer a conexão com o Github Actions.
+Image description
+
+Pronto, se as configurações foram criadas com sucesso, você terá uma mensagem similiar com a da imagem abaixo.
+
+Image description
+
+Faça commit de tudo.
+
+Image description
+
+Configurando o Github Actions
+Para configurar o Github Actions vamos precisar primeiro de um token de autenticação do Firebase, gere esse token executando o comando firebase login:ci. Uma tela do browser deve abrir e você precisará se autenticar.
+
+Image description
+
+Se tudo der certo um token será gerado, na imagem abaixo eu pintei a linha, mas é possível ver que é uma string, guarde esse token por enquanto, vamos colocá-lo em um Secret do repositório no Github.
+
+Image description
+
+Acesse o seu repositório no Github, vá em Settings -> Secrets -> Actions e crie um New repository secret.
+
+Image description
+
+Coloque o nome de FIREBASE_TOKEN e no valor cole o token gerado na etapa anterior. Adicione o Secret.
+
+Image description
+
+Acesse a aba Actions, pesquise por Manual e clique em Configure na caixa do Manual workflow.
+
+Image description
+
+A página que será aberta já vem com algum código, substitua tudo pelo código abaixo.
+name: Deploy-To-Firebase
+
+on: 
+  push:
+    branches: 
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 16.13
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.13    
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build -- --prod
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+Salve o arquivo clicando em Start Commit e faça o commit.
+
+Image description
+
+Clique em actions novamente e veja se já existe algum workflow sendo executado, se não tiver, vá em Deploy-To-Firebase e clique em Run workflow.
+
+Image description
+
+Opcionalmente, abra o deploy e acompanhe a execução de cada etapa. Se tudo funcionou, você terá uma tela com todas as etapas verdes, como a imagem abaixo.
+
+Image description
+
+Volte na aba do Firebase console.firebase.google.com que você deixou aberta e atualize. Clique em All products e depois em Hosting e você verá uma tela similar à da próxima image. Com dois domínios disponíveis e o pacote que foi publicado.
+
+Image description
+
+Abra um dos domínios e você deve ver uma imagem como a abaixo. Se isso aconteceu com você, é porque precisamos de um ajuste de configuração.
+
+Image description
+
+Abaixo você pode ver o conteúdo do meu arquivo angular.json, na linha 23, a configuração outputPath está configurado para um diretório diferente do que foi informado na hora que configurei o firebase.
+
+Aqui temos duas opções, alterar o arquivo angular.json e colocar "outputPath": "dist" ou alterar o arquivo firebase.json e colocar "public": "dist/angular-tour-of-heroes". Eu preferi alterar o meu angular.json. Fique à vontade.
+
+Image description
+
+Faça a correção e um novo commit. Você verá que foi gerado um novo build. Se tudo correu bem, um novo pacote foi entregue no seu projeto firebase, como na imagem abaixo.
+
+Image description
+
+Observe que agora você tem dois pacotes e existe a opção de voltar para o pacote anterior clicando no botão no início da linha do deploy mais antigo.
+
+Observe também que o número de arquivos do último deploy está zero. Isso acontece porque há uma certa demora para o Firebase atualizar esse número.
+
+O mais importante é que se você acessar um dos dois domínios, deve ver o projeto publicado, como na imagem a seguir.
+
+Image description
+
+Conclusão
+Espero que esse passo a passo tenha ajudado a configurar um projeto do angular no firebase.
+
+Aproveite e adicione uma etapa de notificação no seu pipeline do Github Actions utilizando o Telegram
+
+Top comments (0)
+
+Subscribe
+pic
+Add to the discussion
+Code of Conduct • Report abuse
+DEV Community
+
+Trending in Angular
+The Angular community is currently discussing NgRx v17 and its new features like @ngrx/signals library, the workings of Angular Dependency Injection, and updates in Angular 17.
+
+NgRx 
+Announcing NgRx v17: Introducing NgRx Signals, Operators, Performance Improvements, Workshops, and more!
+Brandon Roberts for NgRx ・ Nov 22
+#angular #ngrx
+This is Angular 
+How Angular Dependency Injection works under the hood
+thomas for This is Angular ・ Nov 16
+#angular #dependancyinjection
+This is Angular 
+What's new in Angular 17
+Nicolas Frizzarin for This is Angular ・ Nov 16
+#angular #webdev #news #javascript
+jdgamble555 
+Angular is Much Better, But is Angular Universal?
+Jonathan Gamble ・ Nov 18
+#angular #angularuniversal #webdev #javascript
+This is Angular 
+MiniRx Signal Store for Angular - API Preview
+Florian Spier for This is Angular ・ Nov 17
+#angular #rxjs #javascript #webdev
+Read next
+wevtimoteo profile image
+Cleaning your working directory in Git (including untracked files) 😎
+Weverton Timoteo - Nov 3
+
+7h33mp7ym4n profile image
+A Thorough Exploration of Kubernetes DaemonSets: An In-Depth Examination
+7h3-3mp7y-m4n - Oct 5
+
+codesolutionshub profile image
+How to Optimize and Speed Up Docker?
+CodeSolutionsHub - Oct 5
+
+abdrzqsalihu profile image
+A Comprehensive Guide on How to Use Git and GitHub for Beginners
+Abdulrazaq Salihu - Nov 2
+
+
+Felipe Marques
+Follow
+LOCATION
+Brazil
+EDUCATION
+Computer Science
+WORK
+Senior Software Engineer
+JOINED
+16 de dez. de 2019
+More from Felipe Marques
+Deploy an API REST .Net 5 to Google Cloud Run using Github and Google Cloud Build
+#csharp #github #cloud #devops
+Como publicar uma API REST .Net 5 no Google Cloud Run usando Github e Google Cloud Build
+#csharp #github #cloud #devops
+How to publish an Angular app to Firebase Hosting using Github Actions
+#github #devops #angular #firebase
+profile
+Sentry
+PROMOTED
+
+
+
+Crash reporting for React Native with source map support
+Sentry is the leading error monitoring tool among React Native devs according to State of React Native .
+
+Try Free
+
+name: Deploy-To-Firebase
+
+on: 
+  push:
+    branches: 
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 16.13
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16.13    
+    - name: Install dependencies
+      run: npm install
+    - name: Build
+      run: npm run build -- --prod
+    - uses: w9jds/firebase-action@master
+      with:
+        args: deploy
+      env:
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+DEV Community — A constructive and inclusive social network for software developers. With you every step of your journey.
+
+Home
+Podcasts
+Videos
+Tags
+FAQ
+Forem Shop
+Advertise on DEV
+About
+Contact
+Guides
+Software comparisons
+Code of Conduct
+Privacy Policy
+Terms of use
+Built on Forem — the open source software that powers DEV and other inclusive communities.
+
+Made with love and Ruby on Rails. DEV Community © 2016 - 2023.
