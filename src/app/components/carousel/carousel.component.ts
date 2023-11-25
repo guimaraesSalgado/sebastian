@@ -16,7 +16,6 @@ import { Carousel } from './carousel.interface';
   ],
 })
 export class CarouselComponent {
-  @Input() currentIndex: number = 0;
   @Input() carouselItems: Carousel[] = [
     {
       image: {
@@ -30,6 +29,8 @@ export class CarouselComponent {
     }
   ];
 
+  @Input() optionalClick: boolean = true; // Desabilitar navegação dos bullets
+  @Input() currentIndex: number = 0;
   @Output() nextSlideEvent = new EventEmitter<void>();
 
   changeSlide(index: number): void {

@@ -1,18 +1,18 @@
 <div class="carousel">
   <div class="carousel-image">
-    <img [@fadeInOut]="currentIndex" [src]="carouselItems[currentIndex]?.image?.url"
-      [alt]="carouselItems[currentIndex]?.image?.description">
+    <img [@fadeInOut]="currentIndex" [src]="carouselItems[currentIndex].image.url"
+      [alt]="carouselItems[currentIndex].image.description">
   </div>
 
   <div class="carousel-bullets">
-    <div *ngFor="let item of carouselItems; let i = index"
-    class="bullet" [ngClass]="{'active': currentIndex === i}"
-    (click)="changeSlide(i)" [attr.alt]="item?.image?.description">
+    <div *ngFor="let item of carouselItems; let i = index" class="bullet" [ngClass]="{'active': currentIndex === i}"
+      (click)="optionalClick && changeSlide(i)" [attr.alt]="item.image.description">
     </div>
   </div>
 
   <div class="carousel-text">
-    <h1>{{ carouselItems[currentIndex]?.subject?.title }}</h1>
-    <span>{{ carouselItems[currentIndex]?.subject?.description }}</span>
+    <h1>{{ carouselItems[currentIndex].subject.title }}</h1>
+    <span>{{ carouselItems[currentIndex].subject.description }}</span>
   </div>
 </div>
+
