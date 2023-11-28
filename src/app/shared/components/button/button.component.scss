@@ -1,0 +1,55 @@
+.button {
+  padding: {
+    left: 1rem;
+    right: 1rem;
+    top: 0.5rem;
+    bottom: 0.5rem
+  };
+  font-weight: 700;
+  border-radius: 8px;
+
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+
+  &.type-dark {
+    background-color: rgb(87, 72, 174);
+    color: white;
+  }
+
+  &.type-light {
+    background-color: rgb(255 255 255);
+    color: rgb(87, 72, 174);
+  }
+
+  &.type-inline {
+    background-color: rgb(255 255 255);
+    color: rgb(87, 72, 174);
+    border: 1px solid rgb(87, 72, 174);
+  }
+
+  &.loading {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+
+  &__refresh {
+    animation: rotate 1s linear infinite;
+  }
+
+  &__icon {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .loading-spinner {
+    font-size: 14px;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

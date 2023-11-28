@@ -2,33 +2,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './views/index/index.component';
-import { AuthComponent } from './layouts/auth/auth.component';
 import { AuthModule } from './views/auth/auth.module';
 import { ErrorComponent } from './layouts/error/error.component';
-import { HeaderComponent } from './layouts/header/header.component';
-
-import { HomeDashComponent } from './views/home-dash/home-dash.component';
+import { PageModule } from './views/page/page.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    AuthComponent,
     ErrorComponent,
-    HeaderComponent,
-
-    HomeDashComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AuthModule,
 
+    AuthModule,
+    PageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { LoadingService } from "src/app/components/loading/loading.service";
+import { LoadingService } from "src/app/shared/components/loading/loading.service";
 
 @Component({
   selector: "app-login",
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.loadingService.show();
     setTimeout(() => {
       this.loadingService.hide()
-      this.router.navigate(['/home'])
+      this.router.navigate(['/page/home'])
     }, 2000);
   }
 

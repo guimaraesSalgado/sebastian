@@ -6,7 +6,7 @@
             font-weight: 700;
             color: #1D2125; // Color/Neutral/Dark/D001
         }
-    
+
         p {
             margin: 16px 0px;
             color: #596773; // Color/Neutral/Dark/D005
@@ -30,7 +30,7 @@
 
 
 .s-button-n {
-    background: #5748ae;
+    background: #5748ae; //primary
     padding: 16px 32px;
     border-radius: 8px;
     color: white;
@@ -40,9 +40,9 @@
 .s-button-i {
     background: transparent;
     padding: 16px 32px;
-    border: 1px solid #5748ae;
+    border: 1px solid #5748ae; //primary
     border-radius: 8px;
-    color: #5748ae;
+    color: #5748ae; //primary
     font-weight: 900;
 }
 

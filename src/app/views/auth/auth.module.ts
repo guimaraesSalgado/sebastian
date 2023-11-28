@@ -1,32 +1,32 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { AppRoutingModule } from 'src/app/app-routing.module';
 
-import { SeInputModule } from 'src/app/components/forms/input.module';
-import { LoadingModule } from 'src/app/components/loading/loading.module';
-import { CarouselModule } from 'src/app/components/carousel/carousel.module';
+import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { AuthComponent } from 'src/app/layouts/auth/auth.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    AuthComponent
   ],
   imports: [
     CommonModule,
-    BrowserModule,
+    RouterModule,
     ReactiveFormsModule,
-    AppRoutingModule,
-    SeInputModule,
-    CarouselModule,
+    AuthRoutingModule,
+    SharedModule,
     LoadingModule.forRoot()
   ]
 })

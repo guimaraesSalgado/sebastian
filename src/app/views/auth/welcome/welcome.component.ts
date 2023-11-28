@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Carousel } from "src/app/components/carousel/carousel.interface";
+import { Carousel } from "src/app/shared/components/carousel/carousel.interface";
 
 import { ITENS_APRESENTACAO } from "./welcome.constants";
 import { Router } from "@angular/router";
@@ -21,7 +21,7 @@ export class WelcomeComponent {
     if (nextIndex !== 0) {
       this.currentIndex = nextIndex;
     } else {
-      this.router.navigate(['/home'])
+      this.router.navigate(['/page/home'])
     }
   }
 }

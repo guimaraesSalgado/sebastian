@@ -1,4 +1,4 @@
-import { Carousel } from "src/app/components/carousel/carousel.interface";
+import { Carousel } from "src/app/shared/components/carousel/carousel.interface";
 
 export const ITENS_APRESENTACAO: Carousel[] = [
   {
