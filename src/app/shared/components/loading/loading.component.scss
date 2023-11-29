@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/colors.scss';
+
 .s-loading {
   position: fixed;
   top: 0;
@@ -13,7 +15,7 @@
     bottom: 0;
     left: 0;
     z-index: 9001;
-    background-color: rgb(255 255 255);
+    background-color: $color-enabled;
   }
 
   &__container {
@@ -50,7 +52,7 @@
     &__child {
       height: 100%;
     width: 0;
-    background-color: rgb(87 72 174);
+    background-color: $primary-color;
     animation: progress 4s infinite ease-in-out;
     }
   }

@@ -1,6 +1,8 @@
+@import '../../../../assets/styles/colors.scss';
+
 .menu {
   .hamburger {
-    border: 1px solid rgb(241 242 244);
+    border: 1px solid $color-disabled;
     border-radius: 5px;
     width: 50px;
     padding: 5px;
@@ -12,7 +14,7 @@
     &__bar {
       height: 2px;
       width: 25px;
-      background-color: rgb(87, 72, 174);
+      background-color: $primary-color;
       margin: 5px 0;
     }
   }
@@ -37,13 +39,13 @@
   }
 
   &__divider {
-    border-top: 1px solid rgb(241 242 244);
+    border-top: 1px solid $color-disabled;
     margin: 8px 24px;
   }
 
   &__footer {
     text-align: center;
-    color: rgb(199 209 219);
+    color: $color-disabled;
     padding-top: 32px;
   }
 }
@@ -53,8 +55,8 @@
 
   &.selected {
     border-radius: 8px;
-    background-color: rgb(87 72 174);
-    color: white !important;
+    background-color: $primary-color;
+    color: $color-enabled !important;
   }
 
   & span {
@@ -79,7 +81,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgb(255 255 255);
+  background-color: $color-enabled;
   overflow-x: hidden;
   transition: 0.5s;
   padding: 32px 0;
@@ -93,7 +95,7 @@
     padding: 12px;
     text-decoration: none;
     font-size: 20px;
-    color: #818181;
+    color: $color-subdued;
     transition: 0.3s;
   }
 

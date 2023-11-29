@@ -1,4 +1,4 @@
-$primary-color: rgb(87, 72, 174);
+@import '../../../../assets/styles/colors.scss';
 
 .carousel {
   display: flex;
@@ -45,7 +45,7 @@ $primary-color: rgb(87, 72, 174);
   }
 
   .transition {
-    background: white
+    background: $color-enabled
   }
 
   &-text {
@@ -61,7 +61,7 @@ $primary-color: rgb(87, 72, 174);
     span {
       font-size: 17px;
       font-weight: 400;
-      color: #596773;
+      color: $color-subdued;
     }
   }
 

@@ -1,3 +1,5 @@
+// button.component.ts
+
 import { Component, Input } from '@angular/core';
 import { ButtonThemeService } from './button-theme.service';
 
@@ -7,13 +9,14 @@ import { ButtonThemeService } from './button-theme.service';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {
-  @Input() theme: string = ''; // Agora o padrão é uma string vazia
+  @Input() theme: string = '';
   @Input() type: 'dark' | 'light' | 'inline' = 'dark';
   @Input() disabled: boolean = false;
-  @Input() icon: string = 'heroRefresh';
+  @Input() icon: string = '';
   @Input() loading: boolean = false;
+  @Input() size: 'normal' | 'full' = 'normal';
 
-  themeInfo: { icon: string; type: string } = { icon: 'heroPlus', type: 'dark' };
+  themeInfo: { icon: string; type: string } = { icon: '', type: 'dark' };
 
   constructor(private buttonThemeService: ButtonThemeService) {}
 
@@ -32,7 +35,11 @@ export class ButtonComponent {
     }
   }
 
+  showIcon(): boolean {
+    return this.icon !== '' && !this.loading;
+  }
+
   getTypeClass(): string {
-    return `type-${this.themeInfo.type}`;
+    return `type-${this.themeInfo.type} ${this.size === 'full' ? 'full-size' : ''}`;
   }
 }

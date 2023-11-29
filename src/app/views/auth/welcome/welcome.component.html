@@ -2,15 +2,13 @@
   <app-s-carousel
   [currentIndex]="currentIndex"
   [carouselItems]="itensCarousel"
-  [optionalClick]="false"
-  (nextSlideEvent)="toAdvance()">
+  [optionalClick]="false">
   </app-s-carousel>
 
   <div class="welcome-footer">
     <div class="welcome-footer__buttons">
-      <button class="w-full bg-indigo-700 text-white font-bold py-2 px-4 rounded-lg font-sans" (click)="toAdvance()">
-        Continuar
-      </button>
+      <app-s-button type="inline" (click)="toJump()" size="full">Pular</app-s-button>
+      <app-s-button type="dark" (click)="toAdvance()" size="full">Continuar</app-s-button>
     </div>
   </div>
 </section>

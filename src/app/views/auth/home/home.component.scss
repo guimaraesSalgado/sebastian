@@ -1,15 +1,17 @@
+@import '../../../../assets/styles/colors.scss';
+
 .home {
     &-header {
         h1 {
             line-height: 1.2;
             font-size: 32px;
             font-weight: 700;
-            color: #1D2125; // Color/Neutral/Dark/D001
+            color: $color-default;
         }
 
         p {
             margin: 16px 0px;
-            color: #596773; // Color/Neutral/Dark/D005
+            color: $color-subdued;
             font-weight: 500;
         }
     }
@@ -20,17 +22,14 @@
 
         p {
           margin: 16px 0px;
-          color: #596773; // Color/Neutral/Dark/D005
+          color: $color-subdued;
           font-weight: 500;
         }
       }
 }
 
-
-
-
 .s-button-n {
-    background: #5748ae; //primary
+    background: $primary-color;
     padding: 16px 32px;
     border-radius: 8px;
     color: white;
@@ -40,9 +39,9 @@
 .s-button-i {
     background: transparent;
     padding: 16px 32px;
-    border: 1px solid #5748ae; //primary
+    border: 1px solid $primary-color;
     border-radius: 8px;
-    color: #5748ae; //primary
+    color: $primary-color;
     font-weight: 900;
 }
 

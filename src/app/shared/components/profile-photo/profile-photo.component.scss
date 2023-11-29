@@ -1,10 +1,12 @@
+@import '../../../../assets/styles/colors.scss';
+
 .profile-photo {
   display: flex;
   align-items: center;
   justify-content: center;
 
   &__container {
-    background: rgb(232 234 242);
+    background: $color-disabled;
     width: 100px;
     height: 100px;
     overflow: hidden;

@@ -16,6 +16,10 @@ export class WelcomeComponent {
 
   constructor(private router: Router){}
 
+  toJump(): void {
+    this.router.navigate(['/page/home'])
+  }
+
   toAdvance(): void {
     const nextIndex = (this.currentIndex + 1) % this.itensCarousel.length;
     if (nextIndex !== 0) {
