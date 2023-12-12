@@ -1,3 +1,31 @@
-<app-s-button type="inline">Home</app-s-button>
-<app-s-button type="dark">Profile</app-s-button>
-<app-s-button type="light">Close</app-s-button>
+<div *ngIf="condicao; then newAccess else standardAccess"></div>
+
+<div class="home">
+  <ng-template #newAccess>
+    <div class="home__new">
+      <div class="home__new-image">
+        <img src="assets/img/ilustracoes/home-new-user.svg" alt="Sebastian - Gerenciador de compras" />
+      </div>
+      <div class="home__new-content">
+        <h1>Uh-oh, parece que estamos com uma tela em branco!</h1>
+        <p>Que tal começar adicionando algumas receitas ou listas de compras?</p>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #standardAccess>
+    <div class="home__new">
+      <div class="home__new-image">
+        <img src="assets/img/ilustracoes/close-store.svg" alt="Sebastian - Gerenciador de compras" />
+      </div>
+      <div class="home__new-content">
+        <h1>Olá senhora, tenha calma!</h1>
+        <p>Esta seção ainda esta em desenvolvimento</p>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div style="padding: 32px;">
+  <app-s-button type="dark" size="full" (click)="teste()" >Clique aqui para testar</app-s-button>
+</div>

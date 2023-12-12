@@ -24,7 +24,7 @@ export class ButtonComponent {
     this.updateThemeInfo();
   }
 
-  private updateThemeInfo() {
+  private updateThemeInfo(): void {
     if (this.theme.trim() === '') {
       this.themeInfo = { icon: this.icon, type: this.type };
     } else {

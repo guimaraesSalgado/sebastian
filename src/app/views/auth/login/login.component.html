@@ -31,7 +31,7 @@
 
     <div class="flex-auto">
       <div class="index__content-button grid-cols-12">
-        <app-s-button type="dark" (click)="logInto()" size="full">Fazer login</app-s-button>
+        <app-s-button type="dark" (click)="logInto()" [disabled]="!isFormValid()" size="full">Fazer login</app-s-button>
       </div>
     </div>
 

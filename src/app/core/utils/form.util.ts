@@ -81,25 +81,30 @@ export class FormUtils {
     FormUtils.setValidators(form, fields, [Validators.required]);
   }
 
-  static setPasswordValidator(control: any): ValidationErrors | null {
-    const value: string = control.value;
+  static emailValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const email: string = control.value;
 
-    if (value.length < 8) {
-      return { minLength: true };
-    }
+      if (!email) {
+        return null;
+      }
 
-    if (!/[A-Z]/.test(value)) {
-      return { uppercaseLetter: true };
-    }
-
-    if (!/[a-z]/.test(value)) {
-      return { lowercaseLetter: true };
-    }
-
-    if (!/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
-      return { specialCharacter: true };
-    }
-
-    return null;
+      const isEmailValid: boolean = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      return isEmailValid ? null : { 'email-invalid': { value: email } };
+    };
   }
+
+  static passwordValidator(control: FormControl): ValidationErrors | null {
+    const value: string = control.value;
+    let errorMessage: string = '';
+
+    if (value?.length < 8) {
+      errorMessage = 'A senha deve conter pelo menos 8 caracteres.';
+    } else if (!/[A-Z]/.test(value) || !/[a-z]/.test(value) || !/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value)) {
+      errorMessage = 'Use uma combinação de letras, números e caracteres especiais.';
+    }
+
+    return errorMessage ? { passwordError: errorMessage } : null;
+  }
+
 }

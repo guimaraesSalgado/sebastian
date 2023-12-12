@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation, SkipSelf } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output, ViewEncapsulation, SkipSelf, ChangeDetectorRef } from '@angular/core';
 import { ControlContainer, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SeInputComponent } from '../input.component';
 
@@ -62,13 +62,14 @@ export class InputTextComponent extends SeInputComponent {
   messageError: boolean = false;
   isPassword: boolean = false;
 
-  constructor(override controlContainer: ControlContainer) {
+  constructor(override controlContainer: ControlContainer, private cdr: ChangeDetectorRef) {
     super(controlContainer);
   }
 
   toggleShowPassword(): void {
-    const newType = this.showPassword ? 'text' : 'password';
-    this.type = this.isPassword ? newType : 'password';
     this.isPassword = !this.isPassword;
-}
+    this.cdr.detectChanges()
+    const newType = this.isPassword ? 'text' : 'password';
+    this.type = newType;
+  }
 }

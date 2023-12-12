@@ -1,6 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { FormUtils } from "src/app/core/utils";
+
 import { LoadingService } from "src/app/shared/components/loading/loading.service";
 
 @Component({
@@ -9,7 +11,7 @@ import { LoadingService } from "src/app/shared/components/loading/loading.servic
   styleUrls: ['./login.component.scss']
 
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   showPassword: boolean = false;
 
   readonly form: FormGroup = this.buildForm();
@@ -20,19 +22,23 @@ export class LoginComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+  isFormValid(): boolean {
+    return this.form.valid
+  }
 
   logInto(): void {
-    this.loadingService.show();
-    setTimeout(() => {
-      this.loadingService.hide()
-      this.router.navigate(['/page/home'])
-    }, 2000);
+     if (this.isFormValid()) {
+      this.loadingService.show();
+      setTimeout(() => {
+        this.loadingService.hide()
+        this.router.navigate(['/page/home'])
+      }, 2000);
+    }
   }
 
   private buildForm(): FormGroup {
     return this.formBuilder.group({
-      user: [null, [Validators.required]],
+      user: [null, [Validators.required, FormUtils.emailValidator()]],
       password: [null, [Validators.required]],
     });
   }
