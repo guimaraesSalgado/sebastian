@@ -28,7 +28,6 @@
     "@popperjs/core": "2.9.1",
     "@tailwindcss/forms": "0.2.1",
     "chart.js": "2.9.4",
-    "firebase": "^10.6.0",
     "lodash": "^4.17.21",
     "lodash.camelcase": "^4.3.0",
     "rxjs": "6.6.6",
