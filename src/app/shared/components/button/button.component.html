@@ -1,0 +1,17 @@
+<button
+  class="button"
+  [class.loading]="loading"
+  [ngClass]="getTypeClass()"
+  [disabled]="disabled">
+  <span *ngIf="loading" class="loading-spinner button__icon">
+    <ng-icon class="button__refresh" name="heroRefresh"></ng-icon>
+  </span>
+
+  <span *ngIf="showIcon()" class="button__icon">
+    <ng-icon [name]="themeInfo.icon"></ng-icon>
+  </span>
+
+  <ng-content></ng-content>
+</button>
+
+

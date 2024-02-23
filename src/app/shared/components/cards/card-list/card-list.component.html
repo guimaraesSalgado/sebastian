@@ -1,0 +1,21 @@
+<div class="card-list mt-8 mb-8" *ngFor="let item of getDisplayedItems()" [style]="getBackgroundStyle(item.theme)">
+  <div class="card-list__header mr-4">
+    <div class="card-list__header-icon" [style]="getHeaderStyle(item.theme)">
+      <ng-icon [name]="getIcon(item.theme)" style="font-size: 28px;"></ng-icon>
+
+    </div>
+  </div>
+  <div class="card-list__content">
+    <h1 [style]="getColorTitle(item.theme)">{{item.title}}</h1>
+    <span>{{item.description}}</span>
+  </div>
+</div>
+
+<div class="card-list__no-content" *ngIf="!items || items.length === 0">
+  <h1 class="mb-2"><b>Você ainda não criou suas listas</b></h1>
+  <span>{{help}}</span>
+
+  <div class="card-list__no-content-button mt-8">
+    <app-s-button type="light" size="normal" (click)="onClick()">{{textButton}}</app-s-button>
+  </div>
+</div>

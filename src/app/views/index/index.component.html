@@ -1,0 +1,8 @@
+<div class="fullscreen" [ngStyle]="{ 'background-color': backgroundColor }" style="transition: background-color 2s;">
+  <div #square id="square" *ngIf="showSquare" class="square">
+      <img class="image-container" src="assets/img/logo/s-logo.svg" alt="Sebastian" />
+  </div>
+  <div *ngIf="showSquare" class="image-container logo">
+      <img src="assets/img/logo/logo.svg" alt="Sebastian - Gerenciador de compras" />
+  </div>
+</div>

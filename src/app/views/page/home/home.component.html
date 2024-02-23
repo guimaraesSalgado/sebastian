@@ -1,0 +1,44 @@
+<!-- <div *ngIf="condicao; then newAccess else standardAccess"></div> -->
+<div *ngIf="condicao; then standardAccess else newAccess"></div>
+
+<div class="home">
+  <ng-template #newAccess>
+    <div class="home__new">
+      <div class="home__new-image">
+        <img src="assets/img/ilustracoes/home-new-user.svg" alt="Sebastian - Gerenciador de compras" />
+      </div>
+      <div class="home__new-content">
+        <h1>Uh-oh, parece que estamos com uma tela em branco!</h1>
+        <p>Que tal começar adicionando algumas receitas ou listas de compras?</p>
+      </div>
+
+      <div class="justify-center">
+        <app-button-create-list size="full"></app-button-create-list>
+        <div class="m-4"></div>
+        <app-button-create-revenue size="full"></app-button-create-revenue>
+      </div>
+
+    </div>
+  </ng-template>
+
+  <ng-template #standardAccess>
+    <div class="home__standard">
+      <div class="home__standard-content">
+        <div class="home__standard-content-list flex items-center	justify-between mb-8">
+          <h1>Listas recentes:</h1>
+          <app-s-button type="link" size="normal" (click)="teste()" icon="heroArrowRight">Ver todas</app-s-button>
+        </div>
+        <app-s-card-list [items]="cards" type="dark" [totalCardDisplay]="2"></app-s-card-list>
+        <div class="home__standard-content-list flex items-center	justify-between mt-8 mb-8">
+          <h1>Receitas recentes::</h1>
+          <app-s-button type="link" size="normal" (click)="teste()" icon="heroArrowRight">Ver todas</app-s-button>
+        </div>
+        <app-s-horizontal-scroll [items]="scrollItens" theme="card" [totalColumns]="2"></app-s-horizontal-scroll>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div style="padding: 28px;">
+  <app-s-button type="dark" size="full" (click)="teste()">Alterar modo de visualização</app-s-button>
+</div>

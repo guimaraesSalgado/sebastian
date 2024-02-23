@@ -1,0 +1,83 @@
+@import '/src/assets/styles/colors.scss';
+
+.horizontal-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; /* Oculta a barra de rolagem vertical */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.item {
+  flex: 0 0 auto;
+  width: calc(100% / 2.5);
+  margin-right: 10px;
+  scroll-snap-align: start;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h3, p {
+    margin: 5px 0;
+  }
+}
+
+.card {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+
+  &-bagde{
+    position: absolute;
+    top: 0px;
+  }
+
+  &-description {
+    font-size: 16px;
+    color: $color-disabled-text;
+  }
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 2px;
+}
+
+
+.image-container-revenue {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.image-container-card {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.no-content {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    padding: 0 12px;
+    color: $color-disabled-text;
+  }
+}

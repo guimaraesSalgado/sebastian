@@ -1,0 +1,11 @@
+@import '../../../../../../assets/styles/colors.scss';
+
+body .ui-inputtext:enabled(.ui-state-error) {
+  border-color: $color-error;
+}
+
+.error-text{
+  font-size: 0.8em;
+  vertical-align: middle;
+  color: $color-error;
+}

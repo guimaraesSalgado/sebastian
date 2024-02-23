@@ -1,0 +1,6 @@
+<div class="profile-photo">
+  <div class="profile-photo__container" [style.width]="getContainerSize()" [style.height]="getContainerSize()" [style.padding]="hasProfilePhoto() ? '0' : '10px'">
+    <img *ngIf="hasProfilePhoto()" [src]="profilePhoto" alt="Foto de perfil do usuário">
+    <div *ngIf="!hasProfilePhoto()" class="default-profile-text">Usuário</div>
+  </div>
+</div>

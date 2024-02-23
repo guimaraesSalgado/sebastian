@@ -1,0 +1,120 @@
+@import '../../../../assets/styles/colors.scss';
+
+.full-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-size: cover;
+  background-position: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgb(109 40 217 / 70%), rgb(0 0 0 / 90%));
+  }
+}
+
+.carousel-container {
+  z-index: 1;
+}
+
+.auth-s-logo {
+  padding: 32px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin: 32px;
+  position: absolute;
+  left: 0;
+  bottom: 25%;
+
+  &-text {
+    flex: 0 0 100%;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+    color: $color-white;
+
+    h1 {
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    span {
+      font-size: 17px;
+      font-weight: 400;
+    }
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 2;
+    filter: none;
+
+    &.prev {
+      left: 10px;
+    }
+
+    &.next {
+      right: 10px;
+    }
+  }
+}
+
+.bullets-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+
+  .bullet {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-disabled-background;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+
+    &.active {
+      background-color: $primary-color;
+      width: 30px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.welcome-footer {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  padding: 32px;
+
+  &__buttons {
+    display: grid;
+  }
+}

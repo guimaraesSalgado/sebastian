@@ -1,0 +1,28 @@
+<div class="full-screen-container" [style.background-image]="'url(' + getCurrentItemImage() + ')'">
+  <div class="carousel-container">
+    <div class="auth-s-logo">
+      <img src="assets/img/logo/s-logo-n.svg" alt="Sebastian, seu app de gerenciamento">
+    </div>
+
+    <div class="bullets-container">
+      <span class="bullet" *ngFor="let item of itensCarousel; let i = index" [class.active]="currentIndex === i"
+        (click)="goToSlide(i)"></span>
+    </div>
+
+    <div class="carousel" [style.transform]="getTransform()">
+      <div class="carousel-text" *ngFor="let item of itensCarousel; let i = index" [class.active]="currentIndex === i">
+        <h1>{{ item.subject.title }}</h1>
+        <span>{{ item.subject.description }}</span>
+      </div>
+    </div>
+
+    <div class="welcome-footer">
+      <div class="welcome-footer__buttons">
+        <app-s-button class="mb-8" type="dark" (click)="next()" size="full">{{currentIndex === 2 ? 'Acessar' :
+          'Continuar'}}</app-s-button>
+        <app-s-button [hidden]="currentIndex === 2 ? true : false" type="inline" (click)="toJump()"
+          size="full">Pular</app-s-button>
+      </div>
+    </div>
+  </div>
+</div>

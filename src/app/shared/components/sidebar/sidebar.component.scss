@@ -1,0 +1,114 @@
+@import '../../../../assets/styles/colors.scss';
+
+.menu {
+  .hamburger {
+    border: 1px solid $color-disabled-background;
+    border-radius: 5px;
+    width: 50px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__bar {
+      height: 2px;
+      width: 25px;
+      background-color: $primary-color;
+      margin: 5px 0;
+    }
+  }
+
+  &__profile {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__information {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    padding: 24px 16px;
+    line-height: 26px;
+
+    &-name {
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    &-email {
+      font-weight: 400;
+      font-size: 14px;
+      color: $color-disabled-text;
+    }
+  }
+
+  &__divider {
+    border-top: 1px solid $color-disabled-background;
+    margin: 0px 24px 24px 24px;
+  }
+
+  &__footer {
+    text-align: center;
+    color: $color-disabled-background;
+    padding-top: 28px;
+  }
+}
+
+.sidebar-link {
+  margin: 0px 24px;
+
+  &.selected {
+    border-radius: 8px;
+    background-color: $primary-color;
+    color: $color-white !important;
+  }
+
+  & span {
+    padding-left: 12px;
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(47 35 75 / 70%);
+  z-index: 1;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $color-white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-size: 20px;
+    color: $color-subdued;
+    transition: 0.3s;
+  }
+
+  &.open {
+    width: 300px;
+  }
+}
+
+.overlay.open {
+  display: block;
+}

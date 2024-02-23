@@ -1,0 +1,56 @@
+<app-s-loading></app-s-loading>
+
+<div class="register">
+  <div class="register-header">
+    <div class="register-image">
+      <img src="assets/img/ilustracoes/register.svg"
+        alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
+    </div>
+  </div>
+
+  <div class="register-content">
+    <div class="flex-auto">
+      <div class="mb-3 pb-2">
+        <h1 class="text-xl font-bold text-left text-blueGray-600">Crie sua conta</h1>
+      </div>
+
+      <form [formGroup]="form" autocomplete="off">
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="name" label="Nome" placeholder="Digite seu nome" [maxlength]="100"
+            [disableMessageError]="true"></app-s-input-text>
+        </div>
+
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'"
+            [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+        </div>
+
+        <div class="relative w-full mb-3">
+          <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'"
+            [maxlength]="12" [disableMessageError]="true" (keyup)="validatePassword($event)" (focus)="onFocus()"
+            (blur)="onBlur()"></app-s-input-text>
+        </div>
+
+        <div>
+          <app-s-custom-error [error]="passwordErrors[0]" [isActive]="isActive"
+            message="A senha deve conter pelo menos 8 caracteres."></app-s-custom-error>
+          <app-s-custom-error [error]="passwordErrors[1]" [isActive]="isActive"
+            message="Use uma combinação de letras, números e caracteres especiais."></app-s-custom-error>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex-auto mt-8">
+      <div class="index__content-button grid-cols-12">
+        <app-s-button type="dark" (click)="logInto()" size="full" [disabled]="!isFormValid()">Criar conta</app-s-button>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap mt-8 relative justify-evenly items-center pb-8">
+      <small class="text-sm text-blueGray-500">
+        Já tem uma conta? <span class="text-indigo-700 font-bold-2 text-sm pl-3" [routerLink]="['/auth/login']">Acessar
+          conta</span>
+      </small>
+    </div>
+  </div>
+</div>

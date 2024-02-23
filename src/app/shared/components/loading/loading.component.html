@@ -1,0 +1,9 @@
+<div class="s-loading" [@transformBackdrop]="showLoading ? 'showing' : 'void'">
+  <div class="s-loading__backdrop"></div>
+  <div class="s-loading__container" [@transformContent]="showLoading ? 'showing' : 'void'">
+    <div class="s-loading__logo"></div>
+    <div class="s-loading__animation">
+      <div class="s-loading__animation__child"></div>
+    </div>
+  </div>
+</div>

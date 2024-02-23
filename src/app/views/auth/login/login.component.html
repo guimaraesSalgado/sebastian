@@ -1,0 +1,46 @@
+<app-s-loading></app-s-loading>
+<div class="login">
+  <div class="login-header">
+    <div class="login-image">
+      <img src="assets/img/ilustracoes/login.svg" alt="Acesse sua conta agora e comece a gerenciar suas compras de onde estiver!">
+    </div>
+  </div>
+
+
+  <div class="login-content">
+    <div class="flex-auto mb-4 pb-2">
+      <h1 class="text-xl font-bold text-left text-blueGray-800">Acesse sua conta</h1>
+    </div>
+
+    <form [formGroup]="form" autocomplete="off">
+      <div class="relative mb-3">
+        <app-s-input-text id="user" label="E-mail" placeholder="Digite seu e-mail" [inputType]="'email'" [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+      </div>
+
+      <div class="relative mb-3">
+        <app-s-input-text id="password" label="Senha" placeholder="Digite sua senha" [inputType]="'password'" [maxlength]="12" [disableMessageError]="true"></app-s-input-text>
+      </div>
+
+      <div class="flex justify-start pb-8 pt-2">
+        <div class="flex">
+          <button class="text-indigo-700 font-bold-2 text-sm" type="button">
+            Esqueceu a senha?
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="flex-auto">
+      <div class="index__content-button grid-cols-12">
+        <app-s-button type="dark" (click)="logInto()" [disabled]="!isFormValid()" size="full">Acessar conta</app-s-button>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap mt-8 relative justify-evenly items-center pb-8">
+      <small class="text-sm text-blueGray-500">
+        Não possui uma conta? <span class="text-indigo-700 font-bold-2 text-sm pl-3" [routerLink]="['/auth/register']">Criar conta</span>
+      </small>
+    </div>
+  </div>
+
+</div>

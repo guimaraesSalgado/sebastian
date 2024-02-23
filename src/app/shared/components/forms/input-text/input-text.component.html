@@ -1,0 +1,27 @@
+<app-s-label *ngIf="label" [id]="id + '--label'" [target]="id + '--input'" [value]="label"
+[required]="control?.errors?.required"></app-s-label>
+
+<div class="password-input">
+  <input
+  autocomplete="off"
+  [type]="type"
+  [id]="id"
+  [name]="name+'--field'"
+  [formControlName]="formControlName"
+  [minlength]="minlength"
+  [maxlength]="maxlength"
+  [placeholder]="placeholder"
+  [readonly]="readonly"
+  [autofocus]="autofocus"
+  (focus)="focus.emit($event)"
+  (blur)="blur.emit($event)"
+  class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150"/>
+
+  <div class="password-toggle" (click)="toggleShowPassword()" *ngIf="showPassword">
+      <ng-icon [name]="isPassword ? 'heroEye' : 'heroEyeOff'"></ng-icon>
+  </div>
+</div>
+
+<div *ngIf="messageError">
+  <app-s-error [id]="id + '--error'" [control]="control" *ngIf="!messageError"></app-s-error>
+</div>

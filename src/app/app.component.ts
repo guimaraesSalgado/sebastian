@@ -1,5 +1,5 @@
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { Platform } from '@angular/cdk/platform';
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,22 +7,22 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   constructor(
-    private platform: Platform,
     private router: Router,
-  ){}
-
-  ngOnInit(): void {
-    // this.validateAccessPlatform()
+    private platform: Platform,
+    private cdr: ChangeDetectorRef
+  ){
+    this.validePlataformAndNavigate();
   }
 
-  validateAccessPlatform(): void {
-    if(this.platform.IOS || this.platform.ANDROID){
-      this.router.navigate(['login']);
-    } else {
-      this.router.navigate(['**']);
-
+  private validePlataformAndNavigate(): void {
+    if(!this.isMobile()){
+      this.router.navigate(['/error']);
     }
+  }
+
+  isMobile(): boolean {
+    return this.platform.ANDROID || this.platform.IOS;
   }
 }

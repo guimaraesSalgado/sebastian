@@ -1,0 +1,24 @@
+.auth {
+  background-image: linear-gradient(to bottom, rgb(87 72 174 / 10%), rgba(255, 255, 255, 0.9)), url('../../../assets/img/bg/auth.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f0f0f0;
+
+  &-fullscreen {
+    width: 100%;
+    height: 100vh; /* Define a altura para cobrir a tela inteira */
+    position: relative;
+    padding: 32px;
+
+    .login-image {
+      position: absolute;
+      top: 10%; /* Ajusta a altura conforme necessário */
+      right: 0;
+    }
+  }
+
+  &-s-logo {
+    padding-bottom: 32px;
+  }
+}
