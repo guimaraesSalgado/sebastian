@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  condicao: boolean = true;
+  showList: boolean = false;
 
   scrollItens = [
     { title: 'Salada de Tomate e Mozzarella', description: 'Saladas', image: 'https://www.rbsdirect.com.br/imagesrc/35817237.jpg?w=700' },
@@ -17,7 +18,17 @@ export class HomeComponent {
 
   cards = [];
 
-  teste(){
-    this.condicao = !this.condicao
+  constructor(
+    private router: Router,
+  ) {
+    this.showList = this.validateArrayLength(this.scrollItens, this.cards);
+  }
+
+  navigateToList(): void {
+    this.router.navigate(['/sebastian/list'])
+  }
+
+  validateArrayLength(...arrays: any[][]): boolean {
+    return arrays.some(array => array.length > 0);
   }
 }

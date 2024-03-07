@@ -10,11 +10,15 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { CustomErrorModule } from './custom-error/custom-error.module';
 import { CardModule } from './cards/card.module';
 import { BagdeModule } from './bagde/bagde.module';
+import { CollapseModule } from './collapse/collapse.module';
+import { CarouselModule } from './carousel/carousel.module';
 
 const COMPONENTS_MODULES = [
   BagdeModule,
   ButtonModule,
   CardModule,
+  CarouselModule,
+  CollapseModule,
   HorizontalScrollModule,
   CustomErrorModule,
   InputModule,
@@ -22,7 +26,7 @@ const COMPONENTS_MODULES = [
   HeaderModule,
   LoadingModule,
   ProfilePhotoModule,
-  SidebarModule
+  SidebarModule,
 ];
 
 @NgModule({

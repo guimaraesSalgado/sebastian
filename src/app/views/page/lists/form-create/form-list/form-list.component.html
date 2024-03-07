@@ -1,0 +1,11 @@
+<form [formGroup]="form" autocomplete="off">
+  <div class="relative mb-3">
+    <app-s-input-text id="name" label="Nome da lista" placeholder="Dê um nome para sua lista." [maxlength]="20"
+      [disableMessageError]="true"></app-s-input-text>
+  </div>
+
+  <div class="relative mb-3">
+    <app-s-input-text id="description" label="Descrição" placeholder="Adicione uma breve descrição para sua lista."
+      [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+  </div>
+</form>

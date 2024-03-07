@@ -5,7 +5,7 @@ export const  MENU_ITEMS: MenuItems[] =  [{
     {
       label: 'Inicio',
       icon: 'heroHome',
-      routerLink: '/page/home',
+      routerLink: '/sebastian/home',
       roles: [],
     },
     {

@@ -12,7 +12,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AuthComponent } from 'src/app/layouts/auth/auth.component';
-import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,11 +23,10 @@ import { AuthRoutingModule } from './auth-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule,
     ReactiveFormsModule,
-    AuthRoutingModule,
     SharedModule,
-    HttpClientModule,
     LoadingModule.forRoot()
   ]
 })

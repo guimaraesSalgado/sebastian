@@ -14,10 +14,8 @@ const routes: Routes = [
   },
   {
     path: "page",
+    loadChildren: () => import('./views/page/page.module').then(m => m.PageModule),
     component: PageComponent,
-    children: [
-      { path: "home", component: HomeComponent },
-    ],
   },
   {
     path: "error",

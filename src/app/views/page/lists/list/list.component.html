@@ -1,0 +1,19 @@
+<div class="list">
+  <div class="list-image">
+    <img src="assets/img/ilustracoes/list.svg" alt="Sebastian - Gerenciador de compras" />
+  </div>
+  <div class="list-content">
+    <p>A vida é muito mais fácil com uma lista. Crie a sua agora mesmo!</p>
+  </div>
+
+  <div class="justify-center">
+    <app-button-create-list size="full" (click)="toggleCollapse()"></app-button-create-list>
+  </div>
+</div>
+
+<app-s-collapse [isCollapsed]="isCollapsed" title="Criar lista" [noDescription]="true">
+  <app-s-carousel [itemCount]="2">
+    <div step="0"><app-form-list></app-form-list></div>
+    <div step="1"><app-form-item></app-form-item></div>
+  </app-s-carousel>
+</app-s-collapse>

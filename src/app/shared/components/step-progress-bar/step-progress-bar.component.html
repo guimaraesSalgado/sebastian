@@ -1,0 +1,14 @@
+<div class="step-container">
+  <div class="step" *ngFor="let step of steps; let i = index" [class.active]="i === currentStep">
+    <div class="step-content">
+      <h3 class="step-title">{{ step.title }}</h3>
+    </div>
+  </div>
+</div>
+
+<div class="progress-container">
+  <div class="progress-bar" [style.width]="calculateProgressBarWidth()"></div>
+</div>
+
+<button (click)="nextStep()">click</button>
+<button (click)="previousStep()">click back</button>
