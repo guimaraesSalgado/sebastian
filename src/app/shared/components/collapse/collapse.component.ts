@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-s-collapse',
@@ -6,8 +6,21 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./collapse.component.scss']
 })
 export class CollapseComponent {
-  @Input() isCollapsed: boolean = true;
+
+  @Input() set isCollapsed(value: boolean){
+    this.collapsed = value
+  }
+
   @Input() title: string = 'Title';
   @Input() noDescription: boolean = false;
   @Input() description: string = 'Description';
+  @ViewChild('collapseContent') collapseContent!: ElementRef;
+
+  collapsed: boolean = true
+
+  constructor() {}
+
+  close(): void {
+    this.collapsed = true;
+  }
 }
