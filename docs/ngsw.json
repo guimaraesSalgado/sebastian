@@ -1,0 +1,129 @@
+{
+  "configVersion": 1,
+  "timestamp": 1710115054924,
+  "index": "/sebastian/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/sebastian/index.html",
+        "/sebastian/main.c49e2ec027b50300.js",
+        "/sebastian/polyfills.3063306be1784679.js",
+        "/sebastian/runtime.c7cdc581ec3c5f7d.js",
+        "/sebastian/styles.c2f6f52204ad801b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/sebastian/assets/img/bg/auth.png",
+        "/sebastian/assets/img/bg/index.png",
+        "/sebastian/assets/img/bg/welcome-1.png",
+        "/sebastian/assets/img/bg/welcome-2.png",
+        "/sebastian/assets/img/bg/welcome-3.png",
+        "/sebastian/assets/img/icon/user.svg",
+        "/sebastian/assets/img/ilustracoes/close-store.svg",
+        "/sebastian/assets/img/ilustracoes/home-new-user.svg",
+        "/sebastian/assets/img/ilustracoes/home/clock.svg",
+        "/sebastian/assets/img/ilustracoes/list.svg",
+        "/sebastian/assets/img/ilustracoes/login.svg",
+        "/sebastian/assets/img/ilustracoes/personal-checklist.svg",
+        "/sebastian/assets/img/ilustracoes/register.svg",
+        "/sebastian/assets/img/ilustracoes/welcome/access-from-anywhere.svg",
+        "/sebastian/assets/img/ilustracoes/welcome/culinary-inspiration.svg",
+        "/sebastian/assets/img/ilustracoes/welcome/organize-purchases.svg",
+        "/sebastian/assets/img/logo/logo.png",
+        "/sebastian/assets/img/logo/logo.svg",
+        "/sebastian/assets/img/logo/m-logo.svg",
+        "/sebastian/assets/img/logo/s-logo-n.svg",
+        "/sebastian/assets/img/logo/s-logo.svg",
+        "/sebastian/assets/img/pwa/icon-128.png",
+        "/sebastian/assets/img/pwa/icon-144.png",
+        "/sebastian/assets/img/pwa/icon-152.png",
+        "/sebastian/assets/img/pwa/icon-192.png",
+        "/sebastian/assets/img/pwa/icon-512.png",
+        "/sebastian/assets/img/pwa/icon-72.png",
+        "/sebastian/assets/img/pwa/icon-96.png",
+        "/sebastian/assets/styles/colors.scss",
+        "/sebastian/assets/styles/index.scss",
+        "/sebastian/assets/styles/tailwind.css",
+        "/sebastian/auth.89a3f9c4c8efa05c.png",
+        "/sebastian/index.27678c3c3055d339.png",
+        "/sebastian/s-logo-n.e8217519649a9295.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/sebastian/assets/img/bg/auth.png": "623b47288169a898aa68603ee9fe7305ad70be10",
+    "/sebastian/assets/img/bg/index.png": "1804e61ecaf920ae95cc4231599b3baa49fa459f",
+    "/sebastian/assets/img/bg/welcome-1.png": "24e3fe2ec5368b67e8e9cc9b8c9b0425a20634ab",
+    "/sebastian/assets/img/bg/welcome-2.png": "e1d5a1c0db75ae55de417656c23a230dcc99f88e",
+    "/sebastian/assets/img/bg/welcome-3.png": "b2f3daac5e3d7b9ec23656f7c17cf6aa73c88a98",
+    "/sebastian/assets/img/icon/user.svg": "e805e3c5d7f561e369820175c02fcafb99a67322",
+    "/sebastian/assets/img/ilustracoes/close-store.svg": "a2ee2c6361d1c7cb3e003d4ac79125c064229414",
+    "/sebastian/assets/img/ilustracoes/home-new-user.svg": "812bef5ab49c9a1cd13e480ed2c3492ccdd5e64d",
+    "/sebastian/assets/img/ilustracoes/home/clock.svg": "23e2ecf5a37b4a15c5e042f9242638d9f16b2d86",
+    "/sebastian/assets/img/ilustracoes/list.svg": "224b67f864c2fee78f3af453d083b5227cd58c87",
+    "/sebastian/assets/img/ilustracoes/login.svg": "b9c3951618eca345b0f4f20888ff9733efc33b84",
+    "/sebastian/assets/img/ilustracoes/personal-checklist.svg": "d564c05e80e2abbd1134295619e9d5b073a8c18c",
+    "/sebastian/assets/img/ilustracoes/register.svg": "5c823943ecdf39fb906680ee66d07ff12195c37a",
+    "/sebastian/assets/img/ilustracoes/welcome/access-from-anywhere.svg": "65013453aa46337c66f30bf0e413e52df4b2676c",
+    "/sebastian/assets/img/ilustracoes/welcome/culinary-inspiration.svg": "e47258734b583271c668e06f968cd7ec63310f6b",
+    "/sebastian/assets/img/ilustracoes/welcome/organize-purchases.svg": "390a27ebe41c42ef6595fdeb8cd81565b98b1540",
+    "/sebastian/assets/img/logo/logo.png": "4a300ec71883bd9c5c85948037db828c24f45cd1",
+    "/sebastian/assets/img/logo/logo.svg": "c61306078cef241c92c7db941a49ed6fb04fbd88",
+    "/sebastian/assets/img/logo/m-logo.svg": "e7feb485343476d3b791fdf9101ce81e2f6df601",
+    "/sebastian/assets/img/logo/s-logo-n.svg": "c7c928c7784bf3557aae4f3f283f37b7dd60859a",
+    "/sebastian/assets/img/logo/s-logo.svg": "1445eb0e04a56de03408b517169501e1c96e23bc",
+    "/sebastian/assets/img/pwa/icon-128.png": "1b11006e065def38a2eaa2b08fc5451649bda036",
+    "/sebastian/assets/img/pwa/icon-144.png": "e4bf06141a7f7c41881e9f27c99fa9defe84e0a0",
+    "/sebastian/assets/img/pwa/icon-152.png": "8f033376b82e38427e8f53ae5988496406c87668",
+    "/sebastian/assets/img/pwa/icon-192.png": "2d5187fb6f6a738335667c5ca3c8f37695b88d7d",
+    "/sebastian/assets/img/pwa/icon-512.png": "51d40bf552e387ecc84d816478c609c211c5d947",
+    "/sebastian/assets/img/pwa/icon-72.png": "8181c7b6bc0ea208e8e0c0ff5e76162bd90b145b",
+    "/sebastian/assets/img/pwa/icon-96.png": "0f20580e8d121f9aacbf2d69296188dd472da10f",
+    "/sebastian/assets/styles/colors.scss": "a5634cffadb8900cf196ffcafe357050bf9ae047",
+    "/sebastian/assets/styles/index.scss": "e7f58d55e42708ce4bc38cb0968aafdee36d56ba",
+    "/sebastian/assets/styles/tailwind.css": "77930401875d07b1da60c2ae58de4179a70b1b06",
+    "/sebastian/auth.89a3f9c4c8efa05c.png": "623b47288169a898aa68603ee9fe7305ad70be10",
+    "/sebastian/index.27678c3c3055d339.png": "1804e61ecaf920ae95cc4231599b3baa49fa459f",
+    "/sebastian/index.html": "1b3697bbcda3c8cee5e946542bffb154767ad2bf",
+    "/sebastian/main.c49e2ec027b50300.js": "930147d2d57ffcb0bfb31e847b94048b4592a75f",
+    "/sebastian/polyfills.3063306be1784679.js": "a7a35cebe550496ac2cd97b93632ff622558b454",
+    "/sebastian/runtime.c7cdc581ec3c5f7d.js": "9b03be5f685507c8cd6e0cc6a8b0497f3be6214e",
+    "/sebastian/s-logo-n.e8217519649a9295.svg": "c7c928c7784bf3557aae4f3f283f37b7dd60859a",
+    "/sebastian/styles.c2f6f52204ad801b.css": "0568cd1a4c1c02a6a355ec818708c06009327b1a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

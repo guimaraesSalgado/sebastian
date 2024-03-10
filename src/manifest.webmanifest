@@ -1,0 +1,47 @@
+{
+  "name": "App Sabastian",
+  "short_name": "Sebastian",
+  "description":"O Sebastian é uma plataforma que te ajudará a criar gerenciar e compartilhar compras e receitas.",
+  "theme_color": "#9b06da",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "assets/pwa/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
