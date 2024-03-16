@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { CollapseComponent } from 'src/app/shared/components/collapse/collapse.component';
 
 @Component({
   selector: 'app-list',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent {
-isCollapsed = true;
-currentStep: number = 0;
+  @ViewChild('collapseContent', { static: false }) collapseContent!: CollapseComponent;
+
+  isCollapsed = true;
+  currentStep: number = 0;
+
+  closedCollapse(): void {
+    this.collapseContent.collapse();
+  }
 }

@@ -1,5 +1,5 @@
+import { Component, Input } from '@angular/core';
 import { AUTO_STYLE, animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 
 const DEFAULT_DURATION = 300;
 
@@ -17,14 +17,8 @@ const DEFAULT_DURATION = 300;
   ]
 })
 export class CollapseComponent {
-  @ViewChild('collapseContent') collapseContent!: ElementRef;
-  @Input() set isCollapsed(value: boolean){
-    this.collapsed = value
-  }
-
   @Input() textButton: string = 'Clique aqui';
-
-  collapsed: boolean = false
+  @Input() collapsed: boolean = false;
 
   toggle(): void {
     this.collapsed = !this.collapsed;

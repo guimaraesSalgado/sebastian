@@ -21,13 +21,23 @@
 </ng-container>
 
 <div class="step-actions" class="mt-8">
-  <div class="mb-4">
-    <app-s-button type="dark" size="full" (click)="goToStep(1)" [disabled]="currentStep === steps.length - 1">Salvar</app-s-button>
+  <!-- AÇÃO INICIAL -->
+  <div class="mb-4" *ngIf="currentStep !== steps.length - 1">
+    <app-s-button type="dark" size="full" (click)="goToStep(1)"
+      [disabled]="currentStep === steps.length - 1">{{textButtons[0]}}</app-s-button>
   </div>
 
-  <app-s-button type="light" size="full" (click)="goToStep(-1)"  [disabled]="currentStep === 0">Cancelar</app-s-button>
+  <!-- AÇÃO OPCIONAL -->
+  <div class="mb-4" *ngIf="currentStep === steps.length - 1 && actionButton">
+    <app-s-button type="dark" size="full" (click)="action()">{{textButtons[1]}}</app-s-button>
+  </div>
+
+  <!-- VOLTAR -->
+  <app-s-button *ngIf="currentStep > 0 && currentStep < steps.length - 1" type="light" size="full"
+    (click)="goToStep(-1)" [disabled]="currentStep === 0">Voltar</app-s-button>
+
+  <!-- VOLTAR -->
+  <app-s-button *ngIf="currentStep === 0 || currentStep === steps.length -1" type="light" size="full" (click)="cancel()">
+    {{ currentStep === 0 ? 'Cancelar' : 'Finalizar'}}
+  </app-s-button>
 </div>
-
-
-
-
