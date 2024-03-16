@@ -7,15 +7,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-
+import { WelcomeComponent } from '../page/welcome/welcome.component';
 import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { AuthComponent } from 'src/app/layouts/auth/auth.component';
+import { AuthRoutingModule } from './auth-routing.module';
+import { IndexComponent } from './index/index.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
     HomeComponent,
+    IndexComponent,
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
@@ -27,6 +29,7 @@ import { AuthComponent } from 'src/app/layouts/auth/auth.component';
     RouterModule,
     ReactiveFormsModule,
     SharedModule,
+    AuthRoutingModule,
     LoadingModule.forRoot()
   ]
 })

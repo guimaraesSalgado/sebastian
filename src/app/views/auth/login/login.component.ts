@@ -31,7 +31,7 @@ export class LoginComponent {
       this.loadingService.show();
       setTimeout(() => {
         this.loadingService.hide()
-        this.router.navigate(['/sebastian/home'])
+        this.router.navigate(['/page/home'])
       }, 2000);
     }
   }

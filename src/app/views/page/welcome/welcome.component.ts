@@ -17,7 +17,7 @@ export class WelcomeComponent {
   constructor(private router: Router){}
 
   toJump(): void {
-    this.router.navigate(['/sebastian/home'])
+    this.router.navigate(['/page/home'])
   }
 
   prev(): void {
@@ -30,7 +30,7 @@ export class WelcomeComponent {
 
   next(): void {
     if(this.currentIndex === 2) {
-      this.router.navigate(['/sebastian/home'])
+      this.toJump();
       return;
     }
 

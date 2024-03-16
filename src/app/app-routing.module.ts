@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { IndexComponent } from './views/index/index.component';
 
-import { HomeComponent } from './views/page/home/home.component';
 import { ErrorComponent } from './layouts/error/error.component';
 import { PageComponent } from './layouts/page/page.component';
 
@@ -13,17 +11,13 @@ const routes: Routes = [
     canActivate: [],
   },
   {
-    path: "page",
-    loadChildren: () => import('./views/page/page.module').then(m => m.PageModule),
+    path: 'page',
     component: PageComponent,
+    loadChildren: () => import('./views/page/page.module').then(m => m.PageModule),
+    canActivate: [],
   },
-  {
-    path: "error",
-    component: ErrorComponent,
-  },
-
-  { path: "", component: IndexComponent },
-  { path: "", redirectTo: "auth", pathMatch: "full" },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: "**", component: ErrorComponent },
 ];
 
 @NgModule({

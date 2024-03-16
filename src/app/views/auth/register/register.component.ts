@@ -40,7 +40,7 @@ export class RegisterComponent {
       this.loadingService.show();
       setTimeout(() => {
         this.loadingService.hide()
-        this.router.navigate(['/sebastian/welcome'])
+        this.router.navigate(['/page/welcome'])
       }, 2000);
     }
   }

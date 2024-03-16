@@ -30,7 +30,6 @@ import { FormItemComponent } from './lists/form-create/form-item/form-item.compo
   imports: [
     CommonModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     RouterModule,
     ReactiveFormsModule,
     PageRoutingModule,

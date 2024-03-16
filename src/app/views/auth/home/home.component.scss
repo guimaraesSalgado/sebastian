@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/colors.scss';
+@import 'src/assets/styles/colors.scss';
 
 .auth {
   background-image: linear-gradient(to bottom, rgb(109 40 217 / 70%), rgb(0 0 0 / 90%)), url('../../../../assets/img/bg/index.png');
@@ -22,9 +22,12 @@
 
   &-s-logo {
     padding-bottom: 28px;
+
+    img {
+      width: 20%;
+    }
   }
 }
-
 
 .home {
   &-header {

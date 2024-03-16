@@ -34,7 +34,7 @@ export class IndexComponent implements AfterViewInit {
 
   private navigateToHome(): void {
     setTimeout(() => {
-      this.router.navigate(['/sebastian/home']);
+      this.router.navigate(['/auth/home']);
     }, 4000);
   }
 }

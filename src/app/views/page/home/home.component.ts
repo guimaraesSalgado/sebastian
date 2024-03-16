@@ -25,7 +25,7 @@ export class HomeComponent {
   }
 
   navigateToList(): void {
-    this.router.navigate(['/sebastian/list'])
+    this.router.navigate(['/page/list'])
   }
 
   validateArrayLength(...arrays: any[][]): boolean {
