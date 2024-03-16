@@ -8,6 +8,12 @@ const DEFAULT_DURATION = 300;
   templateUrl: './collapse.component.html',
   styleUrls: ['./collapse.component.scss'],
   animations: [
+    trigger('overlay', [
+      state('false', style({ opacity: 1 })),
+      state('true', style({ opacity: 0 })),
+      transition('false => true', animate('300ms ease-out')),
+      transition('true => false', animate('300ms ease-in'))
+    ]),
     trigger('collapse', [
       state('false', style({ height: AUTO_STYLE, visibility: AUTO_STYLE })),
       state('true', style({ height: '0', visibility: 'hidden' })),

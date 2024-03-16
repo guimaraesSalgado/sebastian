@@ -25,6 +25,7 @@ export class StepComponent {
   }
 
   cancel(): void {
+    this.currentStep = 0;
     this.onCancel.emit()
   }
 
