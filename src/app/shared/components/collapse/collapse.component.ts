@@ -17,25 +17,24 @@ const DEFAULT_DURATION = 300;
   ]
 })
 export class CollapseComponent {
-
+  @ViewChild('collapseContent') collapseContent!: ElementRef;
   @Input() set isCollapsed(value: boolean){
     this.collapsed = value
   }
 
-  @Input() title: string = 'Title';
-  @Input() noDescription: boolean = false;
-  @Input() description: string = 'Description';
-  @ViewChild('collapseContent') collapseContent!: ElementRef;
+  @Input() textButton: string = 'Clique aqui';
 
   collapsed: boolean = false
 
-  constructor() {}
-
-  toggle() {
+  toggle(): void {
     this.collapsed = !this.collapsed;
   }
 
-  collapse() {
+  expand(): void {
+    this.collapsed = false;
+  }
+
+  collapse(): void {
     this.collapsed = true;
   }
 }

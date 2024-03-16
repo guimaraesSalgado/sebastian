@@ -1,0 +1,33 @@
+<div class="step" *ngIf="showCounter">
+  <ng-container *ngFor="let step of steps; let i = index;">
+    <div class="step-item">
+      <div class="step-number" [class.active]="i === currentStep">{{ i + 1 }}</div>
+    </div>
+    <hr class="step-separator" *ngIf="i !== steps.length - 1">
+  </ng-container>
+</div>
+
+<ng-container *ngIf="theme === 'create-list'">
+  <div class="carousel-item" *ngIf="currentStep === 0">
+    <ng-content select="[step='0']"></ng-content>
+  </div>
+  <div class="carousel-item" *ngIf="currentStep === 1">
+    <ng-content select="[step='1']"></ng-content>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="theme === ''">
+  Olá, insira seu novo tema aqui.
+</ng-container>
+
+<div class="step-actions" class="mt-8">
+  <div class="mb-4">
+    <app-s-button type="dark" size="full" (click)="goToStep(1)" [disabled]="currentStep === steps.length - 1">Salvar</app-s-button>
+  </div>
+
+  <app-s-button type="light" size="full" (click)="goToStep(-1)"  [disabled]="currentStep === 0">Cancelar</app-s-button>
+</div>
+
+
+
+

@@ -1,0 +1,36 @@
+@import 'src/assets/styles/colors.scss';
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  &-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &-number {
+    margin: 0 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $color-disabled-background;
+    color: $color-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.active {
+      background-color: $primary-color;
+    }
+  }
+
+  &-separator {
+    margin: 0 5px;
+    border: 1px solid $color-disabled-background;
+    width: 100px;
+  }
+}
+

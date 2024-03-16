@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CollapseComponent } from './collapse.component';
+import { StepComponent } from './step.component';
 import { ButtonModule } from '../button/button.module';
 
 @NgModule({
@@ -9,8 +9,8 @@ import { ButtonModule } from '../button/button.module';
     CommonModule,
     ButtonModule
   ],
-  declarations: [CollapseComponent],
-  exports: [CollapseComponent],
+  declarations: [StepComponent],
+  exports: [StepComponent],
 
 })
-export class CollapseModule { }
+export class StepModule { }

@@ -6,15 +6,10 @@
     <p>A vida é muito mais fácil com uma lista. Crie a sua agora mesmo!</p>
   </div>
 
-  <div class="justify-center">
-    <app-button-create-list size="full" (click)="toggleCollapse()"></app-button-create-list>
-  </div>
+  <app-s-collapse [isCollapsed]="isCollapsed" textButton="Criar lista">
+    <app-s-step theme="create-list"  [steps]="['Criação de Lista', 'Criação de item']">
+      <div step="0"><app-form-list></app-form-list></div>
+      <div step="1"><app-form-item></app-form-item></div>
+    </app-s-step>
+  </app-s-collapse>
 </div>
-
-<app-s-collapse [isCollapsed]="isCollapsed" title="Criar lista" [noDescription]="true">
-  <app-s-carousel [itemCount]="2">
-    <div step="0"><app-form-list></app-form-list></div>
-    <div step="1"><app-form-item></app-form-item></div>
-  </app-s-carousel>
-</app-s-collapse>
-
