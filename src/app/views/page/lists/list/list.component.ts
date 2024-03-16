@@ -26,11 +26,11 @@ nextStep(): void {
     setTimeout(() => {
       this.currentStep++;
       this.animationState = 'in';
-    }, 500); // Tempo da animação
+    }, 500);
   }
 }
 
-  toggleCollapse() {
+  toggleCollapse(): void {
     this.isCollapsed = !this.isCollapsed;
   }
 }

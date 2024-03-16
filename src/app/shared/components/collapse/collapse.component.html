@@ -1,9 +1,13 @@
-<div *ngIf="!collapsed" class="collapse" [ngClass]="{'collapsed': collapsed}">
-  <div class="overlay" *ngIf="!collapsed"></div>
-  <div class="collapse__content" #collapseContent>
-    <div class="line" (click)="close()"></div>
+<div class="overlay" [@overlay]="collapsed" *ngIf="!collapsed" (click)="collapse()"></div>
+
+
+<div class="collapsible" [@collapse]="collapsed">
+  <div class="collapsible__content" #collapseContent>
+    <div class="line" (click)="collapse()"></div>
     <h1>{{ title }}</h1>
     <p *ngIf="!noDescription">{{ description }}</p>
     <ng-content></ng-content>
   </div>
 </div>
+
+
