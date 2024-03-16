@@ -21,7 +21,8 @@ export class FormItemComponent {
   private buildForm(): FormGroup {
     return this.formBuilder.group({
       name: [null, [Validators.required]],
-      description: [null, [Validators.required]],
+      qtd: [null, [Validators.required]],
+      category: [null, [Validators.required]],
     });
   }
 }

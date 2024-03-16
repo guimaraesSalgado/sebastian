@@ -7,3 +7,27 @@ h1 {
   color: $color-default;
   text-align: left;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 20px; /* Adiciona espaçamento entre as colunas */
+  max-width: calc(100% - 20px);
+}
+
+.grid-container > div {
+  width: auto;
+}
+
+.relative {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.grid-container > div.end {
+  text-align: left;
+}
+
+.grid-container .category {
+  grid-column: 1 / span 2; /* Expande a div para ocupar duas colunas */
+}

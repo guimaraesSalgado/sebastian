@@ -2,15 +2,22 @@
   <h1>Adicionar item</h1>
 </div>
 
-<!-- <form [formGroup]="form" autocomplete="off">
-  <div class="relative mb-3">
-    <app-s-input-text id="name" label="Nome da lista" placeholder="Dê um nome para sua lista." [maxlength]="20"
-      [disableMessageError]="true"></app-s-input-text>
-  </div>
+<form [formGroup]="form" class="form" autocomplete="off">
+  <div class="grid-container">
+    <div class="relative mb-3">
+      <app-s-input-text id="name" label="Nome" placeholder="Buscar item." [maxlength]="20"></app-s-input-text>
+    </div>
 
-  <div class="relative mb-3">
-    <app-s-input-text id="description" label="Descrição" placeholder="Adicione uma breve descrição para sua lista."
-      [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
+    <div class="relative mb-3 end">
+      <app-s-input-text id="qtd" label="Qtd" placeholder="0" [maxlength]="99"></app-s-input-text>
+    </div>
+
+    <div class="relative mb-3 category">
+      aqui será um item que ainda não sei como fazer
+    </div>
+
+    <div class="relative mb-3 category">
+      <app-s-input-text id="category" label="Categoria" placeholder="Digite a categoria do item." [maxlength]="100"></app-s-input-text>
+    </div>
   </div>
-</form> -->
-Oi é outro conteudo aqui
+</form>
