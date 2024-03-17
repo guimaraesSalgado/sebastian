@@ -12,8 +12,10 @@ import { CardModule } from './cards/card.module';
 import { BagdeModule } from './bagde/bagde.module';
 import { CollapseModule } from './collapse/collapse.module';
 import { StepModule } from './step/step.module';
+import { AutocompleteModule } from './autocomplete/autocomplete.module';
 
 const COMPONENTS_MODULES = [
+  AutocompleteModule,
   BagdeModule,
   ButtonModule,
   CardModule,

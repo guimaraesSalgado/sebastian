@@ -1,0 +1,12 @@
+
+<div class="autocomplete">
+  <input
+   type="text"
+   placeholder="Digite algo..."
+   (keyup)="filterItems($event)"
+   class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150">
+
+  <ul *ngIf="filteredItems.length > 0">
+    <li *ngFor="let item of filteredItems" (click)="selectItem(item)">{{ item }}</li>
+  </ul>
+</div>

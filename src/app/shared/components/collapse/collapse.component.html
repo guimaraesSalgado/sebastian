@@ -1,14 +1,11 @@
 <div class="justify-center">
-<app-s-button type="dark" size="full" (click)="expand()">{{textButton}}</app-s-button>
+  <app-s-button type="dark" size="full" (click)="expand()">{{textButton}}</app-s-button>
 </div>
 
-<div class="overlay" [@overlay]="collapsed" *ngIf="!collapsed" (click)="collapse()"></div>
+<div class="overlay" [@overlay]="collapsed" *ngIf="!collapsed"></div>
 
 <div class="collapsible" [@collapse]="collapsed">
   <div class="collapsible__content" #collapseContent>
-    <div class="line" (click)="collapse()"></div>
     <ng-content></ng-content>
   </div>
 </div>
-
-
