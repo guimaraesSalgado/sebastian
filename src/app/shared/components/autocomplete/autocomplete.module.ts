@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgIconsModule } from '@ng-icons/core';
 
-import { HeroSearch } from '@ng-icons/heroicons/outline';
+import { HeroRefresh, HeroSearch } from '@ng-icons/heroicons/outline';
 import { AutocompleteComponent } from './autocomplete.component';
 
 @NgModule({
@@ -10,7 +10,7 @@ import { AutocompleteComponent } from './autocomplete.component';
     CommonModule,
 
     NgIconsModule,
-    NgIconsModule.withIcons({ HeroSearch }),
+    NgIconsModule.withIcons({ HeroSearch, HeroRefresh }),
   ],
   declarations: [AutocompleteComponent],
   exports: [AutocompleteComponent],
