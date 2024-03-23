@@ -4,19 +4,22 @@
 
 <form [formGroup]="form" class="form" autocomplete="off">
   <div class="grid-container">
-    <div class="relative mb-3">
+    <div class="relative mb-3 col-100"> <!-- Coluna 1: 100% -->
       <app-s-autocomplete id="name" label="Nome" placeholder="Pesquise o item." [maxlength]="20"></app-s-autocomplete>
     </div>
 
-    <div class="relative mb-3 end">
-      <app-s-select id="qtd" label="Qtd" placeholder="0" [selectOptions]="['1', '2', '3', '4', '5']"></app-s-select>
+    <div class="relative mb-3 col-30"> <!-- Coluna 2: 40% -->
+      <app-s-select id="measure" label="Medida" placeholder="Escolha a opção" [selectOptions]="['Unidade', 'Kilo', 'Grama', 'Litro', 'Milimitro']"></app-s-select>
     </div>
 
-    <div class="relative mb-3 category">
+    <div class="relative mb-3 col-70"> <!-- Coluna 3: 60% -->
+      <app-s-input-quantity id="quantity" label="Quantidade" placeholder="0"></app-s-input-quantity>
     </div>
 
-    <div class="relative mb-3 category">
-      <app-s-input-text id="category" label="Categoria" placeholder="Digite a categoria do item." [maxlength]="100"></app-s-input-text>
+    <div class="relative mb-3 col-100"> <!-- Coluna 4: 100% -->
+      <app-s-autocomplete id="category" label="Categoria" placeholder="Digite a categoria do item." [maxlength]="20"></app-s-autocomplete>
     </div>
   </div>
+
+
 </form>

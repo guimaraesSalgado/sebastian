@@ -1,5 +1,5 @@
 <app-s-label *ngIf="label" [id]="id + '--label'" [target]="id + '--input'" [value]="label"
-[required]="control?.errors?.required"></app-s-label>
+             [required]="control?.errors?.required"></app-s-label>
 
 <div class="autocomplete relative">
   <span class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -8,17 +8,17 @@
     </span>
   </span>
   <input
-  type="text"
-  [id]="id"
-  [name]="name+'--field'"
-  [formControlName]="formControlName"
-  [minlength]="minlength"
-  [maxlength]="maxlength"
-  [placeholder]="placeholder"
-  [readonly]="readonly"
-  [autofocus]="autofocus"
-  (focus)="focus.emit($event)"
-  (blur)="blur.emit($event)"
+    type="text"
+    [id]="id"
+    [name]="name+'--field'"
+    [formControlName]="formControlName"
+    [minlength]="minlength"
+    [maxlength]="maxlength"
+    [placeholder]="placeholder"
+    [readonly]="readonly"
+    [autofocus]="autofocus"
+    (focus)="focus.emit($event)"
+    (blur)="blur.emit($event)"
     (keyup)="filterItems($event)"
     class="pl-10 pr-10 px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150"
     aria-label="Campo de pesquisa"
@@ -36,5 +36,5 @@
 </div>
 
 <div *ngIf="messageError">
-  <app-s-error [id]="id + '--error'" [control]="control" *ngIf="!messageError"></app-s-error>
+  <app-s-error [id]="id + '--error'" [control]="control"></app-s-error>
 </div>

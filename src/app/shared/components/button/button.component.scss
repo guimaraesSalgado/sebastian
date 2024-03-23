@@ -30,6 +30,19 @@ button:focus {
     justify-content: center;
   }
 
+  &.square-size {
+    padding: {
+      left: 0.5rem !important;
+      right: 0.5rem !important;
+      top: 1rem !important;
+      bottom: 1rem !important;
+    };
+
+    .button__icon {
+      margin: 0 auto;
+    }
+  }
+
   &.type-dark {
     padding: {
       left: 1.5rem;

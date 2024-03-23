@@ -88,7 +88,7 @@ export class AutocompleteComponent extends SeInputComponent {
   }
 
   selectItem(item: any) {
-    console.log('Item selecionado:', item);
+    this.control.setValue(item.name);
     this.filteredItems = [];
     this.noResultsFound = false;
     this.isLoading = false;

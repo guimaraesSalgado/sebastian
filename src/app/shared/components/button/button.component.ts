@@ -13,8 +13,8 @@ export class ButtonComponent {
   @Input() type: 'dark' | 'light' | 'inline' | 'link' = 'dark';
   @Input() disabled: boolean = false;
   @Input() icon: string = '';
+  @Input() size: 'normal' | 'full' | 'square' = 'normal';
   @Input() loading: boolean = false;
-  @Input() size: 'normal' | 'full' = 'normal';
 
   themeInfo: { icon: string; type: string } = { icon: '', type: 'dark' };
 
@@ -46,6 +46,12 @@ export class ButtonComponent {
   }
 
   getTypeClass(): string {
-    return `type-${this.themeInfo.type} ${this.size === 'full' ? 'full-size' : ''}`;
+    let sizeClass = '';
+    if (this.size === 'full') {
+      sizeClass = 'full-size';
+    } else if (this.size === 'square') {
+      sizeClass = 'square-size';
+    }
+    return `type-${this.themeInfo.type} ${sizeClass}`;
   }
 }
