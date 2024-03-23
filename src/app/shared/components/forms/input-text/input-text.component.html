@@ -15,6 +15,7 @@
   [autofocus]="autofocus"
   (focus)="focus.emit($event)"
   (blur)="blur.emit($event)"
+  aria-label="Campo de texto"
   class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150"/>
 
   <div class="password-toggle" (click)="toggleShowPassword()" *ngIf="showPassword">

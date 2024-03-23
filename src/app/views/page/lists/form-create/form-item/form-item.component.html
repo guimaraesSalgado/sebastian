@@ -5,15 +5,14 @@
 <form [formGroup]="form" class="form" autocomplete="off">
   <div class="grid-container">
     <div class="relative mb-3">
-      <app-s-input-text id="name" label="Nome" placeholder="Buscar item." [maxlength]="20"></app-s-input-text>
+      <app-s-autocomplete id="name" label="Nome" placeholder="Pesquise o item." [maxlength]="20"></app-s-autocomplete>
     </div>
 
     <div class="relative mb-3 end">
-      <app-s-input-text id="qtd" inputType="number" label="Qtd" placeholder="0" [maxlength]="2"></app-s-input-text>
+      <app-s-select id="qtd" label="Qtd" placeholder="0" [selectOptions]="['1', '2', '3', '4', '5']"></app-s-select>
     </div>
 
     <div class="relative mb-3 category">
-      <app-s-autocomplete></app-s-autocomplete>
     </div>
 
     <div class="relative mb-3 category">

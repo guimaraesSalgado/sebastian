@@ -4,9 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeroEye, HeroEyeOff } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
 
-import { InputTextComponent } from './input-text.component';
 import { ErrorModule } from '../config/error/error.module';
 import { SeLabelModule } from '../config/label/label.module';
+import { SelectComponent } from './select.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,7 +19,7 @@ import { SeLabelModule } from '../config/label/label.module';
     NgIconsModule,
     NgIconsModule.withIcons({ HeroEye, HeroEyeOff }),
   ],
-  declarations: [InputTextComponent],
-  exports: [InputTextComponent],
+  declarations: [SelectComponent],
+  exports: [SelectComponent],
 })
-export class InputTextModule {}
+export class SelectModule {}
