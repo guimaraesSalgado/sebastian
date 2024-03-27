@@ -2,7 +2,11 @@
 
 .card-list {
   display: flex;
-  align-items: start;
+  align-items: center;
+
+  background-color: $purple-background;
+  padding: 10px;
+  border-radius: 8px;
 
   &__header {
     &-icon{
@@ -20,20 +24,20 @@
 
     h1 {
       line-height: 1.2;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       margin-bottom: 8px;
       color: $color-default;
     }
 
     span {
-      font-size: 16px;
+      font-size: 14px;
       color: $color-subdued;
     }
   }
 
   &__no-content {
-    padding: 28px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     align-items: center;

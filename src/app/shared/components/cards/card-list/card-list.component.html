@@ -1,4 +1,4 @@
-<div class="card-list mt-4 mb-4" *ngFor="let item of getDisplayedItems()" [style]="getBackgroundStyle(item.theme)">
+<div class="card-list mt-4 mb-4" *ngFor="let item of getDisplayedItems()">
   <div class="card-list__header mr-4">
     <div class="card-list__header-icon" [style]="getHeaderStyle(item.theme)">
       <ng-icon [name]="getIcon(item.theme)" style="font-size: 28px;"></ng-icon>

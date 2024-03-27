@@ -35,19 +35,6 @@ export class CardListComponent {
     }
   }
 
-  getBackgroundStyle(theme: string): any {
-    const themeColors = this.cardThemeService.getTheme(theme) || { backgroundColor: '', color: '' };
-
-    if (this.type === 'dark') {
-      return {
-        'background-color': 'rgb(237, 233, 254)',
-        'padding': '16px',
-        'border-radius': '8px',
-        'align-items': 'center',
-      };
-    }
-  }
-
   getIcon(theme: string): string {
     const themeData = this.cardThemeService.getTheme(theme);
     return themeData ? themeData.icon : '';
