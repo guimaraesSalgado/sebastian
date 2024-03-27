@@ -54,6 +54,14 @@ export class InputQuantityComponent extends SeInputComponent {
     super(controlContainer);
   }
 
+  handleInput(event: any) {
+    const inputValue: string = event.target.value;
+    const newValue: string = inputValue.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    if (newValue.length <= this.maxlength) {
+      this.control.setValue(newValue);
+    }
+  }
+
   handreQtd(plus: boolean): void {
     if (!plus && this.control.value > 0) {
       this.control.setValue(this.control.value - 1);

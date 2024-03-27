@@ -6,7 +6,7 @@
 
   <input
   autocomplete="off"
-  type="number"
+  type="text"
   [id]="id"
   [name]="name+'--field'"
   [formControlName]="formControlName"
@@ -17,6 +17,7 @@
   [autofocus]="autofocus"
   (focus)="focus.emit($event)"
   (blur)="blur.emit($event)"
+  (input)="handleInput($event)"
   aria-label="Campo de texto"
   class="px-3 py-3 border-indigo-700 placeholder-blueGray-300 text-blueGray-600 rounded-lg w-full ease-linear transition-all duration-150"/>
 

@@ -22,7 +22,7 @@ export class FormItemComponent {
     return this.formBuilder.group({
       name: [null, [Validators.required]],
       measure: [null, [Validators.required]],
-      quantity: [null, [Validators.required]],
+      quantity: [null, [Validators.required, Validators.maxLength(4)]],
       category: [null, [Validators.required]],
     });
   }

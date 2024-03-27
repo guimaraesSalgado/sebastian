@@ -16,7 +16,29 @@ export class HomeComponent {
     { title: 'Iscas de frango empanada', description: 'Aperitivos', image: 'https://claudia.abril.com.br/wp-content/uploads/2019/05/gatinho-destaque.jpg?quality=85&strip=info' },
   ];
 
-  cards = [];
+  cards = [
+    {
+      id: 1,
+      icon: '',
+      title: 'Supermercado',
+      description: 'Compras do mês de abril',
+      theme: 'shop'
+    },
+    {
+      id: 2,
+      icon: '',
+      title: 'Bolo de aniversário',
+      description: 'Itens que preciso comprar para o bolo do Rodolfinho',
+      theme: 'revenue'
+    },
+    {
+      id: 3,
+      icon: '',
+      title: 'Torta de frango',
+      description: null,
+      theme: 'info'
+    }
+  ];
 
   constructor(
     private router: Router,

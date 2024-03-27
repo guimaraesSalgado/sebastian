@@ -61,6 +61,24 @@ export class AutocompleteComponent extends SeInputComponent {
       name: 'Rayane',
       cargo: 'Gerente de Produtos',
       email: 'rayane@app.com',
+    },
+    {
+      id: 3,
+      name: 'Thiele',
+      cargo: 'CEO',
+      email: 'thiele@app.com',
+    },
+    {
+      id: 3,
+      name: 'Celsinho',
+      cargo: 'CEO',
+      email: 'thiele@app.com',
+    },
+    {
+      id: 3,
+      name: 'Thamires',
+      cargo: 'CEO',
+      email: 'thiele@app.com',
     }
   ];
   filteredItems: any[] = [];

@@ -1,13 +1,12 @@
-<div class="card-list mt-8 mb-8" *ngFor="let item of getDisplayedItems()" [style]="getBackgroundStyle(item.theme)">
+<div class="card-list mt-4 mb-4" *ngFor="let item of getDisplayedItems()" [style]="getBackgroundStyle(item.theme)">
   <div class="card-list__header mr-4">
     <div class="card-list__header-icon" [style]="getHeaderStyle(item.theme)">
       <ng-icon [name]="getIcon(item.theme)" style="font-size: 28px;"></ng-icon>
-
     </div>
   </div>
   <div class="card-list__content">
-    <h1 [style]="getColorTitle(item.theme)">{{item.title}}</h1>
-    <span>{{item.description}}</span>
+    <h1>{{item.title}}</h1>
+    <span *ngIf="item.description">{{item.description}}</span>
   </div>
 </div>
 

@@ -40,7 +40,7 @@ export class CardListComponent {
 
     if (this.type === 'dark') {
       return {
-        'background-color': themeColors.backgroundColor,
+        'background-color': 'rgb(237, 233, 254)',
         'padding': '16px',
         'border-radius': '8px',
         'align-items': 'center',

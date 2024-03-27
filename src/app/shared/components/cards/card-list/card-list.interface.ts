@@ -3,5 +3,5 @@ export interface Card {
   icon: string,
   theme: string,
   title: string,
-  description: string,
+  description?: string | null,
 }

@@ -1,4 +1,4 @@
-<div class="step" *ngIf="showCounter">
+<div class="step slide-in" *ngIf="showCounter">
   <ng-container *ngFor="let step of steps; let i = index;">
     <div class="step-item">
       <div class="step-number"
@@ -10,15 +10,15 @@
   </ng-container>
 </div>
 
-
 <ng-container *ngIf="theme === 'create-list'">
-  <div class="carousel-item" *ngIf="currentStep === 0">
+  <div class="carousel-item" [ngClass]="{ 'slide-in': currentStep.toString() === '0', 'slide-out': currentStep.toString() === '1' }" *ngIf="currentStep === 0">
     <ng-content select="[step='0']"></ng-content>
   </div>
-  <div class="carousel-item" *ngIf="currentStep === 1">
+  <div class="carousel-item" [ngClass]="{ 'slide-in-reverse': currentStep.toString() === '1', 'slide-out-reverse': currentStep.toString() === '0' }" *ngIf="currentStep === 1">
     <ng-content select="[step='1']"></ng-content>
   </div>
 </ng-container>
+
 
 <ng-container *ngIf="theme === ''">
   Olá, insira seu novo tema aqui.
