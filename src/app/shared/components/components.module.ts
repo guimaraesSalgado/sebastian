@@ -11,7 +11,7 @@ import { CustomErrorModule } from './custom-error/custom-error.module';
 import { CardModule } from './cards/card.module';
 import { BagdeModule } from './bagde/bagde.module';
 import { CollapseModule } from './collapse/collapse.module';
-import { StepModule } from './step/step.module';
+import { StepperModule } from './stepper/stepper.module';
 
 const COMPONENTS_MODULES = [
   BagdeModule,
@@ -26,7 +26,7 @@ const COMPONENTS_MODULES = [
   LoadingModule,
   ProfilePhotoModule,
   SidebarModule,
-  StepModule,
+  StepperModule
 ];
 
 @NgModule({

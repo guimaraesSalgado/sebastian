@@ -7,19 +7,29 @@
   </div>
 
   <app-s-collapse #collapseContent [collapsed]="isCollapsed" textButton="Criar lista">
-    <app-s-step
-      theme="create-list"
-      [steps]="['Criação de Lista', 'Criação de item']"
-      [textButtons]="['Salvar', 'Adicionar outro']"
-      (onCancel)="closedCollapse()">
 
-      <div step="0">
+    <app-s-stepper #stepper [namesSteps]="['Criação de Lista', 'Criação de item']">
+      <app-s-step [expanded]="stepper.currentStep === 0">
         <app-form-list></app-form-list>
-      </div>
-      <div step="1">
-        <app-form-item></app-form-item>
-      </div>
+        <div class="action mt-8">
+          <div class="mb-4">
+            <app-s-button class="mb-4" type="dark" size="full" (click)="stepper.nextStep()">Salvar</app-s-button>
+          </div>
+          <app-s-button type="light" size="full" (click)="closedCollapse()">Cancelar</app-s-button>
+        </div>
+      </app-s-step>
 
-    </app-s-step>
+      <app-s-step [expanded]="stepper.currentStep === 1">
+        <app-form-item></app-form-item>
+
+        <div class="action mt-8">
+          <div class="mb-4">
+            <app-s-button class="mb-4" type="dark" size="full" (click)="stepper.restart()">Adicionar outro</app-s-button>
+          </div>
+          <app-s-button type="light" size="full" (click)="closedCollapse(stepper)">Finalizar</app-s-button>
+        </div>
+      </app-s-step>
+    </app-s-stepper>
+
   </app-s-collapse>
 </div>

@@ -18,6 +18,10 @@ export class FormListComponent {
     return this.form.valid
   }
 
+  clearForm(): void {
+    this.form.reset();
+  }
+
   private buildForm(): FormGroup {
     return this.formBuilder.group({
       name: [null, [Validators.required]],

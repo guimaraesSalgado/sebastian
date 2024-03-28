@@ -14,6 +14,10 @@
   margin-right: 10px;
   scroll-snap-align: start;
 
+  &:last-child {
+    margin-right: 0;
+  }
+
   img {
     max-width: 100%;
     height: auto;

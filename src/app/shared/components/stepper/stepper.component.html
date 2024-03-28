@@ -1,0 +1,16 @@
+
+<div class="step mt-4" *ngIf="showCounter">
+  <ng-container *ngFor="let step of namesSteps; let i = index;">
+    <div class="step-item">
+      <div class="step-number"
+           [class.active]="i === currentStep"
+           [class.inactive]="i < currentStep"
+           [class.completed]="i < currentStep">{{ i + 1 }}</div>
+    </div>
+    <hr class="step-separator" *ngIf="i !== namesSteps.length - 1">
+  </ng-container>
+</div>
+
+<div class="items" [style.transform]="transformStyle" [style.width.%]="stepCount*100">
+  <ng-content></ng-content>
+</div>

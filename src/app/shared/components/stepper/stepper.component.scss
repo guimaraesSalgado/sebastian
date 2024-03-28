@@ -1,5 +1,10 @@
 @import 'src/assets/styles/colors.scss';
 
+:host {
+  display: block;
+  overflow: hidden;
+}
+
 .step {
   display: flex;
   flex-direction: row;
@@ -43,28 +48,12 @@
   }
 }
 
-.slide-in-reverse {
-  animation: slideInReverse 0.3s ease-in-out forwards;
-}
+.items {
+  height: 100%;
+  display: flex;
+  transition: 1s ease-in-out;
 
-.slide-out-reverse {
-  animation: slideOutReverse 0.3s ease-in-out forwards;
-}
-
-@keyframes slideInReverse {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOutReverse {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
+  & div {
+    flex: 1;
   }
 }

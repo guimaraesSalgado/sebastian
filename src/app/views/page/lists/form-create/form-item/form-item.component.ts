@@ -18,6 +18,11 @@ export class FormItemComponent {
     return this.form.valid
   }
 
+  clearForm(): void {
+    console.log('entrou')
+    this.form.reset();
+  }
+
   private buildForm(): FormGroup {
     return this.formBuilder.group({
       name: [null, [Validators.required]],
@@ -26,4 +31,5 @@ export class FormItemComponent {
       category: [null, [Validators.required]],
     });
   }
+
 }
