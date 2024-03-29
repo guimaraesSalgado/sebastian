@@ -26,6 +26,7 @@ export class FormListComponent {
     return this.formBuilder.group({
       name: [null, [Validators.required]],
       description: [null, [Validators.required]],
+      toggleControl: [null, [Validators.required]],
     });
   }
 }

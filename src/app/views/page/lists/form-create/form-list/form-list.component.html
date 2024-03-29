@@ -4,6 +4,7 @@
 </div>
 
 <form [formGroup]="form" autocomplete="off">
+
   <div class="relative mb-3">
     <app-s-input-text id="name" label="Nome da lista" placeholder="Dê um nome para sua lista." [maxlength]="20"
       [disableMessageError]="true"></app-s-input-text>
@@ -13,4 +14,9 @@
     <app-s-input-text id="description" label="Descrição" placeholder="Adicione uma breve descrição para sua lista."
       [maxlength]="100" [disableMessageError]="true"></app-s-input-text>
   </div>
+
+  <div class="relative mt-8">
+    <app-s-toggle id="marketplace" label="Deseja consultar mercados?" formControlName="toggleControl"></app-s-toggle>
+  </div>
+
 </form>

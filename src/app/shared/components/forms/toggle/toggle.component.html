@@ -1,0 +1,11 @@
+<div class="toggle">
+  <app-s-label *ngIf="label" [id]="id + '--label'" [value]="label" [required]="messageError"></app-s-label>
+
+  <div [id]="id" class="toggle-switch" [class.checked]="isChecked" (click)="toggle()">
+    <div class="toggle-slider"></div>
+  </div>
+</div>
+
+<div *ngIf="messageError">
+  <app-s-error [id]="id + '--error'"></app-s-error>
+</div>
