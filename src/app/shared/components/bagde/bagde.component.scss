@@ -1,3 +1,5 @@
+@import '/src/assets/styles/colors.scss';
+
 .badge {
   display: flex;
   align-items: center;
@@ -19,4 +21,17 @@
     font-size: 18px;
   }
 
+  .primary {
+    background-color: $color-badge-purple;
+  }
+
+  .secondary {
+    background-color: $color-badge-red;
+  }
+
+  .tertiary {
+    background-color: $color-badge-yellow;
+  }
 }
+
+

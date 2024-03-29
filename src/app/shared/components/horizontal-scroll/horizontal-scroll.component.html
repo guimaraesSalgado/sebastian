@@ -1,23 +1,24 @@
 <div class="horizontal-scroll-container">
-  <div class="item" [style.width]="getItemWidth()" *ngFor="let item of items">
+  <div class="item" [style.width]="getItemWidth()" *ngFor="let item of scrollItems">
 
     <ng-container *ngIf="theme === 'card'">
       <div class="card">
         <div class="card-bagde" *ngIf="hasBadge">
-          <app-s-bagde theme="default" ></app-s-bagde>
+          <app-s-bagde [color]="item.themeBadge" theme="default" [text]="item.theme"></app-s-bagde>
+
         </div>
         <div class="image-container-card">
           <img [src]="item?.image" [alt]="item.title">
         </div>
       </div>
-      <h1><b>{{ item.title }}</b></h1>
+      <h1 class="mt-4"><b>{{ item.title }}</b></h1>
       <span class="card-description">{{ item.description }}</span>
     </ng-container>
 
     <ng-container *ngIf="theme === 'list'">
       <div class="card">
         <div class="card-bagde" *ngIf="hasBadge">
-          <app-s-bagde theme="default" ></app-s-bagde>
+          <app-s-bagde [color]="item.themeBadge"></app-s-bagde>
         </div>
         <img [src]="item?.image" [alt]="item.title">
       </div>
@@ -27,7 +28,7 @@
     <ng-container *ngIf="theme === 'revenue'">
       <div class="card">
         <div class="card-bagde" *ngIf="hasBadge">
-          <app-s-bagde theme="default" ></app-s-bagde>
+          <app-s-bagde [color]="item.themeBadge"></app-s-bagde>
         </div>
         <div class="image-container-revenue">
           <img [src]="item?.image" [alt]="item.title">
@@ -40,7 +41,7 @@
   </div>
 </div>
 
-<div class="no-content" *ngIf="!items || items.length === 0">
+<div class="no-content" *ngIf="!scrollItems || scrollItems.length === 0">
   <h1 class="mb-2"><b>Você ainda não criou suas listas</b></h1>
   <span>{{help}}</span>
 

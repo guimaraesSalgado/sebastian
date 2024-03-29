@@ -6,7 +6,21 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./bagde.component.scss']
 })
 export class BadgeComponent {
+  @Input() set color(name: string | undefined) {
+    if(name){
+      this.background = name
+      console.log(this.background)
+    }
+  };
+
+  @Input() set text(content: string | undefined){
+    if(content){
+      this.textBadge = content;
+    }
+  }
+
   @Input() theme: 'default' | 'topic' | 'icon'  = 'topic';
-  @Input() text: string = 'S bagde';
-  @Input() color: string = '#007bff';
+
+  background: string = ''
+  textBadge: string = ''
 }

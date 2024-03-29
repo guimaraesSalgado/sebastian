@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./greeting-text.component.scss']
 })
 export class GreetingTextComponent {
-  @Input() nameUser: string = 'Nome do usuário'
+  @Input() nameUser: string = 'Sophia'
+  @Input() description: string = 'Não esqueça de conferir seus itens em estoque.'
   greeting: string = 'Bom dia';
 
   ngOnInit(): void {
@@ -16,11 +17,11 @@ export class GreetingTextComponent {
   private setGreeting(): void {
     const currentHour = new Date().getHours();
     if (currentHour >= 0 && currentHour < 12) {
-      this.greeting = 'Bom dia ☀️';
+      this.greeting = 'Bom dia';
     } else if (currentHour >= 12 && currentHour < 18) {
-      this.greeting = 'Boa tarde ⛅';
+      this.greeting = 'Boa tarde';
     } else {
-      this.greeting = 'Boa noite 🌙';
+      this.greeting = 'Boa noite';
     }
   }
 }

@@ -1,24 +1,24 @@
 <ng-container *ngIf="theme === 'default'">
   <div class="badge">
-    <span class="badge" [style.backgroundColor]="color">
-      {{ text }}
+    <span class="badge" [class]="background">
+      {{  textBadge | titlecase  }}
     </span>
   </div>
 </ng-container>
 
 <ng-container *ngIf="theme === 'topic'">
   <div class="badge">
-    <span class="badge" [style.backgroundColor]="color">
+    <span class="badge" [class]="background">
       <div class="badge-topic-highlighter"></div>
-      {{ text }}
+      {{  textBadge | titlecase  }}
     </span>
   </div>
 </ng-container>
 
 <ng-container *ngIf="theme === 'icon'">
   <div class="badge">
-    <span class="badge" [style.backgroundColor]="color">
-      {{ text }}
+    <span class="badge" [class]="background">
+      {{  textBadge | titlecase  }}
       <ng-icon class="badge-icon-highlighter" name="heroHeart"></ng-icon>
     </span>
   </div>
