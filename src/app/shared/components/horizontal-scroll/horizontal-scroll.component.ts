@@ -17,8 +17,19 @@ export class HorizontalScrollComponent {
   @Input() theme: 'card' | 'list' | 'revenue' = 'card';
   @Input() hasBadge: boolean = true;
   @Input() totalColumns: number = 2;
+  private _themeColorMappings: { [key: string]: string } = {};
+  @Input() set themeColorMappings(value: { [key: string]: string }) {
+    if (value) {
+      this._themeColorMappings = value;
+      this.updateScrollItems();
+    }
+  }
+  get themeColorMappings(): { [key: string]: string } {
+    return this._themeColorMappings;
+  }
+
   @Input() set items(carouselItems: CarouselItem[]) {
-    this.scrollItems = this.validateBadge(carouselItems);
+    this.scrollItems = carouselItems ? this.validateBadge(carouselItems) : [];
   }
 
   // Config botao
@@ -30,17 +41,13 @@ export class HorizontalScrollComponent {
 
   private validateBadge(items: CarouselItem[]): CarouselItem[] {
     return items.map(item => {
-      switch (item.theme) {
-        case 'sobremesa':
-          return { ...item, themeBadge: 'primary' };
-        case 'janta':
-          return { ...item, themeBadge: 'secondary' };
-        case 'almoço':
-          return { ...item, themeBadge: 'tertiary' };
-        default:
-          return item;
-      }
+      const themeBadge = this.themeColorMappings[item.theme!];
+      return { ...item, themeBadge };
     });
+  }
+
+  private updateScrollItems(): void {
+    this.scrollItems = this.validateBadge(this.scrollItems);
   }
 
   getItemWidth(): string {

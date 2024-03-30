@@ -39,7 +39,7 @@
           <h1>Receitas recentes:</h1>
           <app-s-button type="link" size="normal" icon="heroArrowRight">Ver todas</app-s-button>
         </div>
-        <app-s-horizontal-scroll [items]="scrollItens" theme="card" [totalColumns]="2"></app-s-horizontal-scroll>
+        <app-s-horizontal-scroll [items]="scrollItens" theme="card" [totalColumns]="2"  [themeColorMappings]="{ 'sobremesa': 'primary', 'janta': 'secondary', 'almoço': 'tertiary',  'café da manha': 'quartenary'}"></app-s-horizontal-scroll>
 
       </div>
     </div>
