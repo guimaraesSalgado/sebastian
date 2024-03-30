@@ -1,3 +1,7 @@
+button {
+  outline: none;
+}
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
@@ -11,6 +15,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  & span {
+    padding-left: 12px;
+  }
 }
 
 .active {
