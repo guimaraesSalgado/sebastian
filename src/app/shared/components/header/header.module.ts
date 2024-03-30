@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
-import { GreetingTextModule } from '../greeting-text/greeting-text.module';
 import { SidebarModule } from '../sidebar/sidebar.module';
+import { ButtonModule } from '../button/button.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    GreetingTextModule,
+    ButtonModule,
     SidebarModule
   ],
   declarations: [HeaderComponent],

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711757425182,
+  "timestamp": 1711823652437,
   "index": "/sebastian/index.html",
   "assetGroups": [
     {
@@ -11,11 +11,11 @@
         "ignoreVary": true
       },
       "urls": [
-        "/sebastian/442.1429ab1f2bbec62f.js",
+        "/sebastian/442.ef8219c567ed7709.js",
         "/sebastian/index.html",
-        "/sebastian/main.2f1330647d5d6530.js",
+        "/sebastian/main.66d5db6688e07488.js",
         "/sebastian/polyfills.3063306be1784679.js",
-        "/sebastian/runtime.3de176a7e88bfde6.js",
+        "/sebastian/runtime.96dfe09e8181b44e.js",
         "/sebastian/styles.ae187faa22e99850.css"
       ],
       "patterns": []
@@ -45,6 +45,7 @@
         "/sebastian/assets/img/ilustracoes/welcome/culinary-inspiration.svg",
         "/sebastian/assets/img/ilustracoes/welcome/organize-purchases.svg",
         "/sebastian/assets/img/logo/logo-center.svg",
+        "/sebastian/assets/img/logo/logo-extensive.svg",
         "/sebastian/assets/img/logo/logo.png",
         "/sebastian/assets/img/logo/logo.svg",
         "/sebastian/assets/img/logo/m-logo.svg",
@@ -69,7 +70,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/sebastian/442.1429ab1f2bbec62f.js": "3fc3acae87f53dd79bce4f9014fd51289bdf5fc4",
+    "/sebastian/442.ef8219c567ed7709.js": "214a8982d11ea71cd16849e29571e445c86310e6",
     "/sebastian/assets/img/bg/auth.png": "623b47288169a898aa68603ee9fe7305ad70be10",
     "/sebastian/assets/img/bg/index.png": "1804e61ecaf920ae95cc4231599b3baa49fa459f",
     "/sebastian/assets/img/bg/welcome-1.png": "24e3fe2ec5368b67e8e9cc9b8c9b0425a20634ab",
@@ -87,6 +88,7 @@
     "/sebastian/assets/img/ilustracoes/welcome/culinary-inspiration.svg": "e47258734b583271c668e06f968cd7ec63310f6b",
     "/sebastian/assets/img/ilustracoes/welcome/organize-purchases.svg": "390a27ebe41c42ef6595fdeb8cd81565b98b1540",
     "/sebastian/assets/img/logo/logo-center.svg": "7ab32bd66651b0df107d213d8593d4bfd0650ffc",
+    "/sebastian/assets/img/logo/logo-extensive.svg": "7ab32bd66651b0df107d213d8593d4bfd0650ffc",
     "/sebastian/assets/img/logo/logo.png": "4a300ec71883bd9c5c85948037db828c24f45cd1",
     "/sebastian/assets/img/logo/logo.svg": "c61306078cef241c92c7db941a49ed6fb04fbd88",
     "/sebastian/assets/img/logo/m-logo.svg": "e7feb485343476d3b791fdf9101ce81e2f6df601",
@@ -104,10 +106,10 @@
     "/sebastian/assets/styles/tailwind.css": "2e0de5c4114b286596097f1aad0987327d49df9c",
     "/sebastian/auth.89a3f9c4c8efa05c.png": "623b47288169a898aa68603ee9fe7305ad70be10",
     "/sebastian/index.27678c3c3055d339.png": "1804e61ecaf920ae95cc4231599b3baa49fa459f",
-    "/sebastian/index.html": "871e210bb0bbe5e3bfbd8ff233844a664b0c1fa4",
-    "/sebastian/main.2f1330647d5d6530.js": "b9faca9a3de8eb7d3d66f8302cfb81f14f1f9b86",
+    "/sebastian/index.html": "4309b944526a0261049119deebf08f5456bef0cd",
+    "/sebastian/main.66d5db6688e07488.js": "fecea05611b0dac739f8a87d7d9dd9e499bdb367",
     "/sebastian/polyfills.3063306be1784679.js": "a7a35cebe550496ac2cd97b93632ff622558b454",
-    "/sebastian/runtime.3de176a7e88bfde6.js": "4a96a8bc6486dd18177fdbd9b6c6193c35b9b09d",
+    "/sebastian/runtime.96dfe09e8181b44e.js": "4aa937034c0e064958467a3c1985baa2d542054b",
     "/sebastian/s-logo-n.e8217519649a9295.svg": "c7c928c7784bf3557aae4f3f283f37b7dd60859a",
     "/sebastian/styles.ae187faa22e99850.css": "b691b3a2e66a1e0c8eb15bdbbab7c248df009f62"
   },
