@@ -3,7 +3,7 @@ import { NgIconsModule } from '@ng-icons/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { HeroClipboardList, HeroHome } from '@ng-icons/heroicons/outline';
+import { HeroUser, HeroHome, HeroPencilAlt, HeroTicket } from '@ng-icons/heroicons/outline';
 
 import { SidebarComponent } from './sidebar.component';
 import { ProfilePhotoModule } from '../profile-photo/profile-photo.module';
@@ -20,7 +20,7 @@ import { environment } from 'src/environments/environment';
     ProfilePhotoModule,
 
     NgIconsModule,
-    NgIconsModule.withIcons({ HeroHome, HeroClipboardList }),
+    NgIconsModule.withIcons({ HeroHome, HeroUser, HeroPencilAlt, HeroTicket }),
   ],
   declarations: [SidebarComponent],
   exports: [SidebarComponent],

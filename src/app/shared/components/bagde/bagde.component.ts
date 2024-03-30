@@ -9,7 +9,6 @@ export class BadgeComponent {
   @Input() set color(name: string | undefined) {
     if(name){
       this.background = name
-      console.log(this.background)
     }
   };
 

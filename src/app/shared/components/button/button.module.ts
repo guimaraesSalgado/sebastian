@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgIconsModule } from '@ng-icons/core';
-import { HeroArrowRight, HeroPlus, HeroRefresh, HeroMinus, HeroBell } from '@ng-icons/heroicons/outline';
+import { HeroArrowRight, HeroPlus, HeroRefresh, HeroMinus, HeroBell, HeroEye } from '@ng-icons/heroicons/outline';
 
 import { ButtonComponent } from './button.component';
 
@@ -10,7 +10,7 @@ import { ButtonComponent } from './button.component';
     CommonModule,
 
     NgIconsModule,
-    NgIconsModule.withIcons({ HeroPlus, HeroRefresh, HeroArrowRight, HeroMinus, HeroBell }),
+    NgIconsModule.withIcons({ HeroPlus, HeroRefresh, HeroArrowRight, HeroMinus, HeroBell, HeroEye }),
   ],
   declarations: [ButtonComponent],
   exports: [ButtonComponent],

@@ -19,7 +19,6 @@ export class FormItemComponent {
   }
 
   clearForm(): void {
-    console.log('entrou')
     this.form.reset();
   }
 

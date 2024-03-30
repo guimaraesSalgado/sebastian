@@ -13,8 +13,8 @@
 <div class="card-list__no-content" *ngIf="!items || items.length === 0">
   <h1 class="mb-2"><b>Você ainda não criou suas listas</b></h1>
   <span>{{help}}</span>
+</div>
 
-  <div class="card-list__no-content-button mt-8">
-    <app-s-button type="light" size="normal" (click)="onClick()">{{textButton}}</app-s-button>
-  </div>
+<div class="card-list__no-content-button mt-8">
+  <app-s-button type="light" size="full" (click)="onClick()">{{textButton}}</app-s-button>
 </div>
