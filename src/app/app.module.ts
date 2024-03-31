@@ -20,7 +20,6 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HammerModule,
-    SwipeAngularListModule,
 
     AuthModule,
     SharedModule

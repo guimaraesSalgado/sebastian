@@ -13,6 +13,7 @@ import { BagdeModule } from './bagde/bagde.module';
 import { CollapseModule } from './collapse/collapse.module';
 import { StepperModule } from './stepper/stepper.module';
 import { MenuModule } from './menu/menu.module';
+import { SWItemModule } from './sw-item/sw-item.module';
 
 const COMPONENTS_MODULES = [
   BagdeModule,
@@ -28,7 +29,8 @@ const COMPONENTS_MODULES = [
   MenuModule,
   ProfilePhotoModule,
   SidebarModule,
-  StepperModule
+  StepperModule,
+  SWItemModule
 ];
 
 @NgModule({
