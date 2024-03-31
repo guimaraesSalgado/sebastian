@@ -44,8 +44,8 @@
     padding: 20px 20px;
     font-weight: 700;
 
-    & :last-child {
-     border: none;
+    &:last-child {
+      border-bottom: none; // Remova a borda inferior do último li
     }
   }
 
