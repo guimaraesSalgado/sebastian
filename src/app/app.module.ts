@@ -1,6 +1,8 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
 import { BrowserModule, HammerModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { SwipeAngularListModule } from "swipe-angular-list";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HammerModule,
+    SwipeAngularListModule,
+
     AuthModule,
     SharedModule
   ],

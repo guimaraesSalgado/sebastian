@@ -1,40 +1,44 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import * as Hammer from 'hammerjs';
-
+import { Component } from '@angular/core';
 @Component({
   selector: 'app-my',
   templateUrl: './my.component.html',
   styleUrls: ['./my.component.scss']
 })
-export class MyComponent implements AfterViewInit {
-  @ViewChild('container') containerRef!: ElementRef | undefined;
-  items: any[] = [
-    { text: 'Item 1', showMenu: false },
-    { text: 'Item 2', showMenu: false },
-    { text: 'Item 3', showMenu: false }
+export class MyComponent  {
+  title = "for-test";
+
+  list = [
+    {
+      id: 1,
+      title: "Realizar la tarea asignada!",
+      subTitle: "9:00pm",
+      mark: false,
+    },
+    {
+      id: 2,
+      title: "Visitar al perro en casa de tu amiga",
+      subTitle: "9:00pm",
+      mark: false,
+    },
+    {
+      id: 3,
+      title: "Llamar al doctor",
+      subTitle: "9:00pm",
+      mark: false,
+    },
+    {
+      id: 4,
+      title: "Buscar el auto en el taller",
+      subTitle: "9:00pm",
+      mark: false,
+    }
   ];
 
-  constructor() { }
+  action = (a: any) => {
+    console.log(a);
+  };
 
-  ngAfterViewInit(): void {
-    if (!this.containerRef) {
-      console.error('Elemento não encontrado.');
-      return;
-    }
-
-    const mc = new Hammer.Manager(this.containerRef.nativeElement);
-    const swipe = new Hammer.Swipe({ direction: Hammer.DIRECTION_LEFT });
-    mc.add(swipe);
-
-    mc.on('swipe', (event) => {
-      this.items.forEach(item => item.showMenu = false);
-      const target = event.target as HTMLElement;
-      const index = parseInt(target.getAttribute('data-index') || '0', 10);
-      this.items[index].showMenu = true;
-    });
-  }
-
-  closeMenu(item: any) {
-    item.showMenu = false;
+  swipeCallback = (a: any) => {
+    console.log('Callback Swipe', a);
   }
 }

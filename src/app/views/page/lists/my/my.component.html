@@ -5,15 +5,23 @@
     <h1>Minhas listas:</h1>
   </div>
 
-  <div class="container" #container>
-    <div class="item" *ngFor="let item of items; let i = index" [attr.data-index]="i">
-      <div class="item-content" [class.show-menu]="item.showMenu">
-        {{ item.text }}
-      </div>
-      <div class="menu" *ngIf="item.showMenu" (click)="closeMenu(item)">
-        <button class="option">Opção 1</button>
-        <button class="option">Opção 2</button>
-      </div>
-    </div>
+  <div class="container">
+    <sw-item-list
+    *ngFor="let item of list"
+    [inside]="item"
+    [item-class]="'list-custom'"
+    [editTemplate]="editTemplate"
+    [trashTemplate]="trashTemplate"
+    (callback)="action($event)"
+    (swipeCb)="swipeCallback($event)">
+  </sw-item-list>
   </div>
+
+  <ng-template #editTemplate>
+    <i class="fas fa-edit"></i>
+  </ng-template>
+
+  <ng-template #trashTemplate>
+    <i class="fas fa-trash"></i>
+  </ng-template>
 </div>

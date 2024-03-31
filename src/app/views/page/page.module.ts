@@ -17,6 +17,7 @@ import { FormItemComponent } from './lists/new/form-create/form-item/form-item.c
 
 import { MyComponent } from './lists/my/my.component';
 import { FilterComponent } from './lists/my/shared/filter/filter.component';
+import { SwipeAngularListModule } from 'swipe-angular-list';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { FilterComponent } from './lists/my/shared/filter/filter.component';
   imports: [
     CommonModule,
     HttpClientModule,
+    SwipeAngularListModule,
     RouterModule,
     ReactiveFormsModule,
     PageRoutingModule,
