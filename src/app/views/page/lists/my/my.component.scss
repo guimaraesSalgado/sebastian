@@ -1,2 +1,15 @@
 @import 'src/assets/styles/colors.scss';
 
+.my {
+
+  &-list {
+    padding: 0 16px;
+  }
+
+  h1 {
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-subdued;
+  }
+}

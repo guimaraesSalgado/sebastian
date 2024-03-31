@@ -40,9 +40,13 @@
   }
 
   & li {
-    padding: 8px 16px;
+    border-bottom: 1px solid rgb(209 213 219);
+    padding: 20px 20px;
     font-weight: 700;
-    cursor: pointer;
+
+    & :last-child {
+     border: none;
+    }
   }
 
   & li.clickable {
