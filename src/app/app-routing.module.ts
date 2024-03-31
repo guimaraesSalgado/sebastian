@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ErrorComponent } from './layouts/error/error.component';
-import { PageComponent } from './layouts/page/page.component';
 
 const routes: Routes = [
   {
@@ -12,7 +11,6 @@ const routes: Routes = [
   },
   {
     path: 'page',
-    component: PageComponent,
     loadChildren: () => import('./views/page/page.module').then(m => m.PageModule),
     canActivate: [],
   },

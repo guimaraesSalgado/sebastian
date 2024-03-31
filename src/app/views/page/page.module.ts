@@ -6,22 +6,28 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home/home.component';
 import { PageRoutingModule } from './page-routing.module';
-import { ListComponent } from './lists/list/list.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PageComponent } from 'src/app/layouts/page/page.component';
+import { InternalPageComponent } from 'src/app/layouts/internal-page/internal-page.component';
 import { LoadingModule } from 'src/app/shared/components/loading/loading.module';
-import { ButtonCreateListComponent } from './components/button-create-list/button-create-list.component';
-import { ButtonCreateRevenueComponent } from './components/button-create-revenue/button-create-revenue.component';
-import { FormListComponent } from './lists/form-create/form-list/form-list.component';
-import { FormItemComponent } from './lists/form-create/form-item/form-item.component';
+
+import { NewComponent } from './lists/new/new/new.component';
+import { FormListComponent } from './lists/new/form-create/form-list/form-list.component';
+import { FormItemComponent } from './lists/new/form-create/form-item/form-item.component';
+
+import { MyComponent } from './lists/my/my.component';
+import { FilterComponent } from './lists/my/shared/filter/filter.component';
+
 
 @NgModule({
   declarations: [
     PageComponent,
+    InternalPageComponent,
     HomeComponent,
-    ListComponent,
-    ButtonCreateListComponent,
-    ButtonCreateRevenueComponent,
+    NewComponent,
+
+    MyComponent,
+    FilterComponent,
 
     FormListComponent,
     FormItemComponent

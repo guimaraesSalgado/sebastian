@@ -68,6 +68,10 @@ button:focus {
     opacity: 0.7;
   }
 
+  &__text {
+    padding-left: 10px;
+  }
+
   &__refresh {
     animation: rotate 1s linear infinite;
   }

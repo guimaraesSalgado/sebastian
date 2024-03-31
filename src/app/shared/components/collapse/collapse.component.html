@@ -1,5 +1,5 @@
 <div class="justify-center">
-  <app-s-button type="dark" size="full" (click)="expand()">{{textButton}}</app-s-button>
+  <app-s-button type="dark" size="full" (click)="expand()" [name]="textButton"></app-s-button>
 </div>
 
 <div class="overlay" [@overlay]="collapsed" *ngIf="!collapsed"></div>

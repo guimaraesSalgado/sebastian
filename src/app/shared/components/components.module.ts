@@ -12,6 +12,7 @@ import { CardModule } from './cards/card.module';
 import { BagdeModule } from './bagde/bagde.module';
 import { CollapseModule } from './collapse/collapse.module';
 import { StepperModule } from './stepper/stepper.module';
+import { MenuModule } from './menu/menu.module';
 
 const COMPONENTS_MODULES = [
   BagdeModule,
@@ -24,6 +25,7 @@ const COMPONENTS_MODULES = [
   GreetingTextModule,
   HeaderModule,
   LoadingModule,
+  MenuModule,
   ProfilePhotoModule,
   SidebarModule,
   StepperModule

@@ -6,9 +6,9 @@
         <span class="text" *ngIf="isActive('/page/home')">Home</span>
       </button>
 
-      <button routerLink="/page/list" routerLinkActive="active" [ngClass]="{ 'active': isActive('/page/list'), 'left': direction === 'left', 'right': direction === 'right' }">
+      <button routerLink="/page/new" routerLinkActive="active" [ngClass]="{ 'active': isActive('/page/new'), 'left': direction === 'left', 'right': direction === 'right' }">
         <ng-icon class="nav-container__icon" name="heroPencilAlt"></ng-icon>
-        <span class="text" *ngIf="isActive('/page/list')">Listas</span>
+        <span class="text" *ngIf="isActive('/page/new')">Listas</span>
       </button>
 
       <button [ngClass]="{ 'active': isActive('/pagina3'), 'left': direction === 'left', 'right': direction === 'right' }">

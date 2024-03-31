@@ -46,8 +46,8 @@ export class HomeComponent {
     this.showList = this.validateArrayLength(this.scrollItens, this.cards);
   }
 
-  navigateToList(): void {
-    this.router.navigate(['/page/list'])
+  navigateToNew(): void {
+    this.router.navigate(['/page/new'])
   }
 
   validateArrayLength(...arrays: any[][]): boolean {

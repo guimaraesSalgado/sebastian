@@ -10,6 +10,7 @@ import { ButtonThemeService } from './button-theme.service';
 })
 export class ButtonComponent {
   @Input() theme: string = '';
+  @Input() name: string | null = null;
   @Input() type: 'dark' | 'light' | 'inline' | 'link' = 'dark';
   @Input() disabled: boolean = false;
   @Input() icon: string = '';

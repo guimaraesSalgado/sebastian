@@ -1,0 +1,14 @@
+<div class="menu-container">
+  <app-s-button type="light" size="square" icon="heroDotsVertical" (click)="toggleMenu()"></app-s-button>
+  <ul #menuList class="menu-list" [ngClass]="{ 'show': isMenuOpen, 'transition': isTransitioning }" [style.min-width.px]="width">
+    <ng-container *ngFor="let link of links">
+      <li *ngIf="!containsApagar(link)" (click)="hasAction(link)" [class.clickable]="link.hasClick" [ngClass]="link.theme">{{ link.name }}</li>
+    </ng-container>
+    <ng-container *ngFor="let link of links">
+      <li class="menu-list-icon" *ngIf="containsApagar(link)" (click)="hasAction(link)" [class.clickable]="link.hasClick" [ngClass]="link.theme">
+        <ng-icon name="heroTrash"></ng-icon>
+        <span class="pl-3">{{ link.name }}</span>
+      </li>
+    </ng-container>
+  </ul>
+</div>

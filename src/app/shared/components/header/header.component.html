@@ -1,11 +1,25 @@
-<div class="header">
-  <div class="header-logo">
-    <img src="assets/img/logo/logo-extensive.svg" alt="Home sebastian">
-  </div>
+<ng-container *ngIf="theme === 'home'">
+  <div class="header header-home">
+    <div class="header-logo">
+      <img src="assets/img/logo/logo-extensive.svg" alt="Home sebastian">
+    </div>
 
-  <div class="header-notification">
-    <app-s-button type="light" size="square" icon="heroBell"></app-s-button>
+    <div class="header-notification">
+      <app-s-button type="light" size="square" icon="heroBell"></app-s-button>
+    </div>
   </div>
+</ng-container>
 
-</div>
+<ng-container *ngIf="theme === 'internal'">
+  <div class="header header-internal" >
+    <div class="header-back">
+      <app-s-button type="light" size="square" icon="heroArrowLeft" (click)="goBack()" name="Voltar"></app-s-button>
+    </div>
+
+    <div class="header-notification">
+      <app-s-menu [links]="menuLinks" (onAction)="handleMenuAction($event)" [width]="150"></app-s-menu>
+    </div>
+  </div>
+</ng-container>
+
 <app-s-sidebar></app-s-sidebar>

@@ -18,10 +18,10 @@
 
     <div class="welcome-footer">
       <div class="welcome-footer__buttons">
-        <app-s-button class="mb-8" type="dark" (click)="next()" size="full">{{currentIndex === 2 ? 'Acessar' :
-          'Continuar'}}</app-s-button>
+        <app-s-button class="mb-8" type="dark" (click)="next()" size="full" name="{{currentIndex === 2 ? 'Acessar' :
+        'Continuar'}}"></app-s-button>
         <app-s-button [hidden]="currentIndex === 2 ? true : false" type="inline" (click)="toJump()"
-          size="full">Pular</app-s-button>
+          size="full" name="Pular"></app-s-button>
       </div>
     </div>
   </div>

@@ -13,9 +13,11 @@
       </div>
 
       <div class="justify-center">
-        <app-button-create-list size="full"></app-button-create-list>
+        <app-s-button type="dark"  size="full" (click)="navigateToNew()" name="Criar lista"></app-s-button>
         <div class="m-4"></div>
-        <app-button-create-revenue size="full"></app-button-create-revenue>
+        <app-s-button type="inline" size="full" name="Criar receita"></app-s-button>
+
+        <!-- <app-button-create-revenue size="full"></app-button-create-revenue> -->
       </div>
 
     </div>
@@ -31,13 +33,13 @@
 
         <div class="home__standard-content-list flex items-center	justify-between mb-8 mt-8">
           <h1>Listas recentes:</h1>
-          <app-s-button type="link" size="normal" (click)="navigateToList()" icon="heroEye">Ver todas</app-s-button>
+          <app-s-button type="link" size="normal" (click)="navigateToNew()" icon="heroEye" name="Ver todas"></app-s-button>
         </div>
-        <app-s-card-list [items]="cards" type="dark" [totalCardDisplay]="3" (actionButton)="navigateToList()"></app-s-card-list>
+        <app-s-card-list [items]="cards" type="dark" [totalCardDisplay]="3" (actionButton)="navigateToNew()"></app-s-card-list>
 
         <div class="home__standard-content-list flex items-center	justify-between mt-8 mb-8 mt-8">
           <h1>Receitas recentes:</h1>
-          <app-s-button type="link" size="normal" icon="heroEye">Ver todas</app-s-button>
+          <app-s-button type="link" size="normal" icon="heroEye" name="Ver todas"></app-s-button>
         </div>
 
         <app-s-horizontal-scroll [items]="scrollItens" theme="card" [totalColumns]="2"  [themeColorMappings]="{ 'sobremesa': 'primary', 'janta': 'secondary', 'almoço': 'tertiary',  'café da manha': 'quartenary'}"></app-s-horizontal-scroll>

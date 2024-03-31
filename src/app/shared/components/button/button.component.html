@@ -1,8 +1,4 @@
-<button
-  class="button"
-  [class.loading]="loading"
-  [ngClass]="getTypeClass()"
-  [disabled]="disabled">
+<button class="button" [class.loading]="loading" [ngClass]="getTypeClass()" [disabled]="disabled">
   <span *ngIf="loading" class="loading-spinner button__icon">
     <ng-icon class="button__refresh" name="heroRefresh"></ng-icon>
   </span>
@@ -11,7 +7,7 @@
     <ng-icon [name]="themeInfo.icon"></ng-icon>
   </span>
 
+  <span *ngIf="name" class="pl-3">{{name}}</span>
+
   <ng-content></ng-content>
 </button>
-
-
