@@ -4,6 +4,16 @@
   <div class="my-list flex items-center	justify-between mb-8 mt-8">
     <h1>Minhas listas:</h1>
   </div>
+
+  <div class="container" #container>
+    <div class="item" *ngFor="let item of items; let i = index" [attr.data-index]="i">
+      <div class="item-content" [class.show-menu]="item.showMenu">
+        {{ item.text }}
+      </div>
+      <div class="menu" *ngIf="item.showMenu" (click)="closeMenu(item)">
+        <button class="option">Opção 1</button>
+        <button class="option">Opção 2</button>
+      </div>
+    </div>
+  </div>
 </div>
-
-
