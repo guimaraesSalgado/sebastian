@@ -8,14 +8,7 @@ import { CardThemeService } from '../cards/card-list/card-theme.service';
   styleUrls: ['./sw-item.component.scss']
 })
 export class SWItemComponent {
-  items: any[] = [
-    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake', theme: 'revenue'},
-    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox', theme: 'info'},
-    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake', theme: 'revenue'},
-    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake', theme: 'shop'},
-    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox', theme: 'info'},
-    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake', theme: 'revenue'},
-  ];
+  @Input() items: any[] = [];
 
   actionButtonPosition: { [key: number]: number | null } = {};
   isActionButtonVisible: boolean = false;
