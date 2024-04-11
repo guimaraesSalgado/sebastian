@@ -1,30 +1,21 @@
-<div>
-  <div>
-    <sw-item-list
-      *ngFor="let item of list" [inside]="item" [item-class]="'list-custom'"
-      [show-mark]="false"
-      (swClick)="clickOnItem(item)"
-      (swipeCb)="swipeCallback($event)"
-      [editTemplate]="editTemplate"
-      [trashTemplate]="trashTemplate"
-      [customTemplate]="customTemplateSrc"
-      (callback)="action($event)">
-    </sw-item-list>
+<div class="list">
+  <div class="item"
+    *ngFor="let item of items"
+    (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)"
+    (touchend)="onTouchEnd($event)">
 
+    <div class="item-icon">
+      <ng-icon name="heroPencilAlt"></ng-icon>
+    </div>
+
+    <div class="item-content" (click)="onItemClick(item)">
+      <h4><b>{{ item.title }}</b></h4>
+      <span *ngIf="item.description">{{ item.description }}</span>
+    </div>
+
+    <div class="item-action" [style.right.px]="actionButtonPosition">
+      Action
+    </div>
   </div>
 </div>
-<ng-template #editTemplate>
-  <ng-icon name="heroPencilAlt"></ng-icon>
-</ng-template>
-<ng-template #trashTemplate>
-  <ng-icon name="HeroTrash"></ng-icon>
-</ng-template>
-
-
-<ng-template #customTemplateSrc let-item='item' let-id='id'>
-  <div style="display: flex;">
-      <div>
-        <h3 style="margin-top: 0;margin-bottom: 0;">Lorem, ipsum dolor.</h3>
-      </div>
-    </div>
-</ng-template>

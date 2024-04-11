@@ -1,1 +1,50 @@
 @import '/src/assets/styles/colors.scss';
+
+
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+.item-icon {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// .item-content {
+//   flex: 1;
+// }
+
+.item-action {
+  background-color: #3880ff;
+  color: white;
+  padding: 10px;
+  width: 80px;
+  text-align: center;
+  position: absolute;
+  right: -80px; /* Esconde o botão de ação */
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: right 0.3s ease;
+}
+
+.item:hover .item-action {
+  right: 0; /* Mostra o botão de ação ao passar o mouse sobre o item */
+}
+

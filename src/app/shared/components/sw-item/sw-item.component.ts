@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface ListItem {
+  id: number;
+  title: string;
+  subTitle: string;
+  mark: boolean;
+}
 
 @Component({
   selector: 'app-s-sw-item',
@@ -6,76 +13,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./sw-item.component.scss']
 })
 export class SWItemComponent {
-  list = [
-    {
-      id: 1,
-      title: 'Realizar la tarea asignada!',
-      subTitle: '9:00pm'
-    },
-    {
-      id: 2,
-      title: 'Visitar al perro en casa de tu amiga',
-      subTitle: '9:00pm'
-    },
-    {
-      id: 3,
-      title: 'Llamar al doctor',
-      subTitle: '9:00pm'
-    },
-    {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    },
-        {
-      id: 4,
-      title: 'Buscar el auto en el taller',
-      subTitle: '9:00pm'
-    }
+  items: any[] = [
+    { title: 'Item 1', description: 'nha' },
+    { title: 'Item 2', description: null },
+    { title: 'Item 3', description: 'nha' }
   ];
 
+  actionButtonPosition: number | null = null; // posição do botão de ação (-80 para escondido, 0 para mostrado)
 
-  action = (a: any) => {
-    console.log(a);
-
-  };
-
-  clickOnItem = (a: any) => {
-    console.log('Click on item');
+  onTouchStart(event: TouchEvent): void {
+    this.actionButtonPosition = null; // reinicia a posição do botão de ação ao toque inicial
   }
 
-  swipeCallback = (a: any) => {
-    console.log('Callback Swipe', a);
+  onTouchMove(event: TouchEvent): void {
+    // obtém a posição do toque
+    const touchX = event.touches[0].clientX;
+
+    // calcula a posição do botão de ação com base no movimento do toque
+    this.actionButtonPosition = Math.min(Math.max(touchX - 80, -80), 0);
+  }
+
+  onTouchEnd(event: TouchEvent): void {
+    // reseta a posição do botão de ação após o toque final
+    this.actionButtonPosition = null;
+  }
+
+  onItemClick(item: any): void {
+    console.log('Item clicked:', item);
+    // Aqui você pode adicionar a lógica para o que deseja fazer quando um item é clicado
+  }
+
+  onActionClick(item: any): void {
+    console.log('Action clicked for item:', item);
+    // Aqui você pode adicionar a lógica para o que deseja fazer quando o botão de ação é clicado
   }
 }
-
