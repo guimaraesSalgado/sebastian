@@ -1,12 +1,9 @@
-<div class="list">
-  <div class="item"
-    *ngFor="let item of items"
-    (touchstart)="onTouchStart($event)"
-    (touchmove)="onTouchMove($event)"
-    (touchend)="onTouchEnd($event)">
+<div class="list" [class.action-button-visible]="isActionButtonVisible">
+  <div class="item" *ngFor="let item of items" (touchstart)="onTouchStart($event, item.id)"
+    (touchmove)="onTouchMove($event, item.id)" (touchend)="onTouchEnd($event, item.id)">
 
     <div class="item-icon">
-      <ng-icon name="heroPencilAlt"></ng-icon>
+      <ng-icon [name]="item.icon"></ng-icon>
     </div>
 
     <div class="item-content" (click)="onItemClick(item)">
@@ -14,8 +11,8 @@
       <span *ngIf="item.description">{{ item.description }}</span>
     </div>
 
-    <div class="item-action" [style.right.px]="actionButtonPosition">
-      Action
+    <div class="item-action" [style.right.px]="actionButtonPosition[item.id]">
+      <ng-icon name="heroTrash"></ng-icon>
     </div>
   </div>
 </div>

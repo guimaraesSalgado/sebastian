@@ -1,11 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 
-interface ListItem {
-  id: number;
-  title: string;
-  subTitle: string;
-  mark: boolean;
-}
 
 @Component({
   selector: 'app-s-sw-item',
@@ -14,37 +8,45 @@ interface ListItem {
 })
 export class SWItemComponent {
   items: any[] = [
-    { title: 'Item 1', description: 'nha' },
-    { title: 'Item 2', description: null },
-    { title: 'Item 3', description: 'nha' }
+    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
+    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
+    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' },
+    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
+    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
+    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' },
+    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
+    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
+    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' }
   ];
 
-  actionButtonPosition: number | null = null; // posição do botão de ação (-80 para escondido, 0 para mostrado)
+  actionButtonPosition: { [key: number]: number | null } = {};
+  isActionButtonVisible: boolean = false;
 
-  onTouchStart(event: TouchEvent): void {
-    this.actionButtonPosition = null; // reinicia a posição do botão de ação ao toque inicial
+  onTouchStart(event: TouchEvent, itemId: number): void {
+    this.isActionButtonVisible = true;
+    this.actionButtonPosition[itemId] = null;
+    this.items.forEach(item => {
+      item.active = false;
+    });
+    this.items.find(item => item.id === itemId).active = true;
   }
 
-  onTouchMove(event: TouchEvent): void {
-    // obtém a posição do toque
+  onTouchMove(event: TouchEvent, itemId: number): void {
     const touchX = event.touches[0].clientX;
-
-    // calcula a posição do botão de ação com base no movimento do toque
-    this.actionButtonPosition = Math.min(Math.max(touchX - 80, -80), 0);
+    this.actionButtonPosition[itemId] = Math.min(Math.max(touchX - 80, -80), 0);
   }
 
-  onTouchEnd(event: TouchEvent): void {
-    // reseta a posição do botão de ação após o toque final
-    this.actionButtonPosition = null;
+  onTouchEnd(event: TouchEvent, itemId: number): void {
+    this.isActionButtonVisible = false;
+    this.items.find(item => item.id === itemId).active = false;
+    this.actionButtonPosition[itemId] = null;
   }
 
   onItemClick(item: any): void {
     console.log('Item clicked:', item);
-    // Aqui você pode adicionar a lógica para o que deseja fazer quando um item é clicado
   }
 
   onActionClick(item: any): void {
     console.log('Action clicked for item:', item);
-    // Aqui você pode adicionar a lógica para o que deseja fazer quando o botão de ação é clicado
   }
 }

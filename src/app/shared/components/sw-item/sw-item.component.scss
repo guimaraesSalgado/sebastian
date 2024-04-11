@@ -1,18 +1,24 @@
 @import '/src/assets/styles/colors.scss';
 
-
-
 .list {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   width: 100%;
+  padding: 0 14px;
+  transition: opacity 0.3s ease;
+}
+
+.list.action-button-visible {
+  opacity: 0.8;
 }
 
 .item {
   display: flex;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: $purple-background;
   padding: 10px 0;
+  border-radius: 8px;
   margin-bottom: 5px;
   position: relative;
 }
@@ -22,22 +28,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 28px;
 }
 
-// .item-content {
-//   flex: 1;
-// }
-
 .item-action {
-  background-color: #3880ff;
+  background-color: $primary-color;
   color: white;
   padding: 10px;
-  width: 80px;
+  width: 60px;
   text-align: center;
   position: absolute;
-  right: -80px; /* Esconde o botão de ação */
+  right: -100px; /* Esconde o botão de ação */
   top: 0;
   bottom: 0;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
