@@ -2,13 +2,13 @@
   <div class="item" *ngFor="let item of items" (touchstart)="onTouchStart($event, item.id)"
     (touchmove)="onTouchMove($event, item.id)" (touchend)="onTouchEnd($event, item.id)">
 
-    <div class="item-icon">
+    <div class="item-icon" [style]="getHeaderStyle(item.theme)">
       <ng-icon [name]="item.icon"></ng-icon>
     </div>
 
     <div class="item-content" (click)="onItemClick(item)">
       <h4><b>{{ item.title }}</b></h4>
-      <span *ngIf="item.description">{{ item.description }}</span>
+      <span *ngIf="item.description">{{ item.description | textLimit: 30 }}</span>
     </div>
 
     <div class="item-action" [style.right.px]="actionButtonPosition[item.id]">

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CardThemeService } from '../cards/card-list/card-theme.service';
 
 
 @Component({
@@ -8,19 +9,29 @@ import { Component } from '@angular/core';
 })
 export class SWItemComponent {
   items: any[] = [
-    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
-    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
-    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' },
-    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
-    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
-    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' },
-    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake'},
-    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox'},
-    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake' }
+    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake', theme: 'revenue'},
+    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox', theme: 'info'},
+    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake', theme: 'revenue'},
+    { id: 1, title: 'Menu de Café da Manhã', description: 'Café da manhã dessa semana.', active: false , icon: 'heroCake', theme: 'shop'},
+    { id: 2, title: 'Compras do mês', description: null, active: false , icon: 'heroInbox', theme: 'info'},
+    { id: 3, title: 'Almoço aniversário', description: 'Itens para o aniversário da Betania', active: false, icon: 'heroCake', theme: 'revenue'},
   ];
 
   actionButtonPosition: { [key: number]: number | null } = {};
   isActionButtonVisible: boolean = false;
+
+  constructor(private cardThemeService: CardThemeService) {}
+
+  getHeaderStyle(theme: string): any {
+    const themeColors = this.cardThemeService.getTheme(theme) || { backgroundColor: '', color: '' };
+      return this.getStyle(themeColors);
+  }
+
+  private getStyle(themeColors: any): any {
+    return {
+      'color': themeColors.color
+    };
+  }
 
   onTouchStart(event: TouchEvent, itemId: number): void {
     this.isActionButtonVisible = true;
