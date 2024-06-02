@@ -6,6 +6,7 @@ import { AutocompleteModule } from './autocomplete/autocomplete.module';
 import { SelectModule } from './select/select.module';
 import { InputQuantityModule } from './input-quantity/input-quantity.module';
 import { ToggleModule } from './toggle/toggle.module';
+import { MultiSelectModule } from './multi-select/multi-select.module';
 
 @NgModule({
   imports: [CommonModule],
@@ -16,6 +17,7 @@ import { ToggleModule } from './toggle/toggle.module';
     AutocompleteModule,
     InputTextModule,
     InputQuantityModule,
+    MultiSelectModule,
     SelectModule,
     ToggleModule
   ],

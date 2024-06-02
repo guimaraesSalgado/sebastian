@@ -17,9 +17,9 @@ export class AppComponent {
   }
 
   private validePlataformAndNavigate(): void {
-    if(!this.isMobile()){
-      this.router.navigate(['/error']);
-    }
+    // if(!this.isMobile()){
+    //   this.router.navigate(['/error']);
+    // }
   }
 
   isMobile(): boolean {

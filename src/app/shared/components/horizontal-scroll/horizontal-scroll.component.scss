@@ -3,9 +3,9 @@
 .horizontal-scroll-container {
   display: flex;
   overflow-x: auto;
-  overflow-y: hidden; /* Oculta a barra de rolagem vertical */
-  scroll-snap-type: x mandatory;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  white-space: nowrap; /* Impede que os itens quebrem para a próxima linha */
 }
 
 .item {
@@ -92,8 +92,4 @@
     padding: 0 12px;
     color: $color-disabled-text;
   }
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-  display: none;
 }

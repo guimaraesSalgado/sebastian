@@ -1,0 +1,15 @@
+<div class="multi-select-container">
+  <div class="multi-select-header" (click)="toggleDropdown()">
+    <span *ngIf="selectedOptions.length === 0">{{ placeholder }}</span>
+    <span *ngIf="selectedOptions.length > 0">{{ selectedLabels }}</span>
+    <span class="dropdown-icon">&#9660;</span>
+  </div>
+  <div class="multi-select-dropdown" *ngIf="isOpen">
+    <input type="text" [(ngModel)]="filterText" placeholder="Filtrar...">
+    <ul>
+      <li *ngFor="let option of filterOptions()" (click)="selectOption(option)">
+        {{ option.label }}
+      </li>
+    </ul>
+  </div>
+</div>

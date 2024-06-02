@@ -59,7 +59,7 @@ export class AutocompleteComponent extends SeInputComponent {
     {
       id: 2,
       name: 'Rayane',
-      cargo: 'Gerente de Produtos',
+      cargo: 'Analista de Produto',
       email: 'rayane@app.com',
     },
     {
@@ -74,12 +74,6 @@ export class AutocompleteComponent extends SeInputComponent {
       cargo: 'CEO',
       email: 'thiele@app.com',
     },
-    {
-      id: 3,
-      name: 'Thamires',
-      cargo: 'CEO',
-      email: 'thiele@app.com',
-    }
   ];
   filteredItems: any[] = [];
   noResultsFound: boolean = false;

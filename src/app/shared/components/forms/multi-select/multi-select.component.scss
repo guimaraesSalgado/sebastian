@@ -1,0 +1,12 @@
+/* Estilo básico das opções */
+select option {
+  background-color: #f3f4f6;
+  color: #333;
+  /* Outros estilos conforme necessário */
+}
+
+/* Estilizar opção quando estiver selecionada */
+select option:checked {
+  background-color: #4a90e2;
+  color: #fff;
+}
