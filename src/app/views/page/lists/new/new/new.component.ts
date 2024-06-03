@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { CollapseComponent } from 'src/app/shared/components/collapse/collapse.component';
 import { StepperComponent } from 'src/app/shared/components/stepper/stepper.component';
+import { LoadingService } from 'src/app/shared/components/loading/loading.service';
 import { FormListComponent } from '../form-create/form-list/form-list.component';
 
 @Component({
@@ -16,6 +17,7 @@ export class NewComponent {
 
   constructor(
     private router: Router,
+    private loadingService: LoadingService,
   ) { }
 
   isCollapsed = true;
@@ -30,7 +32,10 @@ export class NewComponent {
   }
 
   navigateToMyList(): void {
-    this.router.navigate(['/page/list/my-list'])
+      this.loadingService.show();
+      setTimeout(() => {
+        this.loadingService.hide()
+        this.router.navigate(['/page/list/my-list'])
+      }, 2000);
   }
-
 }

@@ -32,7 +32,6 @@ export class HorizontalScrollComponent {
     this.scrollItems = carouselItems ? this.validateBadge(carouselItems) : [];
   }
 
-  // Config botao
   @Input() help?: string = 'Informe como criar listas aqui.';
   @Input() textButton?: string = 'Criar lista';
   @Output() actionButton = new EventEmitter<null>();

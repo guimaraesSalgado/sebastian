@@ -1,5 +1,6 @@
-import { Component, EventEmitter, forwardRef, Input, Output, HostBinding } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, Output, HostListener, HostBinding } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { SeInputComponent } from '../input.component';
 
 @Component({
   selector: 'app-multi-select',
@@ -13,20 +14,22 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
     }
   ]
 })
-export class MultiSelectComponent implements ControlValueAccessor {
+export class MultiSelectComponent extends SeInputComponent {
 
   @HostBinding('class') classHost = 'app-multi-select';
+  @Input() set disableMessageError(disable: boolean) {
+    this.messageError = disable;
+  }
 
   @Input() options: any[] = [];
   @Input() placeholder = 'Escolha uma opção';
-  @Input() disabled = false;
 
-  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onChange = new EventEmitter<any[]>();
 
   selectedOptions: any[] = [];
   isOpen = false;
   filterText = '';
+  messageError: boolean = false;
 
   onTouched: () => void = () => {};
   onChangeFn: (value: any) => void = () => {};
@@ -42,43 +45,49 @@ export class MultiSelectComponent implements ControlValueAccessor {
   }
 
   selectOption(option: any) {
-    if (!this.selectedOptions.includes(option)) {
-      this.selectedOptions.push(option);
-      this.onChange.emit(this.selectedOptions);
-      this.onChangeFn(this.selectedOptions);
-    }
-  }
-
-  removeOption(option: any) {
-    const index = this.selectedOptions.indexOf(option);
+    const index = this.selectedOptions.findIndex(selected => selected.value === option.value);
     if (index > -1) {
-      this.selectedOptions.splice(index, 1);
-      this.onChange.emit(this.selectedOptions);
-      this.onChangeFn(this.selectedOptions);
-    }
-  }
-
-  writeValue(value: any): void {
-    if (value) {
-      this.selectedOptions = value;
+      this.selectedOptions.splice(index, 1); // Remover opção se já estiver selecionada
     } else {
-      this.selectedOptions = [];
+      this.selectedOptions.push(option); // Adicionar opção se não estiver selecionada
     }
-  }
-
-  registerOnChange(fn: any): void {
-    this.onChangeFn = fn;
-  }
-
-  registerOnTouched(fn: any): void {
-    this.onTouched = fn;
-  }
-
-  setDisabledState?(isDisabled: boolean): void {
-    this.disabled = isDisabled;
+    this.onChange.emit(this.selectedOptions);
+    this.onChangeFn(this.selectedOptions);
   }
 
   filterOptions() {
     return this.options.filter(option => option.label.toLowerCase().includes(this.filterText.toLowerCase()));
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.multi-select-container')) {
+      this.isOpen = false;
+    }
+  }
+
+  onHeaderKeydown(event: KeyboardEvent) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.toggleDropdown();
+      event.preventDefault();
+    }
+  }
+
+  onInputKeydown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.isOpen = false;
+    }
+  }
+
+  onOptionKeydown(event: KeyboardEvent, option: any) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      this.selectOption(option);
+      event.preventDefault();
+    }
+  }
+
+  getAriaLabelledBy(): string | null {
+    return this.label ? `${this.id}--label` : null;
   }
 }

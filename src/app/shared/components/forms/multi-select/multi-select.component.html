@@ -1,15 +1,22 @@
+<app-s-label *ngIf="label" [id]="id + '--label'" [target]="id + '--input'" [value]="label"
+             [required]="control?.errors?.required"></app-s-label>
+
 <div class="multi-select-container">
-  <div class="multi-select-header" (click)="toggleDropdown()">
+  <div class="multi-select-header" (click)="toggleDropdown()" tabindex="0" (keydown)="onHeaderKeydown($event)">
     <span *ngIf="selectedOptions.length === 0">{{ placeholder }}</span>
     <span *ngIf="selectedOptions.length > 0">{{ selectedLabels }}</span>
     <span class="dropdown-icon">&#9660;</span>
   </div>
   <div class="multi-select-dropdown" *ngIf="isOpen">
-    <input type="text" [(ngModel)]="filterText" placeholder="Filtrar...">
+    <input type="text" [(ngModel)]="filterText" placeholder="Filtrar..." (keydown)="onInputKeydown($event)">
     <ul>
-      <li *ngFor="let option of filterOptions()" (click)="selectOption(option)">
+      <li *ngFor="let option of filterOptions()" (click)="selectOption(option)" tabindex="0" (keydown)="onOptionKeydown($event, option)">
         {{ option.label }}
       </li>
     </ul>
   </div>
+</div>
+
+<div *ngIf="messageError">
+  <app-s-error [id]="id + '--error'" [control]="control"></app-s-error>
 </div>

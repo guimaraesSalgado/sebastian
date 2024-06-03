@@ -1,19 +1,14 @@
-import { AfterContentInit, AfterViewInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
-
+import { AfterContentInit, Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { StepComponent } from './step/step.component';
 
 @Component({
   selector: 'app-s-stepper',
   templateUrl: './stepper.component.html',
-  styleUrls: ['./stepper.component.scss'],
-  host: {
-    '[style.left]': '-50*step'
-  }
+  styleUrls: ['./stepper.component.scss']
 })
 export class StepperComponent implements AfterContentInit {
   @ContentChildren(StepComponent) children!: QueryList<StepComponent>;
   @Input() namesSteps: string[] = [];
-  @Input() expanded: boolean = false;
   @Input() showCounter: boolean = true;
 
   currentStep: number = 0;
@@ -53,6 +48,6 @@ export class StepperComponent implements AfterContentInit {
   }
 
   private updateTransformStyle(): void {
-    this.transformStyle = `translateX(-${this.currentStep*(100/this.stepCount)}%)`;
+    this.transformStyle = `translateX(-${this.currentStep * (100 / this.stepCount)}%)`;
   }
 }

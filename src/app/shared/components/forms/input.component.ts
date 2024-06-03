@@ -71,8 +71,13 @@ export abstract class SeInputComponent implements ControlValueAccessor, OnInit {
   }
 
   writeValue(value: any): void {
-    this.model = value;
+    if (value) {
+      this.model = value;
+    } else {
+      this.model = [];
+    }
   }
+
 
   registerOnChange(fn: any): void {
     this.controlChange = fn;
