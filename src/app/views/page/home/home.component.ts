@@ -50,6 +50,10 @@ export class HomeComponent {
     this.router.navigate(['/page/new'])
   }
 
+  navigateToList(): void {
+    this.router.navigate(['/page/list/my-list'])
+  }
+
   validateArrayLength(...arrays: any[][]): boolean {
     return arrays.some(array => array.length > 0);
   }

@@ -1,6 +1,5 @@
 <div class="horizontal-scroll-container">
-  <div class="item" [style.width]="getItemWidth()" *ngFor="let item of scrollItems">
-
+  <div class="item" *ngFor="let item of scrollItems" [style.width]="getItemWidth()">
     <ng-container *ngIf="theme === 'card'">
       <div class="card">
         <div class="card-bagde" *ngIf="hasBadge">
@@ -36,14 +35,12 @@
       <h4><b>{{ item.title }}</b></h4>
       <span class="card-description">{{ item.description }}</span>
     </ng-container>
-
   </div>
 </div>
 
 <div class="no-content" *ngIf="!scrollItems || scrollItems.length === 0">
   <h1 class="mb-2"><b>Você ainda não criou suas listas</b></h1>
   <span>{{help}}</span>
-
   <div class="no-content-button mt-8">
     <app-s-button type="light" size="normal" (click)="onClick()" [name]="textButton!"></app-s-button>
   </div>
