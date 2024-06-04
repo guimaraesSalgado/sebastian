@@ -18,6 +18,7 @@ export class HorizontalScrollComponent {
   @Input() hasBadge: boolean = true;
   @Input() totalColumns: number = 2;
   private _themeColorMappings: { [key: string]: string } = {};
+
   @Input() set themeColorMappings(value: { [key: string]: string }) {
     if (value) {
       this._themeColorMappings = value;

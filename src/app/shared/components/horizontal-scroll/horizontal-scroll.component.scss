@@ -2,14 +2,27 @@
 
 .horizontal-scroll-container {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;  // Suporte para rolagem suave em dispositivos iOS
+  scroll-snap-type: x mandatory;  // Habilitar snap scroll
+
+  // Garantir que a rolagem funcione corretamente em dispositivos móveis
+  touch-action: pan-x;
+
+  // Ajustes para dispositivos móveis
+  @media (max-width: 768px) {
+    .item {
+      width: calc(100% / 1.5);  // Ajustar a largura dos itens em telas menores
+    }
+  }
 }
 
 .item {
   flex: 0 0 auto;
   width: calc(100% / 2.5);
   margin-right: 10px;
-  scroll-snap-align: start;
+  scroll-snap-align: start;  // Habilitar snap scroll nos itens
 
   &:last-child {
     margin-right: 0;
@@ -25,7 +38,7 @@
   }
 
   p {
-    font-size: 14;
+    font-size: 14px;
   }
 
   h4, p {
