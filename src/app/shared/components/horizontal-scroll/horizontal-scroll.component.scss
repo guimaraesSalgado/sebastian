@@ -3,9 +3,9 @@
 .horizontal-scroll-container {
   display: flex;
   overflow-x: auto;
-  // overflow-y: hidden;
-  // -webkit-overflow-scrolling: touch;
-  // scroll-snap-type: x mandatory;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
   white-space: nowrap;
 }
 
@@ -51,10 +51,6 @@
     font-size: 16px;
     color: $color-disabled-text;
   }
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-  height: 2px;
 }
 
 .image-container-revenue {
