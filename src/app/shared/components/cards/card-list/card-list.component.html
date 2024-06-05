@@ -6,7 +6,7 @@
   </div>
   <div class="card-list__content">
     <h1>{{item.title}}</h1>
-    <span *ngIf="item.description">{{item.description}}</span>
+    <span *ngIf="item.description">{{item.description | textLimit: 30}}</span>
   </div>
 </div>
 
