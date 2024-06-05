@@ -3,16 +3,33 @@
 .horizontal-scroll-container {
   display: flex;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  white-space: nowrap;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;  // Suporte para rolagem suave em dispositivos iOS
+  scroll-snap-type: x mandatory;  // Habilitar snap scroll
+  white-space: nowrap;  // Evita quebra de linha dos itens
+
+  // Garantir que a rolagem funcione corretamente em dispositivos móveis
+  touch-action: pan-x;
+  -ms-overflow-style: none;  // Esconde a barra de rolagem no IE e Edge
+  scrollbar-width: none;  // Esconde a barra de rolagem no Firefox
+
+  &::-webkit-scrollbar {
+    display: none;  // Esconde a barra de rolagem no Safari e Chrome
+  }
+
+  // Ajustes para dispositivos móveis
+  @media (max-width: 768px) {
+    .item {
+      width: calc(100% / 1.5);  // Ajustar a largura dos itens em telas menores
+    }
+  }
 }
 
 .item {
   flex: 0 0 auto;
   width: calc(100% / 2.5);
   margin-right: 10px;
-  scroll-snap-align: start;
+  scroll-snap-align: start;  // Habilitar snap scroll nos itens
 
   &:last-child {
     margin-right: 0;
@@ -50,10 +67,6 @@
     font-size: 16px;
     color: $color-disabled-text;
   }
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-  height: 2px;
 }
 
 .image-container-revenue {

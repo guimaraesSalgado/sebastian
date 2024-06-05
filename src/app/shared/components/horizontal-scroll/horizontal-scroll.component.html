@@ -1,5 +1,5 @@
 <div class="horizontal-scroll-container">
-  <div class="item" *ngFor="let item of scrollItems" [style.width]="getItemWidth()">
+  <div class="item" [style.width]="getItemWidth()" *ngFor="let item of scrollItems">
     <ng-container *ngIf="theme === 'card'">
       <div class="card">
         <div class="card-bagde" *ngIf="hasBadge">
